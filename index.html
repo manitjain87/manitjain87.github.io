@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manit Jain — CFO-Track Executive & Strategic Investor</title>
+    <meta name="description" content="CFO-track finance executive with 15+ years in turnaround, M&A, and strategic finance. Strategic investor in high-conviction public and private businesses.">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --color-bg: #FFFFFF;
+            --color-bg-secondary: #F9F9F9;
+            --color-text-primary: #1A1A1A;
+            --color-text-secondary: #666666;
+            --color-text-tertiary: #999999;
+            --color-border: #E5E5E5;
+            --color-accent: #0F6E56;
+            --color-accent-light: #E1F5EE;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #0D0D0D;
+                --color-bg-secondary: #1A1A1A;
+                --color-text-primary: #F5F5F5;
+                --color-text-secondary: #A3A3A3;
+                --color-text-tertiary: #737373;
+                --color-border: #2A2A2A;
+                --color-accent: #1D9E75;
+                --color-accent-light: #0F6E56;
+            }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+            padding: 16px 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            nav {
+                background: rgba(13, 13, 13, 0.95);
+            }
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav .logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            text-decoration: none;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        
+        nav a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--color-text-primary);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        h2 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 40px;
+        }
+        
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .hero {
+            padding: 120px 0 100px;
+        }
+        
+        .hero-subtitle {
+            font-size: 20px;
+            color: var(--color-text-secondary);
+            margin-bottom: 32px;
+            max-width: 700px;
+        }
+        
+        .hero-meta {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            margin-bottom: 40px;
+        }
+        
+        .hero-meta a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+        
+        .hero-meta a:hover {
+            text-decoration: underline;
+        }
+        
+        .cta-group {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--color-accent);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0F6E56;
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: var(--color-bg-secondary);
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--color-bg);
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--color-border);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 48px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            border: 2px solid var(--color-bg);
+        }
+        
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .timeline-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .timeline-period {
+            font-size: 14px;
+            color: var(--color-text-tertiary);
+        }
+        
+        .timeline-company {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            margin-bottom: 12px;
+        }
+        
+        .timeline-description {
+            color: var(--color-text-secondary);
+            margin-bottom: 12px;
+        }
+        
+        .metrics {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        
+        .metric {
+            background: var(--color-bg-secondary);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid var(--color-border);
+        }
+        
+        .metric-value {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+        
+        .metric-label {
+            font-size: 13px;
+            color: var(--color-text-tertiary);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .portfolio-item {
+            background: var(--color-bg-secondary);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            transition: all 0.2s;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-accent);
+        }
+        
+        .portfolio-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .portfolio-type {
+            font-size: 14px;
+            color: var(--color-text-tertiary);
+            margin-bottom: 8px;
+        }
+        
+        .portfolio-description {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+        
+        .philosophy-box {
+            background: var(--color-accent-light);
+            padding: 32px;
+            border-radius: 12px;
+            margin-bottom: 48px;
+            border-left: 4px solid var(--color-accent);
+        }
+        
+        .philosophy-box p {
+            color: var(--color-text-primary);
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .project-card {
+            background: var(--color-bg-secondary);
+            padding: 32px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            margin-bottom: 32px;
+        }
+        
+        .project-tag {
+            display: inline-block;
+            background: var(--color-accent-light);
+            color: var(--color-accent);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+        
+        .project-description {
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        
+        .framework-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .framework-item {
+            background: var(--color-bg);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            border: 1px solid var(--color-border);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        
+        .blog-card {
+            background: var(--color-bg-secondary);
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid var(--color-border);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+            display: block;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--color-accent);
+        }
+        
+        .blog-category {
+            font-size: 13px;
+            color: var(--color-accent);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+        
+        .blog-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .blog-excerpt {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        
+        .blog-detail {
+            max-width: 700px;
+        }
+        
+        .blog-detail-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--color-text-primary);
+        }
+        
+        .blog-detail-content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 32px 0 16px;
+        }
+        
+        .blog-detail-content h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 24px 0 12px;
+        }
+        
+        .blog-detail-content p {
+            margin-bottom: 16px;
+        }
+        
+        .blog-detail-content ul, .blog-detail-content ol {
+            margin: 16px 0 16px 24px;
+        }
+        
+        .blog-detail-content li {
+            margin-bottom: 8px;
+        }
+        
+        .blog-detail-content strong {
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+        
+        .blog-detail-content a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+        
+        .blog-detail-content a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-section {
+            background: var(--color-bg-secondary);
+            padding: 60px 0;
+        }
+        
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--color-border);
+            text-align: center;
+            color: var(--color-text-tertiary);
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 28px; }
+            section { padding: 60px 0; }
+            .hero { padding: 80px 0 60px; }
+            nav ul { gap: 20px; }
+            .cta-group { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Blog posts data - ADD YOUR CONTENT HERE
+        const blogPosts = [
+            {
+                id: 'mercadolibre-meli-memo',
+                category: 'Investment Memo',
+                title: 'MercadoLibre (MELI) — Charlie Analysis',
+                excerpt: 'Comprehensive 4-page investment memo applying Buffett/Munger/Thiel/Druckenmiller/Lütke frameworks. BUY rating, 8/10 conviction, +39% upside.',
+                date: '2026-04-03',
+                isPDF: false,
+                content: `
+                    <p><strong>Analyst:</strong> Charlie v6 | <strong>Frameworks:</strong> Buffett + Munger + Thiel + Druckenmiller + Lütke</p>
+                    
+                    <h3>Executive Summary</h3>
+                    
+                    <div style="background: var(--color-bg-secondary); padding: 16px; border-radius: 8px; margin: 16px 0;">
+                        <table style="width: 100%; font-size: 14px;">
+                            <tr><td style="padding: 4px;"><strong>Recommendation</strong></td><td style="text-align: right;">BUY</td></tr>
+                            <tr><td style="padding: 4px;"><strong>Conviction</strong></td><td style="text-align: right;">8/10</td></tr>
+                            <tr><td style="padding: 4px;"><strong>Current Price</strong></td><td style="text-align: right;">~$1,730</td></tr>
+                            <tr><td style="padding: 4px;"><strong>12-Month Target</strong></td><td style="text-align: right;">$2,400</td></tr>
+                            <tr><td style="padding: 4px;"><strong>Upside</strong></td><td style="text-align: right; color: var(--color-accent);">+39%</td></tr>
+                            <tr><td style="padding: 4px;"><strong>Position Size</strong></td><td style="text-align: right;">5–8%</td></tr>
+                        </table>
+                    </div>
+                    
+                    <p><strong>Thesis in 3 sentences:</strong> MercadoLibre is the dominant commerce + fintech + logistics platform across Latin America — a Lollapalooza of compounding moats (network effects, proprietary credit data, logistics infrastructure, fintech lock-in) that no competitor can replicate without a decade and $50B+. The market is penalizing MELI for deliberately compressing margins via $14B+ in 2026 capex — a Bezos-style move to cement a logistics monopoly across a 650M-person market where e-commerce penetration sits at just 16–17%. At 30x forward P/E, trading 34% below its June 2025 ATH, this is a rare entry into a proven franchise at a 10-year valuation trough.</p>
+                    
+                    <h3>The Bull Case</h3>
+                    
+                    <h4>1. Monopoly Already Won — Logistics Moat Completing in 2026</h4>
+                    <p>MELI is not a "will it win?" story — it's a "the market doesn't see how wide the moat already is" story. 42 fulfillment centers (up from 28), 50%+ same/next-day delivery, and logistics costs -11% YoY in Brazil create an infrastructure moat that Shopee, Temu, or Amazon cannot replicate in under 5 years.</p>
+                    
+                    <h4>2. The Lollapalooza Effect — Five Forces Compounding Simultaneously</h4>
+                    <ul>
+                        <li><strong>Commerce network effects:</strong> 83M buyers → more sellers → lower prices → more buyers</li>
+                        <li><strong>Fintech flywheel:</strong> 78M Mercado Pago MAUs generating proprietary transaction data</li>
+                        <li><strong>Logistics scale economies:</strong> More volume → lower per-unit cost → better service</li>
+                        <li><strong>Advertising monetization:</strong> 55.6% LatAm retail media share growing 67–70%/quarter</li>
+                        <li><strong>Proprietary credit data:</strong> 10+ years of default/repayment data — no bank or fintech can replicate</li>
+                    </ul>
+                    
+                    <h4>3. Fintech = Hidden Jewel, Valued Below Peers</h4>
+                    <p>Mercado Pago ($278B TPV, 78M MAUs) and Mercado Crédito ($12.5B portfolio, 4.4% NPL) at standalone comparable multiples would be worth $40–50B. Nubank trades at $55B market cap with no commerce integration and inferior credit data. The market is effectively buying MELI's fintech for free.</p>
+                    
+                    <h4>4. Valuation at 10-Year Trough</h4>
+                    <p>30x forward P/E, PEG 0.93, 3.0x P/S — all at decade lows. The market is treating intentional capex-driven margin compression as permanent structural deterioration. Logistics unit economics improving -11% YoY disprove this.</p>
+                    
+                    <h3>The Bear Case (Munger's Inversion)</h3>
+                    
+                    <p><strong>Inversion: What's the #1 way this becomes a disaster?</strong> The $12.5B credit book — which doubled in 12 months — blows up in a simultaneous LatAm macro shock.</p>
+                    
+                    <h4>1. Credit Book Risk — The $12.5B Unproven Experiment</h4>
+                    <p>The loan book grew 90% YoY. Credit cards grew 114% to $5.7B, launched into Argentina's 31% inflation. MELI's AI underwriting has never been stress-tested through a full LatAm recession. At 8% charge-off (vs. current 4.4% NPL): $1B+ provisioning charge = 50% of FY2025 net income.</p>
+                    
+                    <h4>2. Margin Compression May Be Structural</h4>
+                    <p>Shopee's 85M registered Brazilian buyers + gamified subsidies may force MELI into perpetual shipping subsidization. If logistics investment doesn't translate to unit cost leadership by 2027, operating margins stay at 10–11% vs. street expectation of 18%+ by 2028.</p>
+                    
+                    <h4>3. CEO Transition — 26-Year Founder Passes Baton</h4>
+                    <p>Szarfsztejn (CEO since Jan 2026) is unproven under public-company pressure. Galperin's indefinite time horizon and founder conviction shaped every major capital allocation decision.</p>
+                    
+                    <h3>Framework Scorecard</h3>
+                    
+                    <div style="background: var(--color-bg-secondary); padding: 16px; border-radius: 8px; margin: 16px 0;">
+                        <table style="width: 100%; font-size: 14px;">
+                            <tr><td style="padding: 4px;"><strong>Buffett (Business Quality)</strong></td><td style="text-align: right;">8/10 — Exceptional moat, reasonable valuation</td></tr>
+                            <tr><td style="padding: 4px;"><strong>Munger (Inversion)</strong></td><td style="text-align: right;">Pass — Bear case survivable; not existential</td></tr>
+                            <tr><td style="padding: 4px;"><strong>Thiel (Monopoly)</strong></td><td style="text-align: right;">9/10 — Last mover, integrated stack, 55% ad share</td></tr>
+                            <tr><td style="padding: 4px;"><strong>Druckenmiller (Conviction)</strong></td><td style="text-align: right;">8/10 — 3.9:1 risk/reward, macro neutral</td></tr>
+                            <tr><td style="padding: 4px;"><strong>Lütke (Inflection)</strong></td><td style="text-align: right;">5/10 — Moat formed; not a pre-inflection bet</td></tr>
+                        </table>
+                    </div>
+                    
+                    <h3>Valuation Summary</h3>
+                    
+                    <div style="background: var(--color-bg-secondary); padding: 16px; border-radius: 8px; margin: 16px 0;">
+                        <table style="width: 100%; font-size: 14px;">
+                            <tr><td style="padding: 4px;"><strong>DCF Bear Case</strong></td><td style="text-align: right;">$1,400 (-19%)</td></tr>
+                            <tr><td style="padding: 4px;"><strong>DCF Base Case</strong></td><td style="text-align: right; color: var(--color-accent);">$2,500 (+44%)</td></tr>
+                            <tr><td style="padding: 4px;"><strong>DCF Bull Case</strong></td><td style="text-align: right;">$3,800 (+120%)</td></tr>
+                            <tr><td style="padding: 4px;"><strong>Risk/Reward</strong></td><td style="text-align: right; font-weight: 600;">3.9:1</td></tr>
+                        </table>
+                    </div>
+                    
+                    <h3>Key Insights</h3>
+                    
+                    <ul>
+                        <li><strong>AI moat in credit:</strong> 10+ year longitudinal dataset on LatAm consumer behavior powering ML underwriting — 4.4% NPL vs. industry 7%+</li>
+                        <li><strong>Hidden fintech value:</strong> $278B TPV platform worth $40–50B standalone, effectively free in current valuation</li>
+                        <li><strong>Logistics endgame:</strong> 42 fulfillment centers create 5-year moat replication timeline for competitors</li>
+                        <li><strong>Munger's inversion:</strong> Credit book stress-test is the primary failure mode — monitor NPL >7% as stop-loss trigger</li>
+                        <li><strong>Macro paradigm fit:</strong> Digitization of LatAm commerce + financial inclusion secular wave, 5–10 year runway</li>
+                    </ul>
+                    
+                    <p style="margin-top: 24px; padding: 16px; background: var(--color-accent-light); border-left: 4px solid var(--color-accent); border-radius: 4px;">
+                        <strong>Note:</strong> This is a sample output from Charlie, my AI-powered investment research assistant. 
+                        The full 4-page memo includes TAM analysis, competitive landscape mapping, regulatory assessment, 
+                        unit economics breakdown, DCF scenario modeling, and management evaluation.
+                        <br/><br/>
+                        <a href="https://docs.google.com/document/d/1RY6lX6fvLwEimpLoeXy7ztlkRj8vrPqDeWyg6KT6BI8/edit" 
+                           target="_blank" 
+                           style="color: var(--color-accent); text-decoration: none; font-weight: 500;">
+                            → Read full MercadoLibre memo
+                        </a>
+                    </p>
+                `
+            },
+            {
+                id: 'ai-first-org-design',
+                category: 'Strategic Finance',
+                title: 'AI-First Org Design and its impact on cost structure',
+                excerpt: 'Reimagining a $10Bn+ e-commerce business built from scratch today. Revenue per employee 2-2.5X, headcount down 60%, margins reinvested into customer experience.',
+                date: '2026-01-15',
+                isPDF: false,
+                content: `
+                    <p><strong>Key insight from 2026 Anthropic AI job impact report:</strong> AI is already capable of doing 94% of jobs in the "computer and maths" category, but current actual coverage is only 33%. There's a massive gap between what AI could do and what is actually being done.</p>
+                    
+                    <h3>The Thought Experiment</h3>
+                    
+                    <p>If you built a $10Bn+ e-commerce shop from scratch today, how would you structure the workforce and agents across functions? This requires fundamentally rethinking how work gets done.</p>
+                    
+                    <p>Instead of a traditional pyramid structure heavily reliant on human capital for execution, this new org resembles an <strong>hourglass</strong>:</p>
+                    
+                    <ul>
+                        <li>Small group of strategic directors at the top</li>
+                        <li>AI agents and automated systems forming the massive middle layer of execution</li>
+                        <li>Highly specialized human layer managing exceptions, physical operations, and oversight</li>
+                    </ul>
+                    
+                    <h3>The Numbers</h3>
+                    
+                    <div style="background: var(--color-bg-secondary); padding: 16px; border-radius: 8px; margin: 16px 0;">
+                        <p><strong>Revenue:</strong> ~$12 Billion<br/>
+                        <strong>SG&A / Overhead:</strong> $2B+<br/>
+                        <strong>Headcount:</strong> 12,000 employees (60% reduction vs. traditional org)</p>
+                    </div>
+                    
+                    <h3>Function-by-Function Breakdown</h3>
+                    
+                    <h4>Engineering</h4>
+                    <p>AI agents write/test/deploy code. Elite "Orchestrators" replace junior devs, shifting the human role from creator to editor.</p>
+                    
+                    <h4>Customer Support</h4>
+                    <p>AI resolves 95% of Tier 1/2 inquiries. Remaining humans act as "Empathy Escalation Specialists" for high-value VIP issues.</p>
+                    
+                    <h4>Catalog & Merchandising</h4>
+                    <p>Multimodal AI ingests catalogs and generates 3D/SEO assets instantly. Human roles become purely strategic trend forecasters.</p>
+                    
+                    <h4>Corporate SG&A (HR, Legal, Finance, Commercial)</h4>
+                    <p>A tiny "BizOps" team runs the company using AI simulations.</p>
+                    
+                    <h4>Logistics & Warehouse (The Physical Moat)</h4>
+                    <p>AI optimizes routing, but physical labor remains; robotics is evolving fast though.</p>
+                    
+                    <h3>The Economic Impact</h3>
+                    
+                    <p><strong>Revenue per employee increases 2-2.5X</strong>, decoupling growth from headcount. An AI-first architecture allows you to reinvest into the core pillars of e-commerce, creating a flywheel effect. It allows you to slash prices for customers and give them a "magical" experience.</p>
+                    
+                    <p>As product discovery shifts from search engines (Google) and social feeds (Meta) to conversational commerce (AI assistants like Gemini, ChatGPT), the traditional performance marketing playbook breaks too.</p>
+                    
+                    <h3>Open Questions</h3>
+                    
+                    <ul>
+                        <li><strong>Can incumbents pivot?</strong> Against the massive friction of "how we've always done it"? How to re-structure incentives?</li>
+                        <li><strong>Creativity unleashed?</strong> Today's structures in large orgs kill creativity — as AI agents take over the mundane and repetitive, does it get unleashed?</li>
+                        <li><strong>OPEX shift:</strong> You're trading human OPEX for compute OPEX. How to forecast this massive compute costs?</li>
+                        <li><strong>Security:</strong> New security concerns with AI-driven execution?</li>
+                    </ul>
+                `
+            },
+            {
+                id: 'dlocal-tradeoffs-munger',
+                category: 'Capital Allocation',
+                title: 'The gap between winners and losers: Managing trade-offs ruthlessly',
+                excerpt: 'Charlie Munger nailed it: "Show me the incentive, and I will show you the outcome." Using dLocal as a masterclass in deliberate trade-offs.',
+                date: '2026-01-10',
+                isPDF: false,
+                content: `
+                    <p>Over the last few years, I've had a front-row seat to two very different realities in high-growth businesses: one hitting $100Bn+ GMV, still growing 30%+ YoY, accelerating product velocity, deepening moats, and compounding operating leverage + FCF; the other — similar sector (partial overlap), multi-$Bn+ scale, top talent, endless strategies over 10+ years but still struggling to make ends meet.</p>
+                    
+                    <p>I've lived this globally, across public and private markets.</p>
+                    
+                    <h3>The Hard Truth</h3>
+                    
+                    <p>As an operator and investor obsessed with business models, I've learned one thing: <strong>the gap between winners and losers comes down to how ruthlessly a company manages trade-offs.</strong></p>
+                    
+                    <p>Capital and organizational attention are finite. I've steered millions across performance marketing bets, pricing/promo experiments, new logistics builds, strategic partnerships, build/buy/partner calls, and market expansions.</p>
+                    
+                    <p>I always aim to pressure-test against a dual lens:</p>
+                    <ul>
+                        <li><strong>Short-term reality:</strong> Hitting quarterly/annual metrics</li>
+                        <li><strong>Long-term value:</strong> Maximizing terminal value</li>
+                    </ul>
+                    
+                    <h3>The Missing Lever: Executive Incentives</h3>
+                    
+                    <p>But nailing those conversations requires one thing most companies get wrong: <strong>executive and key-leader (functional heads / key personnel) incentive structure.</strong></p>
+                    
+                    <p>Most companies fail to treat this as the C-suite's most powerful strategic lever. This requires deep, first-principles thinking about what you aim to drive and related fair-value-sharing vs. the standard, straight-line, time-in-business based equity vesting framework.</p>
+                    
+                    <p><strong>Charlie Munger nailed it:</strong> "Show me the incentive, and I will show you the outcome."</p>
+                    
+                    <p>If your business keeps making suboptimal trade-offs, stop staring at budget spreadsheets. Start auditing how you structure the incentives for your leaders and key personnel.</p>
+                    
+                    <h3>Case Study: dLocal (One of My Favorite Holdings)</h3>
+                    
+                    <p>Take dLocal as a masterclass in deliberate trade-offs creating a monster business.</p>
+                    
+                    <p>They consciously accepted a <strong>lower net take rate</strong> (down to 0.88% in Q4 2025 from 1.09% in Q4 2024) to land and embed with the highest-volume global enterprise clients in e-commerce, ride-hailing, streaming, remittances, and fintech across emerging markets.</p>
+                    
+                    <h4>The Outcome</h4>
+                    
+                    <ul>
+                        <li><strong>Deep API integration across 40+ emerging markets</strong> drove massive stickiness</li>
+                        <li><strong>NRR (Net Revenue Retention): 145%</strong></li>
+                        <li><strong>TPV retention: 158% in 2025</strong></li>
+                        <li>Existing merchants expand countries, methods, and products (new add: BNPL), turning dLocal into indispensable infrastructure</li>
+                    </ul>
+                    
+                    <p>They chased <strong>absolute gross profit dollars</strong> ($403M in FY2025, +37% YoY) over margin %, while they scaled TPV to a record <strong>$41 billion in 2025, up 60% YoY</strong>.</p>
+                    
+                    <p>This has unleashed operating leverage and exceptional FCF +110% YoY.</p>
+                    
+                    <p><strong>Result:</strong> Dividends declared, buyback authorized — while still investing aggressively in growth.</p>
+                    
+                    <h3>The Pattern</h3>
+                    
+                    <p>When leaders win on:</p>
+                    <ul>
+                        <li><strong>Volume</strong> (Transactions)</li>
+                        <li><strong>Stickiness</strong> (customer retention + MOAT)</li>
+                        <li><strong>Operating leverage</strong> (FCF)</li>
+                    </ul>
+                    
+                    <p>They embrace painful-but-right trade-offs that build compounding machines.</p>
+                `
+            },
+            {
+                id: 'farfetch-turnaround-q4-2024',
+                category: 'Turnaround Finance',
+                title: 'Farfetch turnaround: −$31M to +$30M EBITDA in 4 quarters',
+                excerpt: 'From Q1 2024 with adjusted EBITDA of -$31M to Q4 2024 at +$30M. The real credit goes to the people who stayed committed after the acquisition.',
+                date: '2025-02-20',
+                isPDF: false,
+                content: `
+                    <p>This past year has been an incredible journey at Farfetch.</p>
+                    
+                    <p>From starting Q1 2024 with an adjusted EBITDA of <strong>-$31 million</strong> to closing Q4 2024 with an adjusted EBITDA of <strong>+$30 million</strong>, the turnaround is nothing short of remarkable.</p>
+                    
+                    <p>But numbers only tell part of the story.</p>
+                    
+                    <h3>The Real Story: People</h3>
+                    
+                    <p>The real credit goes to the people who stayed committed after the acquisition. Their trust, effort, and resilience made this transformation possible.</p>
+                    
+                    <p>One of the most rewarding aspects of working on M&A and business turnarounds is discovering the untapped potential in talented teams. With the right focus, accountability, and a performance-driven culture, people can truly shine—and they did.</p>
+                    
+                    <h3>Beyond Financial Results</h3>
+                    
+                    <p>This isn't just about financial results; it's about creating value together.</p>
+                    
+                    <p>Here's to building on this momentum and continuing to unlock potential in 2025 and beyond!</p>
+                `
+            },
+            {
+                id: 'coupang-q3-2024-farfetch-breakeven',
+                category: 'Turnaround Finance',
+                title: 'Coupang Q3 2024: Farfetch reaches near-breakeven EBITDA ahead of schedule',
+                excerpt: 'Achieved near break-even profitability in Farfetch in Q3 2024, earlier than planned. From -$31M in Q1 to -$2M in Q3.',
+                date: '2024-11-07',
+                isPDF: false,
+                content: `
+                    <p>Turning around a multibillion-dollar business is no small feat! Huge thanks to our teams at Farfetch and Coupang for their hard work and dedication.</p>
+                    
+                    <p>Excited to continue making structural and thoughtful changes to the business, and for what lies ahead as we continue to innovate and grow!</p>
+                    
+                    <h3>Coupang (NYSE: CPNG) Q3 2024 Results</h3>
+                    
+                    <ul>
+                        <li><strong>Net revenues:</strong> $7.9B, up 27% YoY (32% FX-neutral)</li>
+                        <li><strong>Gross profit:</strong> $2.3B, up 45% YoY</li>
+                        <li><strong>Gross profit margin:</strong> 28.8%, +350 bps YoY</li>
+                        <li><strong>Operating cash flow:</strong> $1.8B for the trailing 12-months</li>
+                        <li><strong>Free cash flow:</strong> $935M for the trailing 12-months</li>
+                        <li><strong>Developing Offerings segment</strong> (including Farfetch) net revenues were $975 million, up 347% YoY on a reported basis; excluding Farfetch, the growth was 146% YoY</li>
+                    </ul>
+                    
+                    <h3>CFO Commentary</h3>
+                    
+                    <p><em>"This quarter we continued the strong momentum we've seen throughout this year, delivering robust growth in revenues and margins. Our newer offerings and categories, like Fulfillment and Logistics by Coupang (FLC) and R.Lux, a new luxury offering, are examples of the massive growth opportunity from selection expansion on Rocket Delivery. We also achieved an important milestone in Developing Offerings this quarter, reaching near break-even profitability in Farfetch, earlier than planned. We remain focused on our relentless pursuit of customer wow and operational excellence."</em> — Gaurav Anand, CFO, Coupang</p>
+                    
+                    <h3>CEO Commentary</h3>
+                    
+                    <p><em>"We're very happy that the Farfetch team has achieved the end of year goal of near breakeven adjusted EBITDA in Q3. We're proud of the speed and especially its scale and the discipline with which the team has executed so far this year. There's still work to do there. And our goal is to finish the job of stabilization through the remainder of the year. Next year, we'll begin to assess other opportunities including synergies with Coupang, and we look forward to sharing updates at the appropriate time."</em> — Bom Kim, Founder and CEO, Coupang</p>
+                    
+                    <h3>Context and Performance Evolution</h3>
+                    
+                    <p>We completed the Farfetch acquisition at the end of Jan 2024.</p>
+                    
+                    <p><strong>Commitment in Q1 2024 earnings:</strong> "With the addition of Farfetch results in our Developing Offerings segment, we now estimate that our 2024 adjusted EBITDA losses for Developing Offerings will be around $750 million, an increase of just $100 million. We also anticipate that Farfetch will achieve close to positive adjusted EBITDA on a run-rate basis by the end of 2024."</p>
+                    
+                    <h4>Farfetch Adjusted EBITDA — Actual Results</h4>
+                    
+                    <div style="background: var(--color-bg-secondary); padding: 16px; border-radius: 8px; margin: 16px 0;">
+                        <p><strong>Q1 2024</strong> (Feb and March): -$31M<br/>
+                        <strong>Q2 2024:</strong> -$31M<br/>
+                        <strong>Q3 2024:</strong> -$2M<br/>
+                        <strong>Total YTD</strong> (9 months): -$64M<br/>
+                        <strong>Q4:</strong> Stay tuned 🏆</p>
+                    </div>
+                `
+            },
+            {
+                id: 'marketplace-business-model',
+                category: 'Business Models',
+                title: 'The simplest way to explain an e-commerce marketplace business model',
+                excerpt: 'Five core tenets that drive trust, retention, and sustainable margins. Simple to articulate, extremely difficult to execute at scale.',
+                date: '2022-08-15',
+                isPDF: false,
+                content: `
+                    <p>What's the simplest way to explain an e-commerce marketplace business model? Here is my take:</p>
+                    
+                    <h3>The Five Core Tenets</h3>
+                    
+                    <h4>1. Provide merchants with an attractive channel to grow their business</h4>
+                    <p>Provide them with the tools and policies to do so in a simple and cost efficient manner → attract and retain sellers</p>
+                    
+                    <h4>2. Provide customers with wide selection, competitive price, and fast and reliable delivery speed</h4>
+                    <p>→ Loyal customer base</p>
+                    
+                    <h4>3. Make a healthy margin (cut) by enabling #1 and #2 above</h4>
+                    
+                    <h4>4. Re-invest the margins to become better at #1 and #2 above</h4>
+                    
+                    <h4>5. Maintain the above order of priority</h4>
+                    <p>→ Build trust in your marketplace</p>
+                    
+                    <h3>Execution at Scale</h3>
+                    
+                    <p>This is a simple and high ROI business model, yet <strong>extremely difficult to execute at scale</strong>.</p>
+                    
+                    <p>There are a few international success stories (pure play marketplaces) that have done this successfully such as <strong>Alibaba, Etsy and MercadoLibre</strong>. They have their own niche but the basic tenets 1-5 above seem to be intact.</p>
+                    
+                    <h3>New Concepts Emerging</h3>
+                    
+                    <p>Lately, the new concepts of <strong>social commerce</strong> (top-of-mind: IG and TikTok, Pinterest) and <strong>live commerce</strong> (top-of-mind: Whatnot, Supergreat, Flip) are gaining traction. These players over-index on the entertainment and social angle of shopping.</p>
+                    
+                    <p><strong>I wonder:</strong> Will these new concepts 'truly' disrupt the pure play marketplaces? Can they succeed at scale without investing in the basic tenets 1-5 outlined above or perhaps rely on Shopify for #1 and focus on #2?</p>
+                    
+                    <p>Maybe these models can co-exist and have their own respective category winners?</p>
+                `
+            },
+            {
+                id: 'shopify-reflection',
+                category: 'Leadership & Culture',
+                title: 'Saying goodbye to Shopify: What makes it an amazing place to work',
+                excerpt: 'After 3 years at Shopify, reflecting on merchant obsession, trust and transparency, curiosity-driven culture, and the power of storytelling.',
+                date: '2022-08-10',
+                isPDF: false,
+                content: `
+                    <p>After 3 years, it's time to say bye to Shopify. It's been the best work experience of my life so far — and I am full of gratitude.</p>
+                    
+                    <p>Now as I step out and look back, I can better articulate what I admire about the company and what makes it such an amazing place to work at:</p>
+                    
+                    <h3>1. An environment of care and respect for merchants</h3>
+                    
+                    <p>Shopify really cares for its merchants, the people who built these businesses, their dreams and aspirations. They don't do this for marketing purposes, but this is really in the company's DNA. This bleeds into every function at Shopify from product, sales to even finance and legal.</p>
+                    
+                    <p>No wonder even in the current market environment where most companies are cutting back, Shopify continues to invest in products catering to end-to-end merchant requirements — product discovery and CRM, web3/NFT, AR/VR, B2B fintech, supply chain (from port to porch), POS (incl HW), cross-border commerce, partnering with top global B2C and B2B tech companies and investing in building the enabling infra for the partner ecosystem.</p>
+                    
+                    <p>Mind blowing!</p>
+                    
+                    <h3>2. An environment of trust and transparency</h3>
+                    
+                    <p>The leadership is personally invested in this one — they regularly share their mental models, roadmaps, learnings and strategic plans for everyone internally to consume. It's shared via slack, video msgs, town halls and detailed thought papers.</p>
+                    
+                    <p>Just imagine: all the investment plans for every product-line and for every year are just available for anyone in the company to read. This isn't easy — by doing that you expose yourself to so many risks. But Shopify errs on the side of trusting its people to do the right thing!</p>
+                    
+                    <p>This is great not just for the culture, but it's also very good for business - helps in breaking silos, promotes collaboration and cross-pollination of ideas.</p>
+                    
+                    <h3>3. Hiring for curiosity and growth mindset</h3>
+                    
+                    <p>Shopify hires people with demonstrated high-level of natural curiosity and growth mindset - and they give you the tools and resources to explore your curiosity, develop your craft and pick-up new skills.</p>
+                    
+                    <p>I have personally benefited a lot from the 'Shopify book bar' and 'Own your development' programs.</p>
+                    
+                    <h3>4. Storytelling as a superpower</h3>
+                    
+                    <p>Last but not the least, Shopify is one of the best when it comes to story-telling - this can be a super-power if you want to bring change.</p>
+                    
+                    <h3>The Reality Check</h3>
+                    
+                    <p>Of course, everything isn't great. The company has become very large, very quickly - and still needs to figure many pieces to build a profitable / CF generating business. The current market environment isn't helping either.</p>
+                    
+                    <p>But Shopify has the resources, people and mindset to come out stronger. I have no doubt that it will continue to play a key role in the world of commerce, enabling SMB merchants globally!</p>
+                    
+                    <h3>Next Adventure</h3>
+                    
+                    <p>For my next adventure - I am joining a company that's pushing the boundaries of innovation in the world of commerce, focused on the East Asian markets for now. I will continue to serve SMB merchants in a different and bigger role.</p>
+                `
+            },
+            {
+                id: 'mental-models-partnerships',
+                category: 'Strategic Frameworks',
+                title: 'Mental model for product partnerships',
+                excerpt: 'Mutual value creation first, distribution second. Primary goal is delivering greater customer value through integrated solutions.',
+                date: '2021-11-15',
+                isPDF: false,
+                content: `
+                    <p>I'm reading "The Great Mental Models" by Shane Parrish, Farnam Street. This book contains timeless, broad ideas and is a homage to the idea that we can benefit from understanding how the world works.</p>
+                    
+                    <blockquote style="border-left: 4px solid var(--color-accent); padding-left: 16px; margin: 16px 0; font-style: italic;">
+                    A mental model is simply a representation of how something works. We cannot keep all the details of the world in our brains, so we use models to simplify the complex into understandable and organizable chunks.
+                    </blockquote>
+                    
+                    <p>This book has motivated me to think through and share my mental model about product partnerships.</p>
+                    
+                    <h3>Definition</h3>
+                    
+                    <blockquote style="border-left: 4px solid var(--color-accent); padding-left: 16px; margin: 16px 0; font-style: italic;">
+                    A partnership is an arrangement where parties, known as business partners, agree to cooperate to advance their mutual interests.
+                    </blockquote>
+                    
+                    <h3>The Primary Goal: Mutual Interest</h3>
+                    
+                    <p>A product partnership should deliver <strong>greater value for the customer(s)</strong> by using the partners' solution together, compared to using each of the two solutions separately without any integration or connection.</p>
+                    
+                    <p>Simply put: the solutions used together should help your customer(s) get closer to their goals and / or be more successful.</p>
+                    
+                    <p>Therefore, the parties need to be focused on creating, communicating and delivering the product synergy in a seamless manner. That I believe is the primary goal.</p>
+                    
+                    <h3>The Secondary Goal: Distribution</h3>
+                    
+                    <p>The secondary goal is distribution (i.e. co-marketing or co-selling), and <strong>not the other way round</strong>.</p>
+                    
+                    <p>To complete the loop, the secondary goal (distribution) should be leveraged as a means to reinvest in the primary goal (incremental value via product synergy).</p>
+                    
+                    <p>All the KPIs, such as expanding total addressable market, increasing customer lifetime value and generating referrals (or installs) should be perceived as the by-product of the above loop (flywheel).</p>
+                    
+                    <h3>Reasons for Sub-Optimal Outcomes</h3>
+                    
+                    <p>I've personally experienced well thought through partnerships or initiatives deliver sub-optimal results. The most common reason is:</p>
+                    
+                    <ul>
+                        <li>The inability to create, communicate and deliver on the product synergies, OR</li>
+                        <li>Having a greater focus on leveraging the partnership as a distribution channel compared to the focus on generating incremental value for the customer</li>
+                    </ul>
+                    
+                    <p>Therefore, it is imperative for the partners to align on the primary goal, and how they define success. This requires <strong>long term thinking</strong> amongst all the parties involved.</p>
+                    
+                    <h3>Case Study: Shopify and Facebook</h3>
+                    
+                    <p>Shopify and Facebook partnership is a great example of this model:</p>
+                    
+                    <p>The merchants use Facebook to reach their customer, build a brand and community, while they use Shopify as the commerce backbone to manage their products, orders, inventory, fulfillment, sell on different channels, and much more. <strong>The merchants are far better off using these platforms/products together.</strong></p>
+                    
+                    <p>The two companies have continued to invest in improving the product synergies - recently, they expanded the partnership to include one-click checkout service (Shop Pay) available to merchants that sell on Facebook. This would allow the merchants to offer a faster checkout experience to their customers, leading to higher conversion.</p>
+                    
+                    <h3>Broader Application</h3>
+                    
+                    <p>While this model is based on my experience, I do believe it can be applied across a wide range of partnership (and even M&A) situations to achieve a better outcome for the customers, and consequently for the parties involved.</p>
+                `
+            },
+            {
+                id: 'chief-collaboration-officer',
+                category: 'Organizational Design',
+                title: 'The case for a Chief Collaboration Officer',
+                excerpt: 'A temporary role (2-4 years) to build collaboration as a natural instinct. Working in silos costs dearly — but it's not measured.',
+                date: '2021-09-20',
+                isPDF: false,
+                content: `
+                    <p>Large organizations should consider appointing a <strong>Chief Collaboration Officer (CCO)</strong>, a temporary role (2-4 years) where if the job is done well, then it shouldn't be required anymore.</p>
+                    
+                    <p>Collaboration should become a natural instinct at the respective organization — intra-team, inter-team and perhaps even inter-organizations (such as tech partners, vendors, etc.).</p>
+                    
+                    <h3>The Challenge</h3>
+                    
+                    <p>The challenge here is to develop a culture of collaboration and transparency, and to empower teams with the right tools so that this becomes an enabler to improve output at speed and scale, in a seamless (even fun) manner.</p>
+                    
+                    <h3>Tools That Enable Collaboration</h3>
+                    
+                    <p>From my personal experience, a few tools if used to their potential, that can make collaboration fun, seamless and effective multi-fold:</p>
+                    
+                    <ul>
+                        <li>Slack</li>
+                        <li>Notion</li>
+                        <li>Asana</li>
+                        <li>Miro</li>
+                        <li>Trello</li>
+                        <li>Fellow.app</li>
+                        <li>Shared Google products (docs/excel/PPT)</li>
+                    </ul>
+                    
+                    <h3>The Hidden Cost</h3>
+                    
+                    <p>I believe working in silos costs dearly - there are many examples but <strong>this isn't something that's measured and tracked</strong>.</p>
+                    
+                    <p>It would be an interesting challenge to develop the right KPIs (baseline and North-stars *input metrics) and measure impact (revenue and profitability *output metrics) on this one.</p>
+                    
+                    <h3>Call for Case Studies</h3>
+                    
+                    <p>Please share if anyone has read an interesting case study on this topic — or even better share from personal experience.</p>
+                `
+            },
+            {
+                id: 'bessemer-shopify-memo-2010',
+                category: 'Investment Analysis',
+                title: 'Bessemer's 2010 Shopify memo: A masterclass in contrarian VC thinking',
+                excerpt: '$5M investment at $25M pre-money when few VCs backed SMB software. 10K merchants, $132M GMV then. 1M+ merchants, $61B+ GMV now. What's the next 10-year thesis?',
+                date: '2020-11-10',
+                isPDF: false,
+                content: `
+                    <p>What an incredible read — Investment memo from back in 2010!</p>
+                    
+                    <p>Prepared by the Bessemer Venture Partners team seeking a <strong>$5M primary (+$2M secondary at a 25% discount) investment in Shopify at a pre-money valuation of $25M</strong>.</p>
+                    
+                    <h3>The Contrarian Bet</h3>
+                    
+                    <p>They made this bet when very few VCs would have backed a software business targeting SMBs. This document explains the rationale behind their decision that led to this amazingly impactful investment!</p>
+                    
+                    <h3>The Transformation (2010 → 2020)</h3>
+                    
+                    <p>Since then, Shopify has gone from:</p>
+                    
+                    <div style="background: var(--color-bg-secondary); padding: 16px; border-radius: 8px; margin: 16px 0;">
+                        <p><strong>2010:</strong><br/>
+                        • 10K merchants<br/>
+                        • $132M in GMV<br/>
+                        • Pre-revenue (relative to today's scale)</p>
+                        
+                        <p style="margin-top: 16px;"><strong>2020:</strong><br/>
+                        • 1M+ merchants<br/>
+                        • $61B+ annual GMV<br/>
+                        • Facilitates entrepreneurial journeys across 175 countries<br/>
+                        • Supports 2.1M full-time jobs</p>
+                    </div>
+                    
+                    <h3>What Made This Investment Work</h3>
+                    
+                    <p>Bessemer saw what others missed:</p>
+                    
+                    <ul>
+                        <li><strong>SMB software TAM expansion</strong> — Most VCs thought SMBs couldn't afford or wouldn't adopt SaaS. Bessemer bet on democratization of commerce infrastructure.</li>
+                        <li><strong>Platform potential</strong> — Early recognition that Shopify wasn't just a storefront builder, but commerce operating system.</li>
+                        <li><strong>Founder-market fit</strong> — Tobi Lütke as technical founder who built the product for himself first.</li>
+                        <li><strong>Network effects emerging</strong> — Developer ecosystem and app marketplace creating switching costs.</li>
+                    </ul>
+                    
+                    <h3>The Forward-Looking Question</h3>
+                    
+                    <p>This was written 10 years back. <strong>What would be the next 10-year investment thesis for Shopify?</strong></p>
+                    
+                    <p>My take:</p>
+                    
+                    <ul>
+                        <li><strong>Payments + Fintech expansion</strong> — Shop Pay, Capital, Banking becoming 30%+ of revenue</li>
+                        <li><strong>Logistics infrastructure</strong> — Fulfillment network creating Amazon-level delivery speed</li>
+                        <li><strong>B2B commerce</strong> — Wholesale, supplier networks, cross-border B2B payments</li>
+                        <li><strong>Offline-online convergence</strong> — POS + retail unification driving omnichannel</li>
+                        <li><strong>International expansion</strong> — LatAm, Asia, Africa — replicating North America playbook globally</li>
+                    </ul>
+                    
+                    <p>The 2010 thesis was "democratize commerce for SMBs." The 2020-2030 thesis might be "build the full-stack commerce operating system that competes with Amazon, not just as a marketplace, but as infrastructure."</p>
+                    
+                    <h3>Lessons for Investors</h3>
+                    
+                    <p>What this memo teaches:</p>
+                    
+                    <ul>
+                        <li><strong>Conviction in contrarian bets</strong> — When consensus says "SMBs won't pay," dig deeper</li>
+                        <li><strong>Founder DNA matters</strong> — Technical founders with product vision compound differently</li>
+                        <li><strong>Platform > Product</strong> — Developer ecosystems create 10x moats vs. standalone products</li>
+                        <li><strong>TAM expansion</strong> — The market in 2010 wasn't the market in 2020. Great companies create their TAM.</li>
+                    </ul>
+                `
+            }
+        ];
+
+        function App() {
+            const [activeSection, setActiveSection] = useState('home');
+            const [selectedPost, setSelectedPost] = useState(null);
+
+            const scrollToSection = (id) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+
+            const experience = [
+                {
+                    title: "Senior Director, Finance Business Partnering & Decision Science",
+                    company: "Farfetch — GMV $2.5Bn+, Global E-commerce Marketplace",
+                    period: "Apr 2024 – Present",
+                    location: "London, UK",
+                    description: "Transitioned from Coupang post-acquisition as CFO's right-hand to lead commercial turnaround of distressed business.",
+                    metrics: [
+                        { value: "−$31M → Profitable", label: "EBITDA swing" },
+                        { value: "$40M", label: "Channel margin value" },
+                        { value: "30%+", label: "Marketing efficiency" },
+                        { value: "25+ FTE", label: "Team rebuilt" }
+                    ]
+                },
+                {
+                    title: "Director, Commercial Finance",
+                    company: "Coupang — Revenue $30Bn+, E-commerce Market Leader",
+                    period: "Sep 2022 – Mar 2024",
+                    location: "Seoul, South Korea",
+                    description: "Led business partnering and FP&A for $10B+ GMV Korean marketplace, supporting 150K+ merchants globally.",
+                    metrics: [
+                        { value: "$10B+", label: "GMV managed" },
+                        { value: "15%", label: "YoY revenue growth" },
+                        { value: "150K+", label: "Merchants supported" }
+                    ]
+                },
+                {
+                    title: "Product Partnerships Lead",
+                    company: "Shopify — GMV $200Bn+, Global B2B SaaS Leader",
+                    period: "Oct 2019 – Aug 2022",
+                    location: "Toronto, Canada",
+                    description: "Led global tech partnerships and ecosystem strategy for Shopify POS.",
+                    metrics: [
+                        { value: "250%+", label: "GMV growth" },
+                        { value: "60+", label: "SaaS integrations" },
+                        { value: "$12B+", label: "GMV scaled to" }
+                    ]
+                },
+                {
+                    title: "Strategy & Corp Dev Manager",
+                    company: "Walmart Canada — Revenue $25Bn",
+                    period: "Jan 2018 – Oct 2019",
+                    location: "Toronto, Canada",
+                    description: "Led strategic planning for $650M+ e-commerce BU.",
+                    metrics: [
+                        { value: "~$100M", label: "Instacart ARR" },
+                        { value: "$6M+", label: "Margin uplift" }
+                    ]
+                }
+            ];
+
+            const portfolio = [
+                { name: "Shopify", type: "Public", description: "Global commerce platform" },
+                { name: "Reddit", type: "Public", description: "Social media & community" },
+                { name: "Coupang", type: "Public", description: "E-commerce leader" },
+                { name: "Palantir", type: "Public", description: "AI & data platforms" },
+                { name: "Alibaba", type: "Public", description: "Digital commerce ecosystem" },
+                { name: "Futu", type: "Public", description: "Digital brokerage" },
+                { name: "Upstart", type: "Public", description: "AI-powered lending" },
+                { name: "Nebius", type: "Public", description: "Cloud infrastructure" },
+                { name: "dLocal", type: "Public", description: "Emerging market payments" },
+                { name: "Vision Greens", type: "Private", description: "Vertical farming DTC — 6 year seed/growth investor" }
+            ];
+
+            const frameworks = [
+                "Buffett: Business quality & capital allocation",
+                "Munger: Inversion & mental models",
+                "Thiel: Monopoly framework & competitive moats",
+                "Druckenmiller: Position sizing & conviction weighting",
+                "Lütke's Law: Technical founder inflection detection",
+                "Macro Paradigm Context: Structural shift mapping"
+            ];
+
+            return (
+                <>
+                    <nav>
+                        <div className="container">
+                            <a href="#home" className="logo" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
+                                Manit Jain
+                            </a>
+                            <ul>
+                                <li><a href="#experience" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}>Experience</a></li>
+                                <li><a href="#investing" onClick={(e) => { e.preventDefault(); scrollToSection('investing'); }}>Investing</a></li>
+                                <li><a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a></li>
+                                <li><a href="#writing" onClick={(e) => { e.preventDefault(); scrollToSection('writing'); }}>Writing</a></li>
+                                <li><a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <section id="home" className="hero">
+                        <div className="container">
+                            <h1>Finance Executive &<br/>Strategic Investor</h1>
+                            <p className="hero-subtitle">
+                                Senior Director at Farfetch (Coupang), leading commercial finance and business turnaround. 
+                                15+ years across high-growth tech — Shopify, Coupang, Walmart — spanning multi-country scale-up, 
+                                M&A integration, and capital strategy. Concentrated investor in founder-led platforms applying 
+                                Buffett/Munger/Thiel frameworks. Sharing insights on turnaround finance, unit economics, 
+                                AI-first organizational design, and investment analysis.
+                            </p>
+                            <div className="hero-meta">
+                                <span>📍 London, UK · Canadian Citizen</span>
+                                <span>🎓 Oxford MBA · Chartered Accountant</span>
+                            </div>
+                            <div className="hero-meta" style={{marginTop: '16px'}}>
+                                <a href="mailto:manitjain87@gmail.com">manitjain87@gmail.com</a>
+                                <a href="https://linkedin.com/in/manitjain" target="_blank">LinkedIn</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="experience">
+                        <div className="container">
+                            <h2>Experience</h2>
+                            <div className="timeline">
+                                {experience.map((job, index) => (
+                                    <div key={index} className="timeline-item">
+                                        <div className="timeline-header">
+                                            <div className="timeline-title">{job.title}</div>
+                                            <div className="timeline-period">{job.period}</div>
+                                        </div>
+                                        <div className="timeline-company">{job.company}</div>
+                                        <div className="timeline-description">{job.description}</div>
+                                        <div className="metrics">
+                                            {job.metrics.map((metric, idx) => (
+                                                <div key={idx} className="metric">
+                                                    <div className="metric-value">{metric.value}</div>
+                                                    <div className="metric-label">{metric.label}</div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="investing">
+                        <div className="container">
+                            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '40px', flexWrap: 'wrap', gap: '16px'}}>
+                                <h2 style={{marginBottom: 0}}>Investing</h2>
+                                <div style={{fontSize: '14px', color: 'var(--color-text-tertiary)'}}>
+                                    Last updated: April 2026
+                                </div>
+                            </div>
+                            <div className="philosophy-box">
+                                <p>
+                                    Concentrated portfolio investor in high-conviction public and private businesses. 
+                                    Focus on founder-led platforms with strong unit economics, network effects, and 
+                                    international scaling potential. Blend of developed market tech platforms and 
+                                    emerging market infrastructure plays.
+                                </p>
+                            </div>
+                            <h3>Portfolio</h3>
+                            <div className="portfolio-grid">
+                                {portfolio.map((item, index) => (
+                                    <div key={index} className="portfolio-item">
+                                        <div className="portfolio-name">{item.name}</div>
+                                        <div className="portfolio-type">{item.type} equity</div>
+                                        <div className="portfolio-description">{item.description}</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="projects">
+                        <div className="container">
+                            <h2>Projects</h2>
+                            <div className="project-card">
+                                <div className="project-tag">AI-Powered Investment Research</div>
+                                <h3>Charlie — Investment Research Assistant</h3>
+                                <div className="project-description">
+                                    Claude-powered investment analysis system that synthesizes legendary investor frameworks 
+                                    into comprehensive 4-page investment memos. Combines Warren Buffett's business quality 
+                                    assessment, Charlie Munger's inversion and mental models, Peter Thiel's monopoly identification, 
+                                    Stanley Druckenmiller's position sizing, and Tobi Lütke's technical founder inflection patterns.
+                                </div>
+                                
+                                <div className="project-description">
+                                    <strong>Core capabilities:</strong>
+                                </div>
+                                <div className="project-description" style={{paddingLeft: '16px'}}>
+                                    • <strong>Bull/Bear analysis:</strong> Munger's inversion framework stress-tests theses by identifying failure modes<br/>
+                                    • <strong>Monopoly evaluation:</strong> Thiel's framework for identifying durable competitive advantages<br/>
+                                    • <strong>Management deep dive:</strong> Buffett's principles for assessing capital allocation and integrity<br/>
+                                    • <strong>Position sizing:</strong> Druckenmiller's conviction-weighted portfolio construction<br/>
+                                    • <strong>Technical founder inflection:</strong> Lütke's Law for catching 10-100x opportunities (Shopify/Tesla/Nvidia) before moats are obvious<br/>
+                                    • <strong>Macro paradigm mapping:</strong> Positions investments across structural shifts (AI supercycle, defense modernization, deglobalization) and three investable waves (infrastructure/application/displacement)
+                                </div>
+                                
+                                <div className="project-description">
+                                    Generates interactive DCF models, unit economics analysis, innovation track record assessment, 
+                                    and AI/crypto impact evaluation. Traces second and third-order effects to find non-consensus 
+                                    opportunities before they're priced in.
+                                </div>
+                                
+                                <div className="project-description">
+                                    <strong>Technical stack:</strong> Claude API (Sonnet 4), terminal-based interface, 
+                                    modular framework architecture, markdown output
+                                </div>
+                                
+                                <h4 style={{fontSize: '18px', marginTop: '24px', marginBottom: '12px'}}>Investor Frameworks</h4>
+                                <div className="framework-list">
+                                    {frameworks.map((framework, index) => (
+                                        <div key={index} className="framework-item">{framework}</div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="writing">
+                        <div className="container">
+                            <h2>Writing & Research</h2>
+                            
+                            {selectedPost ? (
+                                <div className="blog-detail">
+                                    <button 
+                                        onClick={() => setSelectedPost(null)}
+                                        className="btn btn-secondary"
+                                        style={{marginBottom: '24px'}}
+                                    >
+                                        ← Back to all posts
+                                    </button>
+                                    
+                                    <div className="blog-detail-header">
+                                        <div className="blog-category">{selectedPost.category}</div>
+                                        <h1 style={{fontSize: '36px', marginBottom: '8px'}}>{selectedPost.title}</h1>
+                                        <div style={{color: 'var(--color-text-tertiary)', fontSize: '14px', marginBottom: '32px'}}>
+                                            {new Date(selectedPost.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                                        </div>
+                                    </div>
+                                    
+                                    <div 
+                                        className="blog-detail-content"
+                                        dangerouslySetInnerHTML={{__html: selectedPost.content}}
+                                    />
+                                </div>
+                            ) : (
+                                <div className="blog-grid">
+                                    {blogPosts.map((post, index) => (
+                                        post.isPDF ? (
+                                            <a 
+                                                key={index}
+                                                href={post.pdfUrl}
+                                                target="_blank"
+                                                className="blog-card"
+                                            >
+                                                <div className="blog-category">{post.category} · PDF</div>
+                                                <div className="blog-title">{post.title}</div>
+                                                <div className="blog-excerpt">{post.excerpt}</div>
+                                            </a>
+                                        ) : (
+                                            <div 
+                                                key={index}
+                                                className="blog-card"
+                                                onClick={() => setSelectedPost(post)}
+                                                style={{cursor: 'pointer'}}
+                                            >
+                                                <div className="blog-category">{post.category}</div>
+                                                <div className="blog-title">{post.title}</div>
+                                                <div className="blog-excerpt">{post.excerpt}</div>
+                                            </div>
+                                        )
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    </section>
+
+                    <section id="contact" className="contact-section">
+                        <div className="container">
+                            <div className="contact-content">
+                                <h2>Connect</h2>
+                                <p style={{fontSize: '16px', color: 'var(--color-text-secondary)', marginBottom: '32px'}}>
+                                    I write about turnaround finance, capital allocation, and investment frameworks. 
+                                    Always open to discussing business model analysis, marketplace economics, and 
+                                    AI-first organizational design with fellow operators and investors.
+                                </p>
+                                <div className="cta-group" style={{justifyContent: 'center'}}>
+                                    <a href="mailto:manitjain87@gmail.com" className="btn btn-primary">
+                                        Email
+                                    </a>
+                                    <a href="https://linkedin.com/in/manitjain" target="_blank" className="btn btn-secondary">
+                                        LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <footer>
+                        <div className="container">
+                            <p>© 2026 Manit Jain. All rights reserved.</p>
+                        </div>
+                    </footer>
+                </>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
