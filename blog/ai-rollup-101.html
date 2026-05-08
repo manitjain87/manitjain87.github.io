@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is an AI Roll-Up? — Manit Jain</title>
+    <meta name="description" content="Klarna replaced 700 customer service agents with one AI system. Private equity noticed. Here's the full playbook — how AI roll-ups work, what the P&L looks like, and the trap most operators miss.">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .p-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 15px;
+        }
+        .p-table th {
+            background: var(--color-surface, #f8f8f6);
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-border, #e0ddd6);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--color-text-secondary, #888);
+        }
+        .p-table th:not(:first-child) {
+            text-align: right;
+        }
+        .p-table td {
+            padding: 9px 14px;
+            border-bottom: 1px solid var(--color-border, #e0ddd6);
+            color: var(--color-text, #1a1a1a);
+        }
+        .p-table td:not(:first-child) {
+            text-align: right;
+        }
+        .p-table tr.subtotal td {
+            font-weight: 700;
+            background: var(--color-surface, #f8f8f6);
+            border-top: 2px solid var(--color-border, #e0ddd6);
+        }
+        .p-table tr:last-child td {
+            border-bottom: none;
+        }
+        .p-table-label {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--color-text-secondary, #888);
+            margin: 32px 0 6px;
+        }
+        .callout {
+            background: var(--color-surface, #f8f8f6);
+            border-left: 3px solid var(--color-text, #1a1a1a);
+            padding: 20px 24px;
+            margin: 32px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .callout p {
+            margin: 0;
+            font-style: italic;
+        }
+        .signal-box {
+            background: #fafaf8;
+            border: 1px solid var(--color-border, #e0ddd6);
+            border-radius: 6px;
+            padding: 24px 28px;
+            margin: 32px 0;
+        }
+        .signal-box .signal-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-secondary, #888);
+            margin-bottom: 10px;
+        }
+        .signal-box p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">Manit Jain</a>
+            <ul>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#investing">Investing</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#writing">Writing</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="blog-post">
+        <a href="../index.html#writing" class="back-link">← Back to all posts</a>
+
+        <header class="blog-post-header">
+            <div class="blog-category">Strategic Finance</div>
+            <h1 class="blog-post-title">What Is an AI Roll-Up? A Practical Guide to the Strategy Reshaping Enterprise Software.</h1>
+            <div class="blog-post-meta">May 8, 2026 · 12 min read</div>
+        </header>
+
+        <div class="blog-post-content">
+
+            <p>In 2024, Klarna deployed an AI agent across their customer service operation. It now handles two-thirds of all support conversations — the equivalent of 700 full-time agents. Resolution time dropped from 11 minutes to 2.</p>
+
+            <p>Klarna didn't announce it as a cost-cutting exercise. They called it a product decision.</p>
+
+            <p>But the private equity industry looked at that number — 700 FTE equivalents, at roughly $60–80K loaded cost each, replaced by software that runs at a fraction of the cost — and saw something different.</p>
+
+            <p>They saw a playbook.</p>
+
+            <h3>First: What Is a Roll-Up?</h3>
+
+            <p>Before we get to the AI part, let's establish the base concept — because most people use the term without explaining it.</p>
+
+            <p>A roll-up is a private equity strategy where a firm acquires multiple companies in the same industry, combines them under one platform, and creates value through consolidation. Not through growth. Through efficiency.</p>
+
+            <p>The classic version looks like this: a PE firm buys ten plumbing companies across five cities. Each one runs its own back-office — separate payroll, separate insurance, separate marketing spend, separate purchasing contracts. The PE firm combines the back-office, renegotiates contracts at volume, and puts a single brand across all ten. The result is a business worth more than the sum of its parts.</p>
+
+            <p>The logic is straightforward. A $10M plumbing company might trade at 4–5× EBITDA. A $100M plumbing platform trades at 8–10×. The multiple expansion alone creates value, even before any operational improvements.</p>
+
+            <p>This strategy has run for thirty years across every fragmented industry — heating and air conditioning, veterinary clinics, car washes, dental practices, collision repair. The question that the current generation of investors is answering: <em>does it work for software?</em></p>
+
+            <h3>Why Software Roll-Ups Have Been Hard</h3>
+
+            <p>The classic roll-up playbook works because the savings are in the back-office — and back-offices are fungible. One accounting system is much like another. Consolidate them and the savings are real and immediate.</p>
+
+            <p>SaaS companies are different.</p>
+
+            <p>The back-office savings are real but modest — one HR platform instead of ten, one finance team instead of ten. On a typical $50M ARR SaaS business, you might find $2–3M in G&A savings. Meaningful, but it doesn't fundamentally change the economics.</p>
+
+            <p>The larger cost in a SaaS business isn't the back-office. It's the <em>delivery</em> of the product itself.</p>
+
+            <p>A software company selling to enterprise customers spends heavily on Customer Success — the team that onboards customers, monitors adoption, runs business reviews, and prevents churn. For a typical mid-market SaaS business, that's 12–18% of revenue. On a $50M ARR company, that's $6–9M per year in salaries, benefits, tools, and management overhead.</p>
+
+            <p>Add Professional Services — the implementation consultants who get customers live — and you're looking at another 5–8%.</p>
+
+            <p>These costs don't consolidate. You can't combine the CS teams of ten portfolio companies and cut 80% of them — each team serves different customers with different products in different industries. Traditional SaaS roll-ups have therefore worked on a narrower thesis: buy undervalued companies, grow them faster, and exit via a size premium or strategic acquisition. The operational improvements are real but limited.</p>
+
+            <p><strong>AI changes the fundamental economics of the delivery layer.</strong> That's the thesis.</p>
+
+            <h3>What the AI Roll-Up Thesis Actually Says</h3>
+
+            <p>Here it is in plain English.</p>
+
+            <p>SaaS companies built between 2010 and 2020 have delivery models designed around human labor — because in 2015, there was no other way to onboard a complex enterprise customer, handle a support escalation, or guide a user through implementation. Humans were the only reliable option.</p>
+
+            <p>That assumption is no longer true.</p>
+
+            <p>The same work that required a Customer Success Manager in 2020 can now be handled by an AI agent — not for all customers, not for all cases, but for a large enough fraction that the economics of the delivery model change fundamentally.</p>
+
+            <p>The PE roll-up thesis is: buy software companies at depressed multiples (2–4× revenue, down from peak multiples of 10–15× in 2021), restructure the delivery model with AI, and re-rate the combined business on the improved economics.</p>
+
+            <p>The math, at a basic level: acquire a $100M revenue SaaS company at 3× revenue — $300M entry price. Restructure the cost structure with AI over 18–24 months. Gross margin goes from ~63% to ~78%. EBIT margin goes from ~5% to ~35–40%. Re-rate at 6× revenue on improved fundamentals — $600M exit value.</p>
+
+            <p>That's a 2× return on enterprise value before any revenue growth. Purely from restructuring the cost of delivering the software you already sell.</p>
+
+            <h3>The Nine Lines</h3>
+
+            <p>A standard mid-market SaaS company at $100M revenue looks something like this. I've split it into Cost of Revenue (what it costs to deliver the product) and Operating Expenses (what it costs to run and grow the business):</p>
+
+            <p class="p-table-label">Cost of Revenue</p>
+            <table class="p-table">
+                <thead>
+                    <tr>
+                        <th>Line Item</th>
+                        <th>Cost</th>
+                        <th>% of Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hosting / Infrastructure</td>
+                        <td>$10M</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>Customer Success / Support</td>
+                        <td>$15M</td>
+                        <td>15%</td>
+                    </tr>
+                    <tr>
+                        <td>Professional Services</td>
+                        <td>$7M</td>
+                        <td>7%</td>
+                    </tr>
+                    <tr>
+                        <td>Third-Party Data &amp; Licenses</td>
+                        <td>$3M</td>
+                        <td>3%</td>
+                    </tr>
+                    <tr>
+                        <td>Capitalized Software Amortization</td>
+                        <td>$2M</td>
+                        <td>2%</td>
+                    </tr>
+                    <tr class="subtotal">
+                        <td>Gross Profit</td>
+                        <td>$63M</td>
+                        <td>63%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="p-table-label">Operating Expenses</p>
+            <table class="p-table">
+                <thead>
+                    <tr>
+                        <th>Line Item</th>
+                        <th>Cost</th>
+                        <th>% of Revenue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Field Sales (AEs, Sales Engineers)</td>
+                        <td>$16M</td>
+                        <td>16%</td>
+                    </tr>
+                    <tr>
+                        <td>SDR / Outbound</td>
+                        <td>$5M</td>
+                        <td>5%</td>
+                    </tr>
+                    <tr>
+                        <td>Paid Marketing / Demand Gen</td>
+                        <td>$10M</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>Partnerships / Channels</td>
+                        <td>$4M</td>
+                        <td>4%</td>
+                    </tr>
+                    <tr>
+                        <td>R&amp;D / Engineering</td>
+                        <td>$15M</td>
+                        <td>15%</td>
+                    </tr>
+                    <tr>
+                        <td>G&amp;A</td>
+                        <td>$8M</td>
+                        <td>8%</td>
+                    </tr>
+                    <tr class="subtotal">
+                        <td>EBIT</td>
+                        <td>$5M</td>
+                        <td>5%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Five percent EBIT. That's the median. That's not a failing company — that's the industry.</p>
+
+            <p>AI restructures every line. Eight of those nine lines go down. One goes up if you're not paying attention. We'll get to that one.</p>
+
+            <h3>The Real Money: Customer Success and Professional Services</h3>
+
+            <p>Customer Success is the biggest target in the P&L. It's also where the clearest public proof points exist.</p>
+
+            <p>Klarna's deployment is the headline case — two-thirds of all support conversations handled by AI, equivalent to 700 full-time agents. But it's not a one-off. Intercom's Fin AI agent is resolving over 40% of customer queries without human involvement across their customer base. Salesforce Agentforce is automating onboarding workflows that previously required a dedicated CSM. Zendesk's AI Agents are reaching autonomous resolution rates north of 50% in production deployments.</p>
+
+            <p>The savings aren't binary. You don't fire the entire CS team. What happens is: the same number of CSMs can manage 2–3× more accounts, which means the ratio of CS headcount to customer accounts drops significantly as you grow. Or, for a roll-up operator restructuring an acquired business, headcount comes down while service quality holds — because AI handles routine interactions more consistently than a median CSM working through a ticket queue.</p>
+
+            <p>On a $15M CS line, 60% automation efficiency frees roughly $9M. <strong>That's 9 points of gross margin improvement from one line alone.</strong></p>
+
+            <p>Professional Services is the quieter version of the same trade. Implementation work — getting customers from contract-signed to live — is increasingly AI-executable. A data migration that took a two-week sprint now takes two days. Standard implementations that required a dedicated PS manager now run through AI-guided configuration flows.</p>
+
+            <p>The operators who go further convert PS from a cost line into a revenue line — positioning AI-accelerated onboarding as a premium product tier rather than absorbing it as COGS. That's not just a cost reduction; it's a business model change.</p>
+
+            <h3>The Second Tranche: Sales and Marketing</h3>
+
+            <p>The CS and PS opportunity is increasingly well-understood. Less discussed: what AI does to the Sales and Marketing stack.</p>
+
+            <p><strong>SDRs first.</strong> The Sales Development Rep function is largely mechanical — find ICP accounts, identify the right contact, write relevant outreach, follow up, book a meeting. Tools like Clay, combined with AI personalization layers and intent signal aggregation, now handle most of that workflow. Companies running these stacks consistently report 40–60% SDR headcount reductions for equivalent pipeline volume. On a $5M SDR line, that's $2–3M back — another two to three points of EBIT.</p>
+
+            <p><strong>Content and demand generation next.</strong> Blog posts, case studies, whitepapers, event presentations — AI generates these at roughly 10% of the previous production cost, with human editing maintaining quality. Google's Performance Max and Meta's Advantage+ AI tooling consistently deliver 15–25% better customer acquisition cost on the same paid media budget. Marketing analytics and attribution — previously a two-to-three-person analyst function — is now largely automatable.</p>
+
+            <p><strong>The field sales team stays mostly intact.</strong> Enterprise deals close on trust and political navigation inside a buying organisation. AI doesn't close a $500K ARR contract. What it does: RFP responses that took three days take four hours. Pre-call account research that took two hours takes fifteen minutes. Gong and Chorus provide AI-driven deal coaching in real time. Same headcount, materially more output, shorter sales cycles.</p>
+
+            <p>Add the CS and PS improvements to the Sales and Marketing restructuring, and you have a clear path from 5% EBIT to 35–40% at flat revenue. That's the trade that PE is pricing in.</p>
+
+            <h3>The Catch — and Why Most Operators Miss It</h3>
+
+            <p>Here's the part that doesn't get discussed enough. And it matters, because getting it wrong doesn't just reduce your return — it directly eats the savings you just generated.</p>
+
+            <p>The intuitive assumption about AI and infrastructure costs: <em>AI is more efficient, so the server bill goes down.</em></p>
+
+            <p>This is wrong.</p>
+
+            <p>The inference team at Nebius — who run open-source managed inference at scale — put it in two sentences:</p>
+
+            <div class="callout">
+                <p>"Inference got a hundred times cheaper this year. The compute bill went up anyway."</p>
+            </div>
+
+            <p>Token prices dropped 100-fold in twelve months. What cost $60 per million tokens of frontier-class reasoning a year ago costs $0.50 today. By any normal reading of a technology cost curve, this should reduce the total bill. The opposite happened. Every hyperscaler's compute spend is rising. Microsoft's Azure capital expenditure guide for 2026 starts with an eight — eight figures annually. OpenAI is spending more on compute every quarter than they spent in all of 2023.</p>
+
+            <p>Why? Because cheaper tokens unlocked an entirely new category of AI product — and those products use far more tokens than what came before.</p>
+
+            <p>A reasoning model burns roughly 10× the output tokens of a standard model, because it thinks through its answer before giving it. An AI agent handling a CS ticket doesn't make one API call — it loops, calls tools, checks system status, retries, and synthesizes. That's roughly 20× the requests of a single-shot completion. A full onboarding session — the thing replacing your PS consultants — can run into millions of tokens.</p>
+
+            <p>This is the Jevons Paradox, named after the economist William Stanley Jevons, who noticed in 1865 that making coal-burning more efficient didn't reduce coal consumption. It increased it — because efficiency unlocked uses that were previously uneconomic. Steam engines became practical at smaller scales. Whole industries that couldn't afford coal at the old price suddenly could. Britain's coal consumption rose sharply, not despite the efficiency gains, but because of them.</p>
+
+            <p>The same dynamic is playing out in AI compute right now. We made every individual token a hundred times cheaper, then built a generation of products that consume ten thousand times more tokens.</p>
+
+            <p><strong>Applied to the roll-up thesis:</strong> when you replace a Customer Success Manager with an AI agent, you don't replace a $100K salary with a $1,000 server bill. You replace it with a complex agentic workflow that burns hundreds of thousands of tokens per interaction, runs continuously across every customer session, and holds large memory states between conversations. The infrastructure line doesn't go down. It goes up.</p>
+
+            <p>By how much depends entirely on whether you manage it.</p>
+
+            <h3>Naive vs. Expert — Where the Real Returns Diverge</h3>
+
+            <p>This is the capability gap that separates the roll-up operators who generate strong returns from those who wonder why the P&L didn't deliver what the model said.</p>
+
+            <p><strong>The naive operator</strong> routes all AI workloads through OpenAI or Anthropic APIs at pay-per-token rates. No inference engineering. The CS savings come through. The infrastructure bill rises 40% because every agent session runs expensive frontier models for every query, regardless of complexity. Net result: you captured maybe 60% of the opportunity.</p>
+
+            <p><strong>The expert operator</strong> treats the inference stack as a product capability, not a vendor relationship. In practice, that means four things:</p>
+
+            <p><strong>1. Open-source models on owned compute.</strong> Meta's Llama, Mistral, and similar models run on reserved compute rather than pay-per-token pricing. For high-volume workloads, this alone cuts inference cost 5–10× versus closed API pricing.</p>
+
+            <p><strong>2. Complexity routing.</strong> A simple FAQ question goes to a small, cheap model. A complex multi-step troubleshooting session routes to a frontier model only when needed. Most CS interactions are simple — routing accordingly cuts cost dramatically without touching quality where it matters.</p>
+
+            <p><strong>3. KV cache sharing.</strong> The KV cache is the memory state of an active AI session. When hundreds of customers with the same product are asking similar onboarding questions, that memory state can be shared rather than rebuilt from scratch for each conversation. This is the infrastructure decision that most operators don't know to make until the bill arrives.</p>
+
+            <p><strong>4. Quantization.</strong> Running models at reduced numerical precision — INT8 rather than full float — delivers 3–4× lower compute cost with minimal quality loss for most customer service workloads.</p>
+
+            <p>The difference between naive and expert execution on a single $100M revenue business: roughly $3M per year in EBIT. Across a ten-company portfolio at $1B combined revenue, that gap in operational capability is worth $30M in annual EBIT — or $450M in equity value at a 15× multiple.</p>
+
+            <p>Same acquisitions. Same thesis. Same AI tools. The difference is entirely in whether the operator understands inference economics well enough to manage the infrastructure line with the same rigour they apply to headcount.</p>
+
+            <h3>What the Full Transformation Looks Like</h3>
+
+            <p>Putting it together — the same $100M SaaS business, before and after expert AI restructuring:</p>
+
+            <table class="p-table">
+                <thead>
+                    <tr>
+                        <th>Line Item</th>
+                        <th>Pre-AI</th>
+                        <th>Post-AI (Expert)</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hosting + Inference</td>
+                        <td>$10M / 10%</td>
+                        <td>$10.8M / 10.8%</td>
+                        <td>+0.8pp ↑</td>
+                    </tr>
+                    <tr>
+                        <td>Customer Success</td>
+                        <td>$15M / 15%</td>
+                        <td>$5M / 5%</td>
+                        <td>−10pp</td>
+                    </tr>
+                    <tr>
+                        <td>Professional Services</td>
+                        <td>$7M / 7%</td>
+                        <td>$3M / 3%</td>
+                        <td>−4pp</td>
+                    </tr>
+                    <tr>
+                        <td>Data / Licenses</td>
+                        <td>$3M / 3%</td>
+                        <td>$1.5M / 1.5%</td>
+                        <td>−1.5pp</td>
+                    </tr>
+                    <tr class="subtotal">
+                        <td>Gross Profit</td>
+                        <td>$63M / 63%</td>
+                        <td>$79.7M / 79.7%</td>
+                        <td>+16.7pp</td>
+                    </tr>
+                    <tr>
+                        <td>Field Sales</td>
+                        <td>$16M / 16%</td>
+                        <td>$13M / 13%</td>
+                        <td>−3pp</td>
+                    </tr>
+                    <tr>
+                        <td>SDRs</td>
+                        <td>$5M / 5%</td>
+                        <td>$2M / 2%</td>
+                        <td>−3pp</td>
+                    </tr>
+                    <tr>
+                        <td>Marketing</td>
+                        <td>$10M / 10%</td>
+                        <td>$6.5M / 6.5%</td>
+                        <td>−3.5pp</td>
+                    </tr>
+                    <tr>
+                        <td>Partnerships</td>
+                        <td>$4M / 4%</td>
+                        <td>$2.5M / 2.5%</td>
+                        <td>−1.5pp</td>
+                    </tr>
+                    <tr>
+                        <td>R&amp;D</td>
+                        <td>$15M / 15%</td>
+                        <td>$9M / 9%</td>
+                        <td>−6pp</td>
+                    </tr>
+                    <tr>
+                        <td>G&amp;A</td>
+                        <td>$8M / 8%</td>
+                        <td>$4.5M / 4.5%</td>
+                        <td>−3.5pp</td>
+                    </tr>
+                    <tr class="subtotal">
+                        <td>EBIT</td>
+                        <td>$5M / 5%</td>
+                        <td>$42.2M / 42%</td>
+                        <td>+37pp</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Thirty-seven points of EBIT improvement at flat revenue. No product changes. No price increases. No market expansion. Just restructuring the cost of delivering the software you already sell.</p>
+
+            <p>At 6× revenue on improved fundamentals, the $300M acquisition becomes a $600M exit. That's the re-rating the playbook is built on.</p>
+
+            <h3>Why This Moment</h3>
+
+            <p>Three things converged to make this viable now that weren't true two years ago.</p>
+
+            <p><strong>The models are good enough.</strong> Intercom Fin resolves over 40% of queries autonomously. Klarna's AI handles two-thirds of support conversations. These aren't demos or projections — they're production deployments. The models can do real CS work reliably enough that operators are betting significant capital on it.</p>
+
+            <p><strong>Token prices crossed a threshold.</strong> At $60 per million tokens for frontier-quality reasoning, the economics of AI CS automation were marginal. At $0.50, they're dramatic. That shift happened in twelve months. The cost of deploying a CS agent across 50,000 monthly customer interactions is now roughly $5,000 per month — replacing what might have been a $600,000 annual CS budget.</p>
+
+            <p><strong>SaaS acquisition multiples compressed to their most attractive level in a decade.</strong> At peak 2021 multiples — 12–15× revenue — you were paying for optionality. A cost-restructuring thesis at that price requires genuine revenue growth to work. At 3–4× revenue — where many mid-market SaaS companies are trading today — the pure cost-restructuring math works even at flat revenue.</p>
+
+            <p>The acquisition price window and the AI capability window happened to open at the same time. That's the trade.</p>
+
+            <h3>What to Watch For</h3>
+
+            <p>A few signals that indicate whether a SaaS company or roll-up operator is executing this well — or whether the model is getting ahead of the reality.</p>
+
+            <p><strong>Gross margin trajectory.</strong> A company genuinely restructuring its delivery model with AI should show gross margin expansion of 8–15 points over 18–24 months. If gross margins are flat while the business is claiming AI benefits, the AI is being applied to the wrong layers — typically R&D tooling (useful but not GP-moving) rather than CS delivery.</p>
+
+            <p><strong>Net Revenue Retention during the transition.</strong> CS automation done well — AI augmenting CSMs before replacing headcount, validating quality before cutting — maintains or improves NRR. CS automation done badly shows up as NRR decline 2–3 quarters after the restructuring. Watch the NRR cohort closely, not just the cost savings announced at acquisition.</p>
+
+            <p><strong>How the company talks about its infrastructure line.</strong> If a SaaS company or roll-up operator models their cloud and infrastructure cost as flat or declining while deploying AI agents, they haven't thought through the Jevons dynamic. The infrastructure line should be going up — but controlled, not runaway. A management team that can articulate their inference cost per customer interaction and their routing strategy has thought through this correctly. One that points to raw token price decreases as evidence of cost reduction has not.</p>
+
+            <p><strong>The pricing model.</strong> Companies charging flat seat fees while running variable-cost AI underneath are carrying a structural margin compression risk as customers use the product more — which is exactly what you want them to do. The operators who get ahead of this are repricing to consumption or outcome-based models before the Jevons bill arrives at scale.</p>
+
+            <h3>The Honest Take</h3>
+
+            <p>AI roll-ups are real and the math is compelling. I believe this is one of the defining PE strategies of the next five years — not because the concept is clever, but because the underlying cost structure of most SaaS businesses hasn't been updated to reflect what AI can actually do to the delivery layer.</p>
+
+            <p>But the gap between the thesis and the outcome is almost entirely in execution quality — specifically, in whether the operator treats inference engineering as a core operational competency or as an IT vendor decision.</p>
+
+            <p>The businesses that generate the strongest returns won't be the ones that bought the most companies or moved the fastest. They'll be the ones that understood the Klarna moment correctly — not as a cost-cutting story, but as a delivery model transformation — and built the infrastructure capability to execute it without letting the compute bill eat the savings.</p>
+
+            <p>For founders and operators on the receiving end of this — the ones who might get acquisition interest from a roll-up — the relevant question is: does the potential acquirer understand the difference between naive and expert execution? Because the operator who cuts your CS team and routes everything through a pay-per-token API isn't running a strategy. They're running a financial model that doesn't match operational reality.</p>
+
+            <p>Ask them what their inference routing architecture looks like.</p>
+
+            <p>If they don't know what you're asking, you have your answer.</p>
+
+            <p style="margin-top: 48px; font-size: 14px; color: var(--color-text-secondary);"><em>Sources: Klarna AI customer service deployment (2024 public reporting); Intercom Fin autonomous resolution data (Intercom product reports, 2024–25); Nebius inference team, Jevons Paradox analysis (2026); Microsoft Azure capital expenditure guidance, Q1 2026 earnings; SaaS acquisition multiple benchmarks, PitchBook 2024–25 vintage.</em></p>
+
+        </div>
+
+        <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--color-border); text-align: center;">
+            <p style="margin-bottom: 24px; color: var(--color-text-secondary);">Interested in discussing AI roll-up strategy or SaaS unit economics?</p>
+            <a href="../index.html#contact" class="btn btn-primary">Get in touch</a>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Manit Jain. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
