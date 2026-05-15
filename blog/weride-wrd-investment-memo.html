@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WeRide (WRD) — Charlie v23 Investment Memo</title>
+<meta name="description" content="WeRide is a Chinese autonomous driving company operating 1,300 robotaxis across 12 countries with Uber as a 5%+ shareholder. Q1 2026 earnings were strong (+58% YoY revenue, 35% GM, ME subsidiary profitable), but the active US-Iran conflict directly threatens the Middle East operations that are the crown jewel of the thesis. Rating: WATCH. Conviction: 3/10.">
+<style>
+/* ═══════════════ RESET & BASE ═══════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6; color: #1e293b; background: #f1f5f9;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+/* ═══════════════ TYPOGRAPHY ═══════════════ */
+h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; }
+h2 { font-size: 1.5rem; font-weight: 700; color: #0f172a; }
+h3 { font-size: 1.15rem; font-weight: 700; color: #334155; margin: 1.5rem 0 0.75rem; }
+h4 { font-size: 1rem; font-weight: 600; color: #475569; margin: 1rem 0 0.5rem; }
+p  { margin-bottom: 0.85rem; line-height: 1.7; }
+strong { color: #0f172a; }
+
+/* ═══════════════ CARDS ═══════════════ */
+.card {
+  background: #fff; border-radius: 12px; padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  border: 1px solid #e2e8f0;
+}
+.card-header {
+  display: flex; align-items: center; gap: 0.6rem;
+  margin-bottom: 1.25rem; padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f1f5f9;
+}
+.card-header h2 { flex: 1; }
+.card-header .icon { font-size: 1.3rem; }
+
+/* ═══════════════ HEADER ═══════════════ */
+.memo-header {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #fff; border-radius: 16px; padding: 2.5rem 2.5rem 1.5rem;
+  margin-bottom: 1.5rem; box-shadow: 0 4px 24px rgba(15,23,42,0.15);
+}
+.memo-header .ticker-line { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.25rem; }
+.memo-header .ticker { font-size: 2.8rem; font-weight: 800; letter-spacing: -1px; }
+.memo-header .exchange { font-size: 1.1rem; color: #94a3b8; font-weight: 500; }
+.memo-header .company { font-size: 1.3rem; color: #cbd5e1; margin-bottom: 0.25rem; }
+.memo-header .meta { font-size: 0.85rem; color: #64748b; margin-bottom: 1.5rem; }
+
+/* ── Recommendation pill ── */
+.rec-pill {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.5rem 1.25rem; border-radius: 100px;
+  font-weight: 700; font-size: 0.9rem; letter-spacing: 0.3px;
+  margin-bottom: 0.75rem;
+}
+.rec-pill.buy        { background: #d1fae5; color: #065f46; border: 1px solid #6ee7b7; }
+.rec-pill.accumulate { background: #fef3c7; color: #92400e; border: 1px solid #fcd34d; }
+.rec-pill.hold       { background: #e2e8f0; color: #475569; border: 1px solid #cbd5e1; }
+.rec-pill.pass       { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+
+/* ── Header stat strip ── */
+.stat-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: rgba(255,255,255,0.08);
+  border-radius: 10px; overflow: hidden; margin-top: 1rem;
+}
+.stat-item {
+  background: rgba(255,255,255,0.06); padding: 1rem 1.25rem; text-align: center;
+}
+.stat-item .stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.8px; color: #94a3b8; margin-bottom: 0.3rem; }
+.stat-item .stat-value { font-size: 1.5rem; font-weight: 700; color: #fff; }
+.stat-item .stat-sub  { font-size: 0.75rem; color: #64748b; margin-top: 0.15rem; }
+.stat-value.up    { color: #34d399; }
+.stat-value.down  { color: #f87171; }
+.stat-value.warn  { color: #fbbf24; }
+
+/* ═══════════════ TABLES ═══════════════ */
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+thead th {
+  background: #f8fafc; color: #64748b; font-weight: 600; font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.6px; padding: 0.7rem 0.85rem;
+  border-bottom: 2px solid #e2e8f0; text-align: left;
+}
+tbody td { padding: 0.7rem 0.85rem; border-bottom: 1px solid #f1f5f9; }
+tbody tr:hover { background: #f8fafc; }
+tr.row-up     { background: #f0fdf4; } tr.row-up td:first-child { border-left: 3px solid #22c55e; }
+tr.row-down   { background: #fef2f2; } tr.row-down td:first-child { border-left: 3px solid #ef4444; }
+tr.row-warn   { background: #fffbeb; } tr.row-warn td:first-child { border-left: 3px solid #f59e0b; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ═══════════════ SENTIMENT TAGS ═══════════════ */
+.tag { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.72rem; font-weight: 600; }
+.tag-green  { background: #d1fae5; color: #065f46; }
+.tag-amber  { background: #fef3c7; color: #92400e; }
+.tag-red    { background: #fee2e2; color: #991b1b; }
+.tag-blue   { background: #dbeafe; color: #1e40af; }
+.tag-gray   { background: #f1f5f9; color: #475569; }
+
+/* ═══════════════ FRAMEWORK BAR CHART ═══════════════ */
+.fw-bar-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.6rem; }
+.fw-label   { width: 180px; font-size: 0.82rem; font-weight: 600; color: #334155; text-align: right; }
+.fw-track   { flex: 1; height: 22px; background: #f1f5f9; border-radius: 6px; overflow: hidden; position: relative; }
+.fw-fill    { height: 100%; border-radius: 6px; display: flex; align-items: center; padding-left: 0.6rem; font-size: 0.7rem; font-weight: 700; color: #fff; }
+.fw-fill.pos { background: linear-gradient(90deg, #22c55e, #16a34a); }
+.fw-fill.neg { background: linear-gradient(90deg, #ef4444, #dc2626); }
+.fw-fill.neut { background: linear-gradient(90deg, #94a3b8, #64748b); }
+.fw-weight  { width: 45px; font-size: 0.8rem; font-weight: 700; color: #475569; text-align: right; }
+
+/* ═══════════════ SCENARIO CARDS ═══════════════ */
+.scenario-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.25rem 0; }
+.scenario-card { border-radius: 10px; padding: 1.25rem; text-align: center; border: 1px solid #e2e8f0; }
+.scenario-card.bull { background: #f0fdf4; border-color: #bbf7d0; }
+.scenario-card.base { background: #f8fafc; border-color: #e2e8f0; }
+.scenario-card.bear { background: #fef2f2; border-color: #fecaca; }
+.scenario-card .sc-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.6px; font-weight: 700; margin-bottom: 0.4rem; }
+.scenario-card.bull .sc-label { color: #15803d; }
+.scenario-card.base .sc-label { color: #475569; }
+.scenario-card.bear .sc-label { color: #b91c1c; }
+.scenario-card .sc-price { font-size: 1.8rem; font-weight: 800; margin-bottom: 0.2rem; }
+.scenario-card .sc-return { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.4rem; }
+.scenario-card .sc-prob  { font-size: 0.8rem; color: #64748b; }
+.scenario-card .sc-basis { font-size: 0.75rem; color: #94a3b8; margin-top: 0.5rem; line-height: 1.4; }
+
+/* ═══════════════ METRIC TILE GRID ═══════════════ */
+.metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin: 1rem 0; }
+.metric-tile {
+  background: #f8fafc; border-radius: 8px; padding: 1rem; text-align: center;
+  border: 1px solid #e2e8f0;
+}
+.metric-tile .mt-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; color: #94a3b8; font-weight: 600; margin-bottom: 0.3rem; }
+.metric-tile .mt-value { font-size: 1.4rem; font-weight: 800; color: #0f172a; }
+.metric-tile .mt-delta { font-size: 0.72rem; font-weight: 600; margin-top: 0.1rem; }
+.mt-up   { color: #16a34a; }
+.mt-down { color: #dc2626; }
+
+/* ═══════════════ RISK/REWARD BAR ═══════════════ */
+.rr-visual { display: flex; align-items: center; gap: 1rem; margin: 1rem 0; font-size: 0.85rem; }
+.rr-bar-track { flex: 1; height: 32px; background: #f1f5f9; border-radius: 16px; position: relative; overflow: hidden; }
+.rr-upside { position: absolute; right: 0; top: 0; height: 100%; background: linear-gradient(90deg, #22c55e, #16a34a); border-radius: 0 16px 16px 0; display: flex; align-items: center; justify-content: flex-end; padding-right: 0.6rem; font-weight: 700; color: #fff; font-size: 0.75rem; }
+.rr-downside { position: absolute; left: 0; top: 0; height: 100%; background: linear-gradient(90deg, #dc2626, #ef4444); border-radius: 16px 0 0 16px; display: flex; align-items: center; padding-left: 0.6rem; font-weight: 700; color: #fff; font-size: 0.75rem; }
+.rr-center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 2px; height: 28px; background: #0f172a; border-radius: 1px; }
+.rr-label { font-weight: 600; }
+
+/* ═══════════════ CALLOUTS ═══════════════ */
+.callout {
+  border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; font-size: 0.9rem;
+  border-left: 4px solid;
+}
+.callout.info   { background: #eff6ff; border-color: #3b82f6; color: #1e40af; }
+.callout.warn   { background: #fffbeb; border-color: #f59e0b; color: #92400e; }
+.callout.danger { background: #fef2f2; border-color: #ef4444; color: #991b1b; }
+.callout strong  { color: inherit; }
+
+/* ═══════════════ PRINT ═══════════════ */
+@media print {
+  body { background: #fff; }
+  .card { box-shadow: none; border: 1px solid #e2e8f0; break-inside: avoid; }
+  .memo-header { background: #0f172a !important; -webkit-print-color-adjust: exact; }
+  .stat-strip { -webkit-print-color-adjust: exact; }
+}
+
+.sources { font-size: 0.8rem; color: #64748b; line-height: 1.7; padding: 1rem 0; border-top: 1px solid #e2e8f0; margin-top: 1.5rem; }
+.footer-note { text-align: center; color: #94a3b8; font-size: 0.75rem; padding: 1.5rem; line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<div class="memo-header">
+  <span class="rec-pill hold">WATCH</span>
+  <div class="ticker-line">
+    <span class="ticker">WRD</span>
+    <span class="exchange">NASDAQ</span>
+  </div>
+  <div class="company">WeRide Inc. — Investment Memorandum</div>
+  <div class="meta">Charlie v23 · May 14, 2026 · Q1 2026 Earnings Reviewed · Price $7.62 · Market Cap $2.55B · EV ~$1.74B<br>
+  <strong style="color:#fbbf24;">⚠ Financials in RMB — ¥7.24/$1 &nbsp;|&nbsp; ⚠ US-Iran conflict: ME subsidiary in active conflict zone</strong></div>
+
+  <div class="stat-strip">
+    <div class="stat-item">
+      <div class="stat-label">Conviction</div>
+      <div class="stat-value down">3 / 10</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-label">Base Target (12mo)</div>
+      <div class="stat-value warn">$5–7</div>
+      <div class="stat-sub">-8% to -34% expected return</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-label">Risk / Reward</div>
+      <div class="stat-value down">0.6 : 1</div>
+      <div class="stat-sub">Fails 3:1 minimum</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-label">Position Size</div>
+      <div class="stat-value down">None</div>
+      <div class="stat-sub">Wait for conflict de-escalation or &lt;$5</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ KEY METRICS TILES ═══════════════ -->
+<div class="metric-grid">
+  <div class="metric-tile">
+    <div class="mt-label">Q1 2026 Revenue</div>
+    <div class="mt-value">¥114M</div>
+    <div class="mt-delta mt-up">+58% YoY</div>
+  </div>
+  <div class="metric-tile">
+    <div class="mt-label">Q1 2026 Gross Margin</div>
+    <div class="mt-value">~35%</div>
+    <div class="mt-delta mt-up">+5pp vs FY25</div>
+  </div>
+  <div class="metric-tile">
+    <div class="mt-label">Cash (Q1 2026)</div>
+    <div class="mt-value">¥6.18B</div>
+    <div class="mt-delta">~$853M</div>
+  </div>
+  <div class="metric-tile">
+    <div class="mt-label">EV / Revenue</div>
+    <div class="mt-value">~18×</div>
+    <div class="mt-delta">Trailing FY2025</div>
+  </div>
+  <div class="metric-tile">
+    <div class="mt-label">Robotaxi Fleet</div>
+    <div class="mt-value">~1,300</div>
+    <div class="mt-delta mt-up">+300 from Q4</div>
+  </div>
+  <div class="metric-tile">
+    <div class="mt-label">Remote Ops Ratio</div>
+    <div class="mt-value">1 : 40</div>
+    <div class="mt-delta mt-up">From 1:10–1:20</div>
+  </div>
+  <div class="metric-tile">
+    <div class="mt-label">ME Subsidiary</div>
+    <div class="mt-value warn">Profitable</div>
+    <div class="mt-delta">⚠ Conflict zone</div>
+  </div>
+  <div class="metric-tile">
+    <div class="mt-label">Analyst Consensus</div>
+    <div class="mt-value">Strong Buy</div>
+    <div class="mt-delta mt-up">Target $14.18</div>
+  </div>
+</div>
+
+<!-- ═══════════════ GEOPOLITICAL WARNING ═══════════════ -->
+<div class="callout danger">
+  <strong>⚠ Geopolitical Override — US-Iran Active War (2026)</strong><br>
+  WeRide's Middle East operations (Abu Dhabi, Dubai, Riyadh pipeline) are in the active US-Iran conflict zone. Per Charlie geopolitical conflict precision rules: <strong>active war = deal destruction, not deal timing.</strong> The Middle East subsidiary — the single strongest proof point in the Q1 2026 call ("profitable at the net level") — is directly exposed. Management did not address this risk on the Q1 2026 earnings call. This is not modeled as a timing delay — it is structural revenue impairment for the conflict duration.
+</div>
+
+<!-- ═══════════════ EXECUTIVE SUMMARY ═══════════════ -->
+<div class="card">
+  <div class="card-header"><span class="icon">📋</span><h2>Executive Summary</h2></div>
+  <p>WeRide is a Chinese autonomous driving company with one of the largest global robotaxi fleets outside Waymo — ~1,300 vehicles across 12 countries and 40+ cities. Uber holds a 5%+ stake and is an active platform partner. The Q1 2026 earnings (released May 13) showed accelerating revenue growth (+58% YoY), improving gross margins (35% vs 30.2% FY2025), continued operating leverage (admin -33% YoY), and the critical disclosure that the Middle East subsidiary is already profitable at the net level.</p>
+
+  <p>However, the analysis is dominated by a geopolitical binary that was not addressed on the earnings call: the <strong>active US-Iran conflict (2026)</strong> directly threatens WeRide's Middle East operations — the crown jewel of the thesis. The UAE (Abu Dhabi, Dubai) sits across the Persian Gulf from Iran. In an escalated conflict scenario, the "profitable subsidiary" flips to loss-making, Uber suspends AV operations in the Gulf, and ~1/3 of group revenue is impaired.</p>
+
+  <p>At $7.62, the stock trades at ~18× trailing revenue with an EV of ~$1.74B. The expected value after incorporating the geopolitical binary is ~$5.80 (24% below current price). The risk/reward ratio of 0.6:1 fails the 3:1 minimum. <strong>Rating: WATCH.</strong> No position recommended until either the US-Iran conflict de-escalates or the stock prices in the conflict risk (below $5).</p>
+
+  <div class="callout info">
+    <strong>Currency correction:</strong> The original analysis incorrectly treated WRD's yfinance financial data as USD when it is reported in RMB. FY2025 revenue is ¥685M (~$95M), not $685M. Cash is ¥6.18B (~$853M), not $7.1B. EV is ~$1.74B, not -$4.2B. All figures in this memo have been corrected with RMB→USD conversions at ~¥7.24/$1.
+  </div>
+</div>
+
+<!-- ═══════════════ SCENARIO ANALYSIS ═══════════════ -->
+<div class="card">
+  <div class="card-header"><span class="icon">📊</span><h2>Scenario Analysis — 12-Month Forward</h2></div>
+
+  <div class="scenario-grid">
+    <div class="scenario-card bull">
+      <div class="sc-label">Bull Case</div>
+      <div class="sc-price">$10–12</div>
+      <div class="sc-return" style="color:#16a34a;">+31% to +57%</div>
+      <div class="sc-prob">Probability: 20%</div>
+      <div class="sc-basis">US-Iran de-escalation in H2 2026. International asset-light model scales beyond conflict. Revenue ¥2B+ FY2027. Re-rate to 8–10× revenue.</div>
+    </div>
+    <div class="scenario-card base">
+      <div class="sc-label">Base Case</div>
+      <div class="sc-price">$5–7</div>
+      <div class="sc-return" style="color:#475569;">-8% to -34%</div>
+      <div class="sc-prob">Probability: 40%</div>
+      <div class="sc-basis">Conflict contained but Gulf tourism slows. Revenue ¥1.0–1.3B FY2026. Maintains 15–20× revenue but growth deceleration compresses multiple.</div>
+    </div>
+    <div class="scenario-card bear">
+      <div class="sc-label">Bear Case</div>
+      <div class="sc-price">$2–4</div>
+      <div class="sc-return" style="color:#dc2626;">-48% to -74%</div>
+      <div class="sc-prob">Probability: 40%</div>
+      <div class="sc-basis">Conflict widens to UAE disruption. ME revenue drops 70–90%. Subsidiary flips from profitable to loss-making. Cash burn accelerates.</div>
+    </div>
+  </div>
+
+  <div class="rr-visual">
+    <span class="rr-label" style="color:#dc2626;">Bear -74%</span>
+    <div class="rr-bar-track">
+      <div class="rr-downside" style="width: 57%;">$2–4</div>
+      <div class="rr-center"></div>
+      <div class="rr-upside" style="width: 18%;">$10–12</div>
+    </div>
+    <span class="rr-label" style="color:#16a34a;">Bull +57%</span>
+  </div>
+  <p style="text-align:center; font-size:0.82rem; color:#64748b; margin-top:0.25rem;">
+    EV = $5.80 · Expected return -24% · Raw risk/reward 0.6:1 · Probability-weighted 0.3:1
+  </p>
+</div>
+
+<!-- ═══════════════ BULL CASE ═══════════════ -->
+<div class="card" style="border-left: 4px solid #22c55e;">
+  <div class="card-header"><span class="icon">🐂</span><h2>The Bull Case</h2></div>
+  <ol style="padding-left:1.25rem;">
+    <li style="margin-bottom:0.75rem;"><strong>International asset-light model is proven and replicable.</strong> The Middle East subsidiary reaching net profitability validates that WeRide's AV operations can be profitable without owning the vehicles. CFO Jennifer Li confirmed asset-light models in all non-China markets. If replicable in Singapore, Zurich, and Saudi Arabia, WeRide transforms from cash-burning Chinese AV company to capital-light international platform.</li>
+    <li style="margin-bottom:0.75rem;"><strong>Unit economics are improving faster than expected.</strong> Remote safety officer ratio improved from 1:10–1:20 to 1:40 — a 75% reduction in per-ride oversight labor cost. Gross margins expanded from 30.2% (FY2025) to ~35% (Q1 2026). Admin costs dropped 33% YoY. Every operational KPI is moving in the right direction.</li>
+    <li style="margin-bottom:0.75rem;"><strong>Uber partnership creates platform-level switching costs.</strong> Uber now holds >5% of WRD (per the Q1 call). Every ride taken through Uber in Abu Dhabi and Dubai deepens the integration. Uber's incentive to continue the partnership is structural — they own equity and the AV integration is live.</li>
+    <li style="margin-bottom:0.75rem;"><strong>GENESIS simulation creates a cost moat.</strong> Training efficiency improved by "thousands of times" vs traditional road testing per CEO Tony Han. This reduces the per-vehicle deployment cost and accelerates new market entry — a genuine technology advantage that compounds.</li>
+    <li style="margin-bottom:0.75rem;"><strong>Regulatory permit portfolio is a 5+ year barrier to entry.</strong> Driverless permits in 12 countries cannot be accelerated with capital. Any competitor wanting to match WeRide's geographic footprint needs to start the regulatory process from scratch in each jurisdiction.</li>
+  </ol>
+</div>
+
+<!-- ═══════════════ BEAR CASE ═══════════════ -->
+<div class="card" style="border-left: 4px solid #ef4444;">
+  <div class="card-header"><span class="icon">🐻</span><h2>The Bear Case (Munger Inversion)</h2></div>
+  <ol style="padding-left:1.25rem;">
+    <li style="margin-bottom:0.75rem;"><strong>The US-Iran conflict destroys the Middle East thesis.</strong> This is the #1 way the investment fails — and it is not priced into the stock. WeRide's UAE operations (Abu Dhabi, Dubai) are ~250km across the Gulf from Iran. An escalated conflict makes the region a no-go zone. Uber suspends AV operations. The "profitable at net level" subsidiary flips to loss-making. ~1/3 of FY2025 revenue is directly exposed. Management's silence on this risk during the Q1 call is either overconfidence or avoidance — neither is reassuring.</li>
+    <li style="margin-bottom:0.75rem;"><strong>Revenue seasonality masks fragile base.</strong> Q1 2026 revenue of ¥114M is 64% below Q4's ¥314M. Annualizing Q1 gives ¥456M — below FY2025's ¥685M. If the seasonal recovery into Q2–Q4 doesn't materialize at the expected magnitude, the annual number disappoints and the growth narrative cracks.</li>
+    <li style="margin-bottom:0.75rem;"><strong>China regulatory pause could extend.</strong> Tony Han acknowledged a "short-term regulatory adjustment" in China. If this extends or tightens into 2027, domestic growth — still the majority of revenue — stalls.</li>
+    <li style="margin-bottom:0.75rem;"><strong>Valuation provides no margin of safety.</strong> At ~18× trailing revenue (~$95M USD) with a ¥359M quarterly net loss, the stock prices in significant execution. If growth decelerates below 30% YoY, the multiple compresses violently — the 52-week range shows a 52% peak-to-trough drawdown.</li>
+    <li style="margin-bottom:0.75rem;"><strong>Competition will arrive.</strong> Waymo, Tesla, and Baidu Apollo are better capitalized. The international markets where WeRide is currently alone will not stay that way. The first-mover advantage is real but finite — measured in years, not decades.</li>
+  </ol>
+</div>
+
+<!-- ═══════════════ FRAMEWORK CONTRIBUTION ═══════════════ -->
+<div class="card">
+  <div class="card-header"><span class="icon">⚖</span><h2>Conviction Framework — How 3/10 Is Built</h2></div>
+
+  <div class="fw-bar-row">
+    <span class="fw-label">Lütke (Technical Founder)</span>
+    <div class="fw-track"><div class="fw-fill pos" style="width:70%;">↑ Score 7/10</div></div>
+    <span class="fw-weight">35%</span>
+  </div>
+  <div class="fw-bar-row">
+    <span class="fw-label">Munger (Inversion / Risk)</span>
+    <div class="fw-track"><div class="fw-fill neg" style="width:90%;">↓ Geopolitical dominates</div></div>
+    <span class="fw-weight">35%</span>
+  </div>
+  <div class="fw-bar-row">
+    <span class="fw-label">Druckenmiller (Sizing)</span>
+    <div class="fw-track"><div class="fw-fill neg" style="width:75%;">↓ No position at current</div></div>
+    <span class="fw-weight">15%</span>
+  </div>
+  <div class="fw-bar-row">
+    <span class="fw-label">Buffett (Business Quality)</span>
+    <div class="fw-track"><div class="fw-fill neut" style="width:50%;">→ Moderate moat</div></div>
+    <span class="fw-weight">10%</span>
+  </div>
+  <div class="fw-bar-row">
+    <span class="fw-label">Thiel (Monopoly)</span>
+    <div class="fw-track"><div class="fw-fill neut" style="width:30%;">→ Competitive market</div></div>
+    <span class="fw-weight">5%</span>
+  </div>
+
+  <div style="display:flex; align-items:center; justify-content:center; gap:1rem; margin-top:1.25rem; padding-top:1rem; border-top:1px solid #e2e8f0;">
+    <div style="background:#f8fafc; border-radius:12px; padding:0.75rem 1.5rem; text-align:center;">
+      <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.6px; color:#94a3b8;">Net Conviction</div>
+      <div style="font-size:2rem; font-weight:800; color:#dc2626;">3<span style="font-size:1rem; color:#94a3b8;">/10</span></div>
+    </div>
+    <div style="font-size:0.82rem; color:#64748b; max-width:300px;">
+      Technical founder + platform shift alignment present (Lütke 7/10). But the US-Iran geopolitical binary overrides the operating story. ME subsidiary is the crown jewel and it sits in an active conflict zone. EV -24% below current price. No position until conflict de-escalates or stock prices the risk.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ GEOPOLITICAL RISK — US-IRAN ═══════════════ -->
+<div class="card" style="border-left: 4px solid #ef4444;">
+  <div class="card-header"><span class="icon">🌍</span><h2>Geopolitical Risk — US-Iran Conflict &amp; Middle East Exposure</h2></div>
+
+  <div class="callout danger">
+    <strong>Classification: Active War (US-Iran, 2026).</strong> Per Charlie geopolitical conflict precision rules: <strong>deal destruction, not deal timing.</strong> WeRide's Middle East operations are concentrated in the Persian Gulf — directly in the conflict proximity zone. Management did not address this risk on the Q1 2026 earnings call (May 13).
+  </div>
+
+  <h3>Markets at Risk</h3>
+  <table>
+    <thead>
+      <tr><th>Market</th><th>Status</th><th>Proximity Risk</th><th>Revenue Impact</th></tr>
+    </thead>
+    <tbody>
+      <tr class="row-down"><td>Abu Dhabi</td><td>Fully driverless, launched Nov 2025</td><td>~250km from Iran</td><td><strong>Direct</strong> — Uber platform live</td></tr>
+      <tr class="row-down"><td>Dubai</td><td>Fully driverless, launched Apr 2026</td><td>~200km from Iran</td><td><strong>Direct</strong> — Jumeirah/Umm Suqeim</td></tr>
+      <tr class="row-warn"><td>Riyadh (Saudi)</td><td>Safety-driver service live</td><td>~800km from Iran</td><td><strong>Moderate</strong> — pipeline at risk</td></tr>
+      <tr class="row-down"><td>Ras Al Khaimah</td><td>Announced/upcoming</td><td>Northern UAE, closest to Strait</td><td><strong>Direct</strong> — deployment likely paused</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Conflict Impact Channels</h3>
+  <ol style="padding-left:1.25rem;">
+    <li style="margin-bottom:0.5rem;"><strong>Tourism & business travel collapse:</strong> UAE is a global tourism/business hub. Active war makes the Gulf a no-go zone. Robotaxi ride volumes collapse regardless of operational capability.</li>
+    <li style="margin-bottom:0.5rem;"><strong>Uber partnership at risk:</strong> Uber would suspend AV operations in affected markets for liability/safety reasons. Platform partnership moat becomes irrelevant when the platform can't operate.</li>
+    <li style="margin-bottom:0.5rem;"><strong>Physical asset risk:</strong> ~300 overseas robotaxi vehicles deployed in UAE. Fleet would need relocation or mothballing if conflict escalates to UAE airspace/maritime disruption.</li>
+    <li style="margin-bottom:0.5rem;"><strong>"ME subsidiary profitable" claim invalidated:</strong> The Q1 call's most bullish data point is contingent on continued operations. Fixed costs remain while revenue drops to near-zero — subsidiary flips to loss-making.</li>
+    <li style="margin-bottom:0.5rem;"><strong>Supply chain disruption:</strong> AV hardware flows through Gulf ports. Strait of Hormuz disruption delays fleet expansion and maintenance.</li>
+  </ol>
+
+  <div class="callout info" style="margin-top:1rem;">
+    <strong>Key observation:</strong> The Q1 2026 earnings call contained <strong>zero analyst questions about the US-Iran conflict</strong> and <strong>zero management acknowledgment of geopolitical risk.</strong> This is either (a) confidence that operations are insulated, or (b) unwillingness to discuss an uncontrollable risk. Either way, the market is not pricing this risk — the stock traded flat after earnings, suggesting the conflict is absent from the consensus model.
+  </div>
+</div>
+
+<!-- ═══════════════ REVENUE TRAJECTORY ═══════════════ -->
+<div class="card">
+  <div class="card-header"><span class="icon">📈</span><h2>Revenue Trajectory &amp; Unit Economics</h2></div>
+  <table>
+    <thead>
+      <tr><th>Fiscal Year</th><th>Revenue (RMB M)</th><th>YoY Growth</th><th>Gross Margin</th><th>R&D (RMB M)</th><th>R&D % Rev</th><th>Op Loss (RMB M)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>FY2022</td><td>¥527.5</td><td>—</td><td>44.1%</td><td>¥759</td><td>144%</td><td>-¥767</td></tr>
+      <tr class="row-down"><td>FY2023</td><td>¥401.8</td><td>-23.8%</td><td>45.7%</td><td>¥1,058</td><td>263%</td><td>-¥1,527</td></tr>
+      <tr class="row-down"><td>FY2024</td><td>¥361.1</td><td>-10.1%</td><td>30.7%</td><td>¥1,091</td><td>302%</td><td>-¥2,159</td></tr>
+      <tr class="row-up"><td>FY2025</td><td>¥684.6</td><td><strong>+89.6%</strong></td><td>30.2%</td><td>¥1,372</td><td>200%</td><td>-¥1,822</td></tr>
+      <tr class="row-up"><td>Q1 2026</td><td>¥114.0</td><td><strong>+58% YoY</strong></td><td>~35%</td><td>¥353</td><td>310%</td><td>TBD</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.82rem; color:#64748b; margin-top:0.5rem;"><strong>Note:</strong> Q1 seasonality is structural in China (Chinese New Year). Compare YoY, not QoQ. Q4 is structurally the highest-revenue quarter due to year-end delivery push.</p>
+
+  <h3>Unit Economics — Key Improvement Vectors</h3>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>FY2024</th><th>FY2025</th><th>Q1 2026</th><th>Trend</th></tr>
+    </thead>
+    <tbody>
+      <tr class="row-up"><td>Gross Margin</td><td>30.7%</td><td>30.2%</td><td>~35%</td><td><span class="tag tag-green">Improving</span></td></tr>
+      <tr class="row-up"><td>Admin as % of Revenue</td><td>330%</td><td>98%</td><td>73%</td><td><span class="tag tag-green">Improving</span></td></tr>
+      <tr class="row-up"><td>Remote Safety Officer Ratio</td><td>~1:10–20</td><td>—</td><td>1:40</td><td><span class="tag tag-green">Improving</span></td></tr>
+      <tr class="row-up"><td>Avg Daily Orders/Vehicle</td><td>—</td><td>—</td><td>17 (peak 28)</td><td><span class="tag tag-green">New disclosure</span></td></tr>
+      <tr class="row-up"><td>Middle East Subsidiary</td><td>Pre-revenue</td><td>Scaling</td><td>Profitable</td><td><span class="tag tag-amber">⚠ At risk</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════ COMPETITIVE LANDSCAPE ═══════════════ -->
+<div class="card">
+  <div class="card-header"><span class="icon">🏆</span><h2>Competitive Landscape</h2></div>
+  <table>
+    <thead>
+      <tr><th>Competitor</th><th>Key Markets</th><th>Funding / Parent</th><th>Threat Level</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Waymo (Alphabet)</td><td>US (Phoenix, SF, LA, Austin)</td><td>Alphabet</td><td><span class="tag tag-amber">High</span></td><td>US-focused; no ME/SEA presence. Uber partnership with WeRide creates friction for Waymo-Uber deal.</td></tr>
+      <tr><td>Baidu Apollo</td><td>China (10+ cities)</td><td>Baidu</td><td><span class="tag tag-amber">High</span></td><td>Larger China fleet; less international</td></tr>
+      <tr><td>Pony.ai</td><td>China, US, ME</td><td>$1B+ raised</td><td><span class="tag tag-amber">Medium</span></td><td>Similar China+international strategy; also filed HK IPO</td></tr>
+      <tr><td>Tesla</td><td>Global (FSD, not yet driverless)</td><td>$1T+ mkt cap</td><td><span class="tag tag-amber">Medium</span></td><td>Brand + capital advantage; timeline uncertain</td></tr>
+      <tr><td>Cruise (GM)</td><td>US (restarting)</td><td>GM</td><td><span class="tag tag-green">Low</span></td><td>Operational setbacks; US-only</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.85rem; margin-top:0.5rem;"><strong>Key differentiator:</strong> WeRide is the only AV company with fully driverless commercial operations across Asia, the Middle East, and Europe (pipeline). The international asset-light model (Middle East already profitable) is a genuine competitive differentiator — but the US-Iran conflict puts it directly at risk.</p>
+</div>
+
+<!-- ═══════════════ MANAGEMENT ═══════════════ -->
+<div class="card">
+  <div class="card-header"><span class="icon">👤</span><h2>Management Analysis — Overall Grade: B</h2></div>
+  <table>
+    <thead>
+      <tr><th>Executive</th><th>Role</th><th>Background</th><th>Key Q1 Signal</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Tony Han</td><td>CEO, Co-founder</td><td>PhD, ex-Baidu Chief Scientist</td><td>Confident on tech moat, GENESIS differentiation. Did <strong>not</strong> address geopolitical risk.</td></tr>
+      <tr><td>Jennifer Li</td><td>CFO</td><td>—</td><td>Disclosed ME subsidiary profitability, asset-light model. International revenue growth guide. Did <strong>not</strong> address geopolitical risk.</td></tr>
+    </tbody>
+  </table>
+  <div class="callout warn" style="margin-top:1rem;">
+    <strong>Governance flag:</strong> Neither the CEO nor CFO addressed the US-Iran conflict's impact on Middle East operations during the Q1 2026 call, despite the UAE being the company's most strategically important international market. This is either confidence or avoidance — either way, investors must model the risk independently since management won't.
+  </div>
+</div>
+
+<!-- ═══════════════ STOP-LOSS & TRIGGERS ═══════════════ -->
+<div class="card">
+  <div class="card-header"><span class="icon">🛑</span><h2>Thesis Stop-Loss Triggers &amp; Key Monitors</h2></div>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+    <div>
+      <h3>Binary Stop-Loss Triggers</h3>
+      <table>
+        <thead><tr><th>Condition</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>YoY revenue growth &lt;25% for 2 consecutive Qs</td><td><span class="tag tag-green">OK (Q1: +58%)</span></td></tr>
+          <tr><td>Gross margin falls below 25%</td><td><span class="tag tag-green">OK (Q1: ~35%)</span></td></tr>
+          <tr><td>Tony Han departs as CEO</td><td><span class="tag tag-green">OK</span></td></tr>
+          <tr><td>Major safety incident grounds fleet in &gt;2 countries</td><td><span class="tag tag-green">OK</span></td></tr>
+          <tr class="row-warn"><td>US-Iran conflict escalates to UAE disruption</td><td><span class="tag tag-amber">⚠ Active monitoring</span></td></tr>
+          <tr><td>Cash falls below ¥4B without ¥500M+/Q revenue</td><td><span class="tag tag-green">OK (¥6.18B, Q4 ¥314M)</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3>Key Triggers to Monitor</h3>
+      <ol style="font-size:0.88rem; padding-left:1.25rem;">
+        <li style="margin-bottom:0.5rem;"><strong>US-Iran conflict trajectory</strong> — the dominant variable. De-escalation = re-rate; escalation = thesis break.</li>
+        <li style="margin-bottom:0.5rem;">Q2 2026 revenue — confirm sequential recovery from Q1 seasonal trough</li>
+        <li style="margin-bottom:0.5rem;">Middle East subsidiary revenue disclosure — is it still growing QoQ despite conflict?</li>
+        <li style="margin-bottom:0.5rem;">China regulatory environment — does "short-term adjustment" resolve?</li>
+        <li style="margin-bottom:0.5rem;">Hong Kong secondary listing progress — reduces US delisting risk</li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ LETTER TO MANAGEMENT ═══════════════ -->
+<div class="card" style="background:#f8fafc; border-left:4px solid #475569;">
+  <div class="card-header"><span class="icon">✉️</span><h2>Letter to Management</h2></div>
+  <p><em>To Tony Han and Jennifer Li —</em></p>
+  <p>The Q1 2026 results were strong — revenue +58%, margins expanding, and the Middle East subsidiary reaching profitability is a genuine milestone. But I need to be direct on one point: the market's most important question about WeRide right now was not asked or answered on the earnings call. The US-Iran conflict puts your most strategically valuable asset — the UAE operations and the Uber partnership — in an active conflict zone. Investors need to hear from you specifically on: (1) what contingency plans exist if the conflict escalates, (2) whether Uber has communicated any operational concerns, and (3) what the financial impact of a 1–2 quarter Gulf disruption would be on the ME subsidiary's profitability. Silence on this creates a vacuum that the market will fill with worst-case assumptions. You have a compelling operational story — don't let the one risk you can't control become the only thing investors can talk about because you haven't addressed it first.</p>
+  <p><em>— Charlie</em></p>
+</div>
+
+<!-- ═══════════════ SOURCES & DISCLAIMER ═══════════════ -->
+<div class="sources">
+  <strong>Data sources:</strong> yfinance (WRD financials — note: in RMB, not USD), Alpha Vantage EARNINGS_CALL_TRANSCRIPT (Q1 2026, released May 13, 2026), WeRide IR, Wikipedia, company public filings. Analysis date: May 14, 2026.
+</div>
+<div class="footer-note">
+  This memorandum is not investment advice. It is an analytical framework applied to publicly available information.<br>
+  All opinions and estimates are the author's own. Past performance does not guarantee future results. May 2026.
+</div>
+
+</div>
+</body>
+</html>
