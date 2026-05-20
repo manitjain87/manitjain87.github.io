@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Agentic Commerce Stack — Manit Jain</title>
+    <meta name="description" content="Query a major retailer's catalog — no browser, no login. You get back 60 products with prices. Query a second retailer the same way. You get: Reference BOT: 0.561e1202.1777634870.45b2368. One shows up when a customer asks an AI shopping agent for the best price. The other doesn't. Neither made that decision deliberately.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">Manit Jain</a>
+            <ul>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#investing">Investing</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#writing">Writing</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="blog-post">
+        <a href="../index.html#writing" class="back-link">← Back to all posts</a>
+
+        <header class="blog-post-header">
+            <div class="blog-category">Strategic Finance</div>
+            <h1 class="blog-post-title">The Agentic Commerce Stack</h1>
+            <div class="blog-post-meta">May 2026 · 8 min read</div>
+        </header>
+
+        <div class="blog-post-content">
+            <p>Query a major retailer's product catalog — no browser, no login. You get back 60 products with prices. Query a second retailer the same way. You get: <code>Reference BOT: 0.561e1202.1777634870.45b2368</code>.</p>
+
+            <p>One shows up when a customer asks an AI shopping agent for the best price. The other doesn't. Neither made that decision deliberately.</p>
+
+            <h3>The problem agents create</h3>
+
+            <p>When an AI shopping agent queries a product catalog, it arrives with the same signature as a scraper: a plain HTTP request, no credential, no intent signal. A merchant cannot distinguish OpenAI's Shopping feature — routing a customer ready to buy — from a competitor's price monitor extracting data for arbitrage.</p>
+
+            <p>Without a way to tell them apart, merchants face a bad binary: block all unrecognised traffic and lose distribution through the AI interfaces their customers are using, or allow everything and hand pricing data to every competitor running an automated monitor.</p>
+
+            <p>That's the access problem. But access is just one layer. The full stack runs from discovery through fulfillment — and every layer is being built simultaneously by companies most executives aren't tracking.</p>
+
+            <h3>Layer 1 — Discovery: who gets found</h3>
+
+            <p>The commerce stack begins with signal. How does an AI agent discover which merchants to query in the first place?</p>
+
+            <p>The baseline answer is robots.txt. OpenAI, Google, and Perplexity publish the user agents their shopping crawlers send: GPTBot, Google-Extended, PerplexityBot. Allowlisting them and blocking everything else takes an hour and costs nothing. This won't stop a sophisticated actor who spoofs the header, but it filters commodity scrapers immediately — and signals to legitimate agents that the merchant wants to be found.</p>
+
+            <p>The more advanced answer is SimGym. Shopify is running 2,000 LLM-guided robot shoppers against live storefronts. The agents browse, filter, add to cart, and abandon — simulating the full range of human purchase behaviour at machine speed. The humans who used to be A/B test subjects are no longer needed.</p>
+
+            <p>Product decisions in commerce run on behavioural signal: what users clicked, which variants converted, where sessions dropped. Human A/B testing is slow, expensive, and subject to selection effects. SimGym eliminates all three constraints. LLM-driven personas run thousands of experiments per week, generating signal at a cost per insight that makes traditional user research uneconomical.</p>
+
+            <p>Discovery is not neutral. If your storefront is structured for agents and accessible through the right channels, queries arrive. If not, they don't. The companies that own the AI that generates the discovery signal own the top of the funnel.</p>
+
+            <h3>Layer 2 — Access: who gets verified</h3>
+
+            <p>A legitimate shopping agent behaves like a customer. It searches, filters, opens a product page, checks availability. A scraper hits listing pages in parallel across all categories — dozens of simultaneous connections, no session continuity, no cart interaction. The pattern is distinguishable at the network level before a request reaches application code.</p>
+
+            <p>Cloudflare's behavioural fingerprinting runs at the CDN layer: request cadence, sequential versus parallel access, session continuity. Any merchant on Cloudflare gets this without building it.</p>
+
+            <p>Cloudflare MCP Server Portals, now in open beta, go further. They centralise every agent connection — authenticated, permissioned, observable in one place. A merchant configures it to serve structured product data to agents with verified identities and return nothing to everything else. The 241 billion tokens Cloudflare processed through AI Gateway in a single week during Agents Week represent the operating scale this infrastructure already runs against.</p>
+
+            <h3>Layer 3 — Credential: what the token means</h3>
+
+            <p>Cloudflare implements the authentication check. The Universal Commerce Protocol defines what the credential means.</p>
+
+            <p>UCP, co-developed by Google and Shopify and backed by Amazon, Meta, Microsoft, Stripe, Visa, Mastercard, Amex, Walmart, Best Buy, and Zalando, includes AP2 — the Agent Payments Protocol. AP2 gives a shopping agent a verifiable credential to present to any merchant: proof that a real customer with purchase intent is behind the request. Not a spoofable header — a cryptographically signed token in a standard the entire commerce infrastructure is converging on.</p>
+
+            <p>When a customer tells their AI assistant to find and buy a specific item, the agent queries merchants using AP2 credentials. Merchants inside the UCP trust layer receive the query, verify the credential, and respond with structured product data. Merchants outside it don't receive the query — the agent has no authenticated channel to reach them.</p>
+
+            <p>OAuth standardised which apps can access your account data. UCP/AP2 is standardising which agents can access your storefront. The consortium building it overlaps almost entirely with the consortium that built card payments infrastructure. These companies set defaults — they don't propose options.</p>
+
+            <h3>Layer 4 — Payment: who closes the transaction</h3>
+
+            <p>For discovery and access to produce revenue, transactions need to close. Two things happened in 2026 that signal where this layer is heading.</p>
+
+            <p>At Stripe Sessions, Stripe articulated its mission for the agentic commerce era: "building economic infrastructure for AI." The implication is that Stripe's payment APIs — already the default for internet commerce — are being extended for agent-to-agent transactions. When an AI agent needs to pay, the rail is being built on the infrastructure that already routes most of the internet's money.</p>
+
+            <p>In the markets where commerce is growing fastest — Latin America, Africa, Southeast Asia — that rail is different. dLocal processes $41 billion in payments across 40 countries through a single API. Amazon, Microsoft, Uber, and Netflix route through it. Revenue per employee: $3.6 million. Free cash flow conversion: 97%. Net margins: 18% — at 1% penetration of a $3.6 trillion TAM growing 25–35% annually.</p>
+
+            <p>The payment layer is not a single winner. It's two different infrastructure problems: developed-market agent payments are being built on Stripe's existing rails. Emerging-market agent payments are being built on dLocal's. The API that an AI agent calls to close a transaction in São Paulo is different from the one it calls in San Francisco. Both are being decided right now.</p>
+
+            <h3>Layer 5 — Fulfillment: who delivers the goods</h3>
+
+            <p>For decades, a business that wanted to ship goods had to stitch together 6–8 providers: a freight broker, a customs agent, a warehouse, a fulfillment center, a last-mile carrier. Amazon just replaced all of them.</p>
+
+            <p>Supply Chain by Amazon — launched this year and opened to all merchants — is a full-stack logistics service: freight, customs, warehousing, fulfillment, and last-mile delivery in a single product. A merchant's AI agent can now initiate a shipment the same way a customer's AI agent initiates a purchase. The logistics layer is being made programmable.</p>
+
+            <p>MercadoLibre is what this looks like at scale in the markets where Amazon hasn't built the same density. Q1 2026: revenue +49% year-over-year, the fastest since Q2 2022. Logistics cost per shipment in Brazil fell 17% in the same quarter that items sold rose 56%. LLM search deployed across three markets with visible funnel impact on purchase conversion.</p>
+
+            <p>The flywheel is self-reinforcing: more volume → lower cost per shipment → lower prices → more volume. Competitors cannot replicate 42 fulfillment centers and 50%+ same or next-day delivery without five years and $20 billion in capital.</p>
+
+            <p>The fulfillment layer has the same structure as payment: Amazon is building the developed-market answer. MercadoLibre is building the LatAm answer. Both are replacing the human-operated logistics stack with infrastructure an AI agent can call directly.</p>
+
+            <h3>The Honest Take</h3>
+
+            <p>When Adam Foroughi rebuilt AppLovin, he cut the core business to about 400 people. As he described it: "It's reaching or over $10 million a head" in EBIT per employee. The product — an AI recommendation model running billions of ad auctions per day — generates more value per person than almost any business built before it. "We don't have a product organization," Foroughi said. "Our engineers are meant to be product managers."</p>
+
+            <p>That is not a management theory. It is the operating model of an AI-native infrastructure company: one team builds the model, the model does the work at scale.</p>
+
+            <p>The commerce equivalent is being assembled across five layers simultaneously — by multiple companies at each layer. Shopify owns the discovery layer and is building agent-native tooling. Cloudflare and the UCP consortium own the access and credential layers. Stripe and dLocal are building the payment rails — developed and emerging markets respectively. Amazon and MercadoLibre are building the fulfillment infrastructure.</p>
+
+            <p>Most coverage of agentic commerce focuses on what the shopper sees. The shopper sees nothing. The shopper types a request and gets a result. What happens between those two moments — the five-layer stack that determines which merchants are discovered, verified, paid, and fulfilled — is being assembled by the companies named above. The merchants inside the stack receive the queries. The merchants outside it don't.</p>
+
+            <p>This is a distribution decision, not a security decision. And distribution windows don't stay open.</p>
+
+            <hr>
+
+            <p style="font-size: 0.9em; color: #666;">Sources: Cloudflare, "Agents Week in Review," blog.cloudflare.com. Cloudflare, "Enterprise MCP," blog.cloudflare.com. Universal Commerce Protocol, developers.googleblog.com / shopify.engineering. Shopify Engineering, "SimGym: cloud-browser A/B testing with LLM personas," February 27, 2026. Stripe, "Stripe Sessions 2026," stripe.com. dLocal Limited, Q4 2025 earnings report and investor presentation. Amazon, "Supply Chain by Amazon," aboutamazon.com. MercadoLibre, Q1 2026 earnings call, May 7, 2026. Adam Foroughi, interview, "AppLovin CEO — AI, Ads, and the Founder Mentality," YouTube, October 21, 2025.</p>
+
+            <p>© 2026 Manit Jain. All rights reserved.</p>
+        </div>
+    </article>
+</body>
+</html>
