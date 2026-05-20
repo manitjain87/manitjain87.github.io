@@ -20,7 +20,7 @@ When you lose a negotiation in the traditional sense, you know. You made an offe
 
 When your agent loses, there's no signal. The deal closes. The goods arrive. Everyone reports that it went fine. You have no reference point for what a better agent would have gotten you — so the loss never registers.
 
-Oxford University's Internet Institute formalised this in their October 2025 "Agentic Inequality" paper. Buyers using weaker agents paid approximately 2% more than those with superior agents. Weaker seller agents lost up to 14% in profit compared to negotiations between equally capable agents.
+Oxford University's Internet Institute formalised this in their October 2025 "Agentic Inequality" paper. Weaker seller agents lost up to 14% in profit compared to negotiations between equally capable agents. Buyers using weaker agents paid approximately 2% more than those with superior agents.
 
 The scale compounds. If your procurement organisation runs thousands of negotiations per year, a 2% disadvantage is not a rounding error. It's a budget line.
 
@@ -36,7 +36,7 @@ This is the most validated case, and the most immediately consequential for anyo
 
 Coupa, SAP Ariba, and Jaggaer are all deploying AI agents for sourcing, pricing negotiation, and SLA terms. So are their enterprise customers. Both sides of the table now have agents. McKinsey puts the efficiency gain from autonomous procurement agents at 15–30%. By end of 2026, 60–70% of transactional procurement will be handled by AI agents.
 
-The question your CPO cannot yet answer: what model is the supplier's agent running? And is yours better?
+The question your CPO cannot answer: what model is the supplier's agent running? And is yours better?
 
 If the answer is "we don't know," that's the gap. Your procurement team is reporting green across the board — and the McKinsey math suggests they may be leaving 15–30% on the table relative to what a better-deployed agent would recover.
 
@@ -55,16 +55,6 @@ B2B procurement and contract negotiation are symmetric — both sides have agent
 Lenders and insurers have been deploying sophisticated pricing AI for years, trained on millions of prior transactions. The consumer-facing tools are basic by comparison.
 
 You're not being outcompeted by another consumer with a better agent. You're being outcompeted by a corporate model that has run this negotiation a hundred thousand times.
-
----
-
-## The Human Version
-
-None of this requires autonomous agents to feel real. Consider hiring.
-
-The candidate sitting across from your recruiter has already used Claude to research your comp bands, identify equity refresh patterns from public filings, prep their negotiation strategy, and draft their counter. Your offer team hasn't updated its playbook in three years.
-
-That's not agent-vs-agent. But it's the same dynamic: one side brought better intelligence to the table, and the other side doesn't know what they conceded.
 
 ---
 
