@@ -71,10 +71,10 @@ INSTRUCTIONS FOR NEW POSTS:
 4. Replace [CATEGORY] (e.g., "Investment Memo", "Strategic Finance")
 5. Replace [DATE] (e.g., "April 3, 2026")
 6. Replace [READ TIME] (estimate: ~200 words per minute)
-7. Add your content between <!-- YOUR CONTENT GOES HERE --> markers
+7. Add your content between the YOUR CONTENT GOES HERE markers
 8. Update index.html to add the card linking to this post
 
-CONTENT FORMATTING:
+CONTENT FORMATTING (prose — editorial aesthetic):
 - <h3> for main sections
 - <h4> for subsections
 - <p> for paragraphs
@@ -89,7 +89,7 @@ Example:
 This is a quote from someone important.
 </blockquote>
 
-Tables:
+Tables (prose-style, uses site's terracotta theme):
 <table>
     <tr>
         <th>Header 1</th>
@@ -100,4 +100,60 @@ Tables:
         <td>Data 2</td>
     </tr>
 </table>
+
+─────────────────────────────────────────────────────────
+JONY / TUFTE DATA COMPONENTS (data-dense elements only)
+─────────────────────────────────────────────────────────
+Use these classes when you need precision data display within a post.
+They use monospace type, 1.5px solid #222 borders, and #fafaf9 backgrounds
+(Jony tokens) — intentionally distinct from the editorial prose aesthetic.
+Invoke /jony for format compliance and /tufte for chart design.
+
+STAT STRIP — 3–4 key numbers side by side:
+<div class="jony-stat-strip">
+    <div class="jony-stat-item">
+        <div class="jony-stat-value">$450M</div>
+        <div class="jony-stat-label">ARR</div>
+    </div>
+    <div class="jony-stat-item">
+        <div class="jony-stat-value">470</div>
+        <div class="jony-stat-label">Employees</div>
+    </div>
+    <div class="jony-stat-item">
+        <div class="jony-stat-value">95%</div>
+        <div class="jony-stat-label">Gross Margin</div>
+    </div>
+</div>
+
+PULL STAT — single large claim number with accent border:
+<div class="jony-pull-stat">
+    <div class="ps-number">2027</div>
+    <div class="ps-context">When non-engineering process automation begins — Pichai, Jan 2025</div>
+</div>
+
+DATA TABLE — comparison table in monospace (Jony-compliant):
+<table class="jony-data-table">
+    <tr>
+        <th>Company</th>
+        <th>ARR</th>
+        <th>Headcount</th>
+        <th>Rev / FTE</th>
+    </tr>
+    <tr>
+        <td>ElevenLabs</td>
+        <td>$450M</td>
+        <td>470</td>
+        <td>$957K</td>
+    </tr>
+</table>
+
+TUFTE CHART WRAPPER — container for any chart/graph/PNG:
+(Chart design governed by /tufte skill — invoke before adding charts)
+<div class="tufte-chart">
+    <img src="path/to/chart.png" alt="Description of chart">
+    <div class="chart-caption">Chart title — source, date</div>
+</div>
+
+MONO LABEL — standalone monospace uppercase label:
+<span class="jony-label">Source: SEC EDGAR, Q1 2026</span>
 -->

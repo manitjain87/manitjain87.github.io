@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Token P&L — Manit Jain</title>
+    <meta name="description" content="Token spend has arrived in real company P&Ls. Dylan Patel spends $7M a year on Claude Code. Jensen Huang says a $500K engineer not burning $250K in tokens should alarm you. The question is whether you know your number — and whether your infrastructure can sustain it.">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">Manit Jain</a>
+            <ul>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#investing">Investing</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#writing">Writing</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <article class="blog-post">
+        <a href="../index.html#writing" class="back-link">← Back to all posts</a>
+
+        <header class="blog-post-header">
+            <div class="blog-category">Strategic Finance</div>
+            <h1 class="blog-post-title">The Token P&L</h1>
+            <div class="blog-post-meta">May 25, 2026 · 7 min read</div>
+        </header>
+
+        <div class="blog-post-content">
+
+            <blockquote>
+"This year the spend just skyrocketed. We're spending $7 million a year on Claude Code at the current rate. North of 25% of spend on AI as a percentage of salary costs."
+            </blockquote>
+
+            <p>That is Dylan Patel, founder of Semi Analysis — one of the most rigorous semiconductor research firms in the industry — describing his own company's AI budget. Twelve months earlier, the number was in the tens of thousands.</p>
+
+            <p>Jensen Huang drew the line from the other direction: if a $500,000 engineer isn't burning at least $250,000 in tokens a year, he would be "deeply alarmed." Not mildly concerned. Alarmed.</p>
+
+            <p>These two data points describe the same reality from opposite ends. Token spend has arrived in real company P&Ls. The question is whether you know your number — and whether your infrastructure can sustain it.</p>
+
+            <hr>
+
+            <h3>Why the Token Bill Only Goes One Direction</h3>
+
+            <p>The cost of running an AI model through an API has fallen roughly 100x over two years. Ramp, which tracks payment data across thousands of enterprise customers, reported that average monthly AI token spend across its base is up 13x in the same period. One in four months, the biggest spenders see costs jump more than 50% with no warning. A single prompt template change can triple a bill overnight.</p>
+
+            <p>The mechanism has a name: Jevons Paradox. Lower cost per token creates more applications worth running, which increases total consumption faster than the price decline. Krishna Rao, Anthropic's CFO, confirmed it from his own pricing decisions: "We lowered the price of Opus, but the consumption went up way more than what you would have expected. This Jevons paradox."</p>
+
+            <p>The DeepSeek sell-off of January 2026 was the sharpest empirical proof. When DeepSeek published its efficiency numbers, NVIDIA's market cap dropped $600 billion in a day on the theory that cheaper models meant less compute demand. Gavin Baker, who has covered semiconductors for 25 years, described the correction: "By DeepSeek Monday it was super clear this was going to be the most positive thing that had ever happened to compute demand. Prices in the AWS availability zones in Asia had already doubled." Cheaper inference didn't reduce the compute bill. It expanded the number of applications worth computing.</p>
+
+            <p>What this looks like inside a company: Meta engineers burned 60 trillion AI tokens in 30 days on an internal productivity platform. The top user consumed $4.2 million worth of tokens at list price. Meta didn't respond by capping usage. It created digital badges — "Token Legend," "Cache Wizard" — for the heaviest users. Simon Taylor distilled the logic: "Tokenmaxxing for status is waste. Tokenmaxxing for shipping is the new moat." Anthropic shipped 120+ features in 90 days by optimising token-to-outcome conversion. The equation: Outcome = Tokens × Intelligent Operating Model.</p>
+
+            <p>JPMorgan's note — "AI Token Costs: Eating Internet Profits Alive" — named Shopify, Spotify, and Pinterest as companies where inference costs are already compressing margins. Goldman's note published the same week argued that when token costs fall far enough, agentic AI flips to a margin-expansion engine. Both are right. They describe different positions on the same curve. The question is which companies are caught in the gap.</p>
+
+            <p>CJ Gustafson, CFO of Datadog, put a timeline on it: within six months, CFOs will start mentioning "AI spend optimisation" on earnings calls — the same way "Snowflake optimisation" became a recurring phrase on SaaS calls in 2023. The companies that tagged token spend by employee before the wave have baselines. The ones that didn't are setting next year's budgets blind.</p>
+
+            <hr>
+
+            <h3>The Supply Side Is Concentrating</h3>
+
+            <p>The demand story is visible. The supply story is less discussed, and more important.</p>
+
+            <p>Anthropic's gross margins went from approximately 30% at the start of 2026 to an estimated floor of 72% today. That is not a cost-cutting story. It is operating leverage at work. AI infrastructure is overwhelmingly fixed cost — GPUs, data centers, power contracts. When Krishna Rao lowered Opus pricing and consumption exploded (net dollar retention above 500% annualised), the same infrastructure was suddenly serving far more tokens. Unit cost collapsed. In a normal market, competition would force you to pass those savings through as price cuts. But when the alternative to your model is no model, you capture the spread. Revenue is adding $10 billion a month. Gross margins hit 72% and held.</p>
+
+            <p>The same structural dynamic is visible one layer down at Nebius. Revenue grew 479% to $530 million in 2025; ARR hit $1.2 billion. Once a data centre is built, incremental revenue drops roughly 70% to the bottom line. Gross margin reached 71% in Q3 2025, up from 60% the year before — not by raising prices, but by spreading fixed infrastructure costs across more workload. The Meta contract ($27 billion over five years) and Microsoft commitment (multi-billion) fill the base. The Token Factory — inference endpoints priced per token rather than per GPU hour — runs at higher utilisation and higher margin on top of it. The demand-supply imbalance doesn't just create pricing power. It creates the volume that operating leverage needs to convert into margin.</p>
+
+            <p>Dylan Patel's analysis takes this further. As frontier model capabilities diverge from mid-tier models, access to the newest model becomes a moat in itself. His scenario: a firm like Citadel signs a deal committing to the first $10 billion of tokens each year from the leading provider. They get early access, preferred pricing, and SLA guarantees that smaller competitors don't. "Now he's going to crush everyone in his industry who doesn't have the same access."</p>
+
+            <p>It is the logical extension of a market where supply is physically constrained and the marginal value of the best token — the one powering the best model at the lowest latency — is dramatically higher than the average token.</p>
+
+            <p>The token supply chain is beginning to look like the chip supply chain. The question of who gets access, at what price, and with what lead time is becoming a strategic question, not a procurement one.</p>
+
+            <hr>
+
+            <h3>From Bare Metal to Token Factory</h3>
+
+            <p>Understanding the supply constraint changes how you read what Nebius is building.</p>
+
+            <p>Nebius began by selling bare-metal GPU access — rent this server, pay by the hour. The economics of bare metal are thin: high capital intensity, low differentiation, fully correlated to GPU spot prices. The Meta contract — $27 billion over five years, with Meta committing to buy up to $15 billion of capacity at Nebius's option — is not the product. Volozh is explicit: "We use these big bare-metal contracts not as our main line of business, but as one of the ways to finance building our own cloud for the rest of the market."</p>
+
+            <p>The Meta contract is the balance sheet. What it finances is the Token Factory.</p>
+
+            <p>The Token Factory is the second layer: inference endpoints, model serving, embedding generation, auto-scaling — priced per token rather than per GPU hour. The margin profile inverts as you move up the stack. Bare metal: 40–50% gross margin, anchored to hardware costs. Token Factory: 70%+ gross margin, anchored to utilisation and software optimisation. An agentic services layer — fine-tuning, retrieval-augmented generation, workflow orchestration — sits above that, with margins that converge toward pure software.</p>
+
+            <p>This stack is possible because Nebius built the physical infrastructure from scratch, optimised for LLM workloads. Volozh: "Land, power, racks, cloud platform, services. It's a full-stack build. It is optimised to the last bolt." Infrastructure purpose-built for AI achieves higher model FLOPS utilisation than general-purpose cloud — the difference between a facility built to run one thing extremely well and one built to run anything adequately.</p>
+
+            <p>NVIDIA's $2 billion investment and preferred-provider designation — including early access to the Rubin platform — is not a financial partnership. It is a supply chain commitment. Nebius gets next-generation chips before the market because NVIDIA's economics are better when chips go into infrastructure that runs at high utilisation, not into general-purpose cloud that sits partially idle.</p>
+
+            <p>CoreWeave reported in its most recent earnings that materially over 50% of its compute is now being used for inference rather than training. The workload has already shifted. The infrastructure designed for it is the constraint.</p>
+
+            <hr>
+
+            <h3>Three Questions for the CFO</h3>
+
+            <p>Token spend is no longer a line item to optimise away. It is a capacity question with the same structural logic as headcount.</p>
+
+            <p><strong>First: Do you know your token spend per engineer?</strong> Datadog tags token spend at the employee level. If your company cannot produce that number, you cannot establish a baseline before the optimisation wave arrives — and you will be setting budgets blind when it does.</p>
+
+            <p><strong>Second: Are you buying at the right layer of the stack?</strong> Bare-metal contracts lock in supply and anchor cost, but commit capital years ahead. Spot market token access preserves flexibility but exposes you to price volatility when supply tightens. The right answer depends on how central inference is to your revenue — not your cost structure, your revenue.</p>
+
+            <p><strong>Third: Who controls the supply chain you depend on?</strong> The token supply chain now has the same concentration dynamics as the chip supply chain. One provider at the foundation model layer, a small number of inference infrastructure providers, and a converging set of frontier model providers. Each layer has pricing power when demand exceeds supply. The companies that understood this as a strategic capacity question early will have contracted supply. The ones that didn't will be buying on the spot market at the moment they can least afford volatility.</p>
+
+            <p>The token bill is not going down. The companies that understand their token economics — what they're spending, what it's producing, and where the supply comes from — will make different decisions than the ones treating it as a software cost to be negotiated annually.</p>
+
+            <p>The refinery doesn't sell crude oil. It sells the product. Nebius is building the refinery.</p>
+
+            <hr>
+
+            <p><em>Sources: Dylan Patel, Semi Analysis, "The Token Economy," 2026. Jensen Huang, Computex 2026 keynote. CJ Gustafson, Mostly Metrics, "Tokens Are the New Per-Employee Line Item," May 2026. Simon Taylor, Fintech Brainfood, "Tokenmaxxing," May 2026. Ramp, AI Spending Report, Q1 2026. Anthropic gross margin estimates: Semi Analysis, May 2026. Krishna Rao, Anthropic CFO, podcast interview, 2025-10-15. Gavin Baker, "AI, Semiconductors, and the Robotic Frontier," Invest Like the Best, 2026. Nebius Group, FY2025 Annual Report and Q1 2026 Earnings. Arkady Volozh, Accel "Spotlight On" podcast, 2025-10-15. Meta, Q1 2026 Earnings Call. CoreWeave, Q1 2026 Earnings Call. JPMorgan, "AI Token Costs: Eating Internet Profits Alive," May 2026. Goldman Sachs, AI Infrastructure Report, May 2026. MBI Deep Dives, Nebius Group analysis, May 2026.</em></p>
+
+        </div>
+
+        <div style="margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--color-border); text-align: center;">
+            <a href="../index.html#contact" class="btn btn-primary">Get in touch</a>
+        </div>
+    </article>
+
+    <footer>
+        <div class="container">
+            <p><em>Disclaimer: The views and opinions expressed in this article are solely my own personal research and analysis. They do not represent, reflect, or relate to the views of any past, current, or future employer, client, or affiliated organization.</em></p>
+            <p>© 2026 Manit Jain. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
