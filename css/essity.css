@@ -494,6 +494,18 @@ section { padding: 96px 0; }
   line-height: 1.75;
 }
 
+.brand-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 10px;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s;
+}
+.brand-link:hover { opacity: 0.7; }
+
 /* Multi-everything paragraph */
 .farfetch-summary {
   font-size: 16px;
