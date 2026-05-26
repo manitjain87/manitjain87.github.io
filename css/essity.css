@@ -641,9 +641,9 @@ section { padding: 96px 0; }
 
 .region-card {
   flex-shrink: 0;
-  width: 240px;
+  width: 190px;
   scroll-snap-align: start;
-  padding: 24px 20px;
+  padding: 18px 16px;
   background: var(--bg2);
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -671,7 +671,7 @@ section { padding: 96px 0; }
 
 .region-name {
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: -0.01em;
   margin-bottom: 6px;
@@ -705,18 +705,6 @@ section { padding: 96px 0; }
   border-radius: 4px;
 }
 
-/* Toronto return note */
-.region-return-note {
-  text-align: center;
-  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  color: var(--text3);
-  padding: 20px 0;
-  margin-bottom: 48px;
-  border-bottom: 1px solid var(--border);
-}
 
 /* Deep dive sections */
 .experience-deep-dive {
@@ -1045,7 +1033,7 @@ footer {
   nav ul li:nth-child(n+7) { display: none; }
   section { padding: 72px 0; }
   .section-title { font-size: 28px; margin-bottom: 36px; }
-  .region-card { width: 200px; }
+  .region-card { width: 180px; }
 }
 
 @media (max-width: 560px) {
