@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <style>
+      .m { font-family: 'SF Mono', 'SFMono-Regular', ui-monospace, 'Menlo', 'Monaco', 'Cascadia Code', 'Consolas', 'Liberation Mono', monospace; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 9 5 L 0 10 Z" fill="#141413"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="#faf9f5"/>
+
+  <!-- Subtle guide circle -->
+  <circle cx="400" cy="200" r="150" fill="none" stroke="#e5e5e4" stroke-width="0.75" stroke-dasharray="3,5"/>
+
+  <!-- Center annotation -->
+  <text x="400" y="193" text-anchor="middle" class="m" fill="#d97757" font-size="9" font-weight="bold" letter-spacing="2.5">AI AGENT FLYWHEEL</text>
+  <text x="400" y="210" text-anchor="middle" class="m" fill="#a8a69d" font-size="8" letter-spacing="1.5">Self-Reinforcing Loop</text>
+
+  <!-- Curved arrow paths (clockwise flow: Gyanchand → Charlie → Chokepoint → Ai, Honestly → Gyanchand) -->
+
+  <!-- Gyanchand → Charlie: exits right edge of top node, enters top edge of right node -->
+  <path d="M 490 60 C 530 40, 570 110, 540 157.5" fill="none" stroke="#141413" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Charlie → Chokepoint: exits bottom edge of right node, enters right edge of bottom node -->
+  <path d="M 545 242.5 C 575 290, 530 347, 490 342" fill="none" stroke="#141413" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Chokepoint → Ai, Honestly: exits left edge of bottom node, enters bottom edge of left node -->
+  <path d="M 310 342 C 275 380, 220 330, 260 242.5" fill="none" stroke="#141413" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Ai, Honestly → Gyanchand: exits top edge of left node, enters left edge of top node (feedback loop) -->
+  <path d="M 260 157.5 C 235 115, 275 72, 310 60" fill="none" stroke="#141413" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Feedback label on the return loop -->
+  <text x="256" y="108" text-anchor="middle" class="m" fill="#a8a69d" font-size="7" letter-spacing="1.5">FEEDBACK</text>
+
+  <!-- Node 1: Gyanchand (Research — data ingestion) -->
+  <rect x="310" y="12.5" width="180" height="85" rx="2" fill="#ffffff" stroke="#141413" stroke-width="1.5"/>
+  <text x="400" y="38" text-anchor="middle" class="m" fill="#a8a69d" font-size="8" letter-spacing="2">R E S E A R C H</text>
+  <text x="400" y="56" text-anchor="middle" class="m" fill="#141413" font-size="14" font-weight="bold" letter-spacing="1">GYANCHAND</text>
+  <text x="400" y="77" text-anchor="middle" class="m" fill="#5c5a52" font-size="10">Data &amp; signal ingestion</text>
+  <!-- Direction indicator: feeds into Charlie (right) -->
+  <text x="478" y="33" text-anchor="end" class="m" fill="#d97757" font-size="13">→</text>
+
+  <!-- Node 2: Charlie (Analysis — investment thesis generation) -->
+  <rect x="455" y="157.5" width="180" height="85" rx="2" fill="#ffffff" stroke="#141413" stroke-width="1.5"/>
+  <text x="545" y="183" text-anchor="middle" class="m" fill="#a8a69d" font-size="8" letter-spacing="2">A N A L Y S I S</text>
+  <text x="545" y="201" text-anchor="middle" class="m" fill="#141413" font-size="14" font-weight="bold" letter-spacing="1">CHARLIE</text>
+  <text x="545" y="222" text-anchor="middle" class="m" fill="#5c5a52" font-size="10">Investment thesis gen.</text>
+  <!-- Direction indicator: feeds into Chokepoint (down) -->
+  <text x="623" y="178" text-anchor="end" class="m" fill="#d97757" font-size="13">↓</text>
+
+  <!-- Node 3: Chokepoint (Discovery — chokepoint mapping) -->
+  <rect x="310" y="302.5" width="180" height="85" rx="2" fill="#ffffff" stroke="#141413" stroke-width="1.5"/>
+  <text x="400" y="328" text-anchor="middle" class="m" fill="#a8a69d" font-size="8" letter-spacing="2">D I S C O V E R Y</text>
+  <text x="400" y="346" text-anchor="middle" class="m" fill="#141413" font-size="14" font-weight="bold" letter-spacing="1">CHOKEPOINT</text>
+  <text x="400" y="367" text-anchor="middle" class="m" fill="#5c5a52" font-size="10">Chokepoint discovery</text>
+  <!-- Direction indicator: feeds into Ai, Honestly (left) -->
+  <text x="478" y="323" text-anchor="end" class="m" fill="#d97757" font-size="13">←</text>
+
+  <!-- Node 4: Ai, Honestly (Content — signal distribution) -->
+  <rect x="165" y="157.5" width="180" height="85" rx="2" fill="#ffffff" stroke="#141413" stroke-width="1.5"/>
+  <text x="255" y="183" text-anchor="middle" class="m" fill="#a8a69d" font-size="8" letter-spacing="2">C O N T E N T</text>
+  <text x="255" y="201" text-anchor="middle" class="m" fill="#141413" font-size="14" font-weight="bold" letter-spacing="1">AI, HONESTLY</text>
+  <text x="255" y="222" text-anchor="middle" class="m" fill="#5c5a52" font-size="10">Content distribution</text>
+  <!-- Direction indicator: feeds back into Gyanchand (up) -->
+  <text x="333" y="178" text-anchor="end" class="m" fill="#d97757" font-size="13">↑</text>
+
+  <!-- Divider line -->
+  <line x1="120" y1="393" x2="680" y2="393" stroke="#e5e5e4" stroke-width="1"/>
+
+  <!-- Finance Parallel annotation -->
+  <text x="400" y="409" text-anchor="middle" class="m" fill="#a8a69d" font-size="8" letter-spacing="2">F I N A N C E  P A R A L L E L</text>
+  <text x="400" y="428" text-anchor="middle" class="m" fill="#5c5a52" font-size="9">Data Ingestion (NetSuite + SAP)  →  Consolidation  →  FP&amp;A</text>
+  <text x="400" y="441" text-anchor="middle" class="m" fill="#5c5a52" font-size="9">→  Management Reporting  →  (actuals vs forecast feedback)</text>
+</svg>
