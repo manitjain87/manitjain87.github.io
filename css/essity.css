@@ -245,8 +245,10 @@ section { padding: 96px 0; }
 
 .hero-eyebrow-sub {
   font-family: 'Poppins', sans-serif;
-  font-size: 12px;
+  font-size: 10px;
   color: var(--text3);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 .hero h1 {
