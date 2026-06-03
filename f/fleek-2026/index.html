@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Fleek — Strategic Finance Brief</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --off-white: #fafaf9;
+    --white: #fff;
+    --black: #111;
+    --secondary: #666;
+    --muted: #999;
+    --faint: #ccc;
+    --border: #222;
+    --border-light: #e5e5e4;
+    --accent: #f59e0b;
+    --mono: 'SF Mono', ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  body {
+    background: var(--off-white);
+    font-family: var(--mono);
+    padding: 48px 40px 80px;
+    max-width: 960px;
+    margin: 0 auto;
+    color: var(--black);
+  }
+
+  /* ── Header ─────────────────────────────── */
+  .doc-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+  }
+  .doc-title {
+    font-size: 22px; font-weight: 700; letter-spacing: -0.5px;
+    color: var(--black); margin-bottom: 4px;
+  }
+  .doc-meta {
+    font-size: 10px; letter-spacing: 1.5px; color: var(--faint);
+    text-transform: uppercase; margin-bottom: 48px;
+  }
+
+  /* ── Section headers ─────────────────────── */
+  .section-num {
+    font-size: 9px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 4px;
+  }
+  .section-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--black); margin-bottom: 20px;
+    padding-bottom: 8px; border-bottom: 1.5px solid var(--border);
+  }
+  .section-title-appendix {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--black); margin-bottom: 20px;
+    padding-bottom: 8px; border-bottom: 1px solid var(--border-light);
+  }
+
+  /* ── Finding cards (Section 01) ──────────── */
+  .findings-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-bottom: 48px;
+  }
+  .finding-card {
+    border: 1.5px solid var(--border); background: var(--white);
+    padding: 18px 16px 14px; display: flex; flex-direction: column;
+  }
+  .finding-card.full { grid-column: 1 / -1; }
+  .finding-label {
+    font-size: 8.5px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  .finding-body {
+    font-size: 10.5px; color: var(--secondary); line-height: 1.6;
+    flex: 1;
+  }
+  .finding-body strong { color: var(--black); font-weight: 700; }
+  .finding-stat {
+    margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--border-light);
+    font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--faint);
+  }
+  .finding-stat span { color: var(--muted); }
+
+  /* ── Org chart ───────────────────────────── */
+  .org-flow { margin-bottom: 48px; }
+  .org-top {
+    border: 1.5px solid var(--border); background: var(--white);
+    padding: 16px 20px 14px; text-align: center; max-width: 100%;
+  }
+  .org-top-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 4px;
+  }
+  .org-top-title {
+    font-size: 14px; font-weight: 700; letter-spacing: -0.2px;
+    color: var(--black); margin-bottom: 6px;
+  }
+  .org-top-desc {
+    font-size: 10px; color: var(--secondary); line-height: 1.5;
+  }
+
+  .org-connector {
+    text-align: center; font-size: 12px; color: var(--border);
+    letter-spacing: -1px; line-height: 1.4; user-select: none;
+    padding: 2px 0;
+  }
+
+  .org-row { display: flex; gap: 0; }
+  .org-fn {
+    flex: 1; border: 1.5px solid var(--border); background: var(--white);
+    padding: 14px 12px 12px;
+  }
+  .org-fn + .org-fn { border-left: none; }
+  .org-fn-name {
+    font-size: 9px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--black); margin-bottom: 2px;
+  }
+  .org-fn-loc {
+    font-size: 8.5px; font-weight: 700; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+  }
+  .org-fn-items {
+    font-size: 10px; color: var(--secondary); line-height: 1.55;
+  }
+
+  .org-ai {
+    border: 1.5px solid var(--border); background: var(--white);
+    padding: 14px 20px 12px; text-align: center; max-width: 100%;
+  }
+  .org-ai-label {
+    font-size: 9px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 6px;
+  }
+  .org-ai-items {
+    font-size: 10px; color: var(--secondary); line-height: 1.7;
+  }
+  .org-ai-note {
+    margin-top: 8px; font-size: 9px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--faint);
+  }
+
+  /* ── Fleek OS callout ────────────────────── */
+  .os-compare {
+    display: flex; gap: 0; margin-top: 14px;
+  }
+  .os-col {
+    flex: 1; border: 1.5px solid var(--border); background: var(--white);
+    padding: 16px;
+  }
+  .os-col + .os-col { border-left: none; }
+  .os-col-label {
+    font-size: 8.5px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  .os-col-item {
+    font-size: 10.5px; color: var(--secondary); line-height: 1.8;
+  }
+  .os-col-item strong { color: var(--black); }
+
+  /* ── Operating model comparison ──────────── */
+  .model-compare { display: flex; gap: 0; margin-top: 14px; }
+  .model-col {
+    flex: 1; border: 1.5px solid var(--border); background: var(--white);
+    padding: 16px;
+  }
+  .model-col + .model-col { border-left: none; }
+  .model-col-label {
+    font-size: 8.5px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  }
+  .model-col-item {
+    font-size: 10.5px; color: var(--secondary); line-height: 1.8;
+  }
+  .model-col-item strong { color: var(--black); }
+  .model-principle {
+    margin-top: 14px; padding: 10px 16px;
+    border: 1px solid var(--border-light); background: var(--off-white);
+    font-size: 10px; color: var(--secondary); line-height: 1.6;
+  }
+  .model-principle strong { color: var(--black); }
+
+  /* ── Tables ──────────────────────────────── */
+  .jony-table {
+    width: 100%; border-collapse: collapse; margin-bottom: 48px;
+  }
+  .jony-table th {
+    font-size: 9px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); text-align: left;
+    padding: 8px 12px; border-bottom: 1.5px solid var(--border);
+    background: var(--off-white);
+  }
+  .jony-table td {
+    padding: 10px 12px; border-bottom: 1px solid var(--border-light);
+    font-size: 10.5px; color: var(--secondary); vertical-align: top;
+    line-height: 1.5;
+  }
+  .jony-table td:first-child { color: var(--black); font-weight: 700; white-space: nowrap; }
+  .jony-table td:last-child { color: var(--black); }
+
+  /* ── Pre / ASCII blocks ──────────────────── */
+  .ascii-block {
+    font-family: var(--mono); font-size: 10.5px; line-height: 1.6;
+    color: var(--black); white-space: pre; margin: 0; overflow-x: auto;
+  }
+  .ascii-block .muted { color: var(--faint); }
+  .ascii-block .amber { color: var(--accent); }
+
+  /* ── Questions ───────────────────────────── */
+  .questions-list { margin-bottom: 48px; }
+  .open-q {
+    margin-bottom: 28px; padding: 20px 20px 16px;
+    border: 1.5px solid var(--border); background: var(--white);
+  }
+  .open-q-num {
+    font-family: var(--mono); font-size: 9px; color: var(--accent);
+    letter-spacing: 2px; text-transform: uppercase;
+    font-weight: 700; margin-bottom: 10px;
+  }
+  .open-q-text {
+    font-family: var(--sans);
+    font-size: 12.5px; color: var(--secondary); line-height: 1.65;
+  }
+  .open-q-text strong { color: var(--black); }
+  .open-q-principle {
+    margin-top: 12px; padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+    font-family: var(--mono); font-size: 9px;
+    color: var(--muted); letter-spacing: 1px; line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* ── Signal strip ────────────────────────── */
+  .signal-strip {
+    display: flex; border: 1.5px solid var(--border);
+    background: var(--white); margin-bottom: 48px; overflow: hidden;
+  }
+  .signal-item {
+    flex: 1; padding: 16px 20px;
+    border-right: 1.5px solid var(--border); text-align: center;
+  }
+  .signal-item:last-child { border-right: none; }
+  .signal-value {
+    font-size: 22px; font-weight: 700; color: var(--black); line-height: 1.1;
+  }
+  .signal-label {
+    font-size: 8.5px; font-weight: 700; letter-spacing: 2.5px;
+    text-transform: uppercase; color: var(--muted); margin-top: 6px;
+  }
+
+  /* ── Identity header ─────────────────────── */
+  .identity-bar {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 40px; padding-bottom: 20px;
+    border-bottom: 1.5px solid var(--border);
+  }
+  .identity-photo {
+    width: 44px; height: 44px; flex-shrink: 0;
+    border: 1.5px solid var(--border);
+  }
+  .identity-text { line-height: 1.4; }
+  .identity-name {
+    font-size: 13px; font-weight: 700; color: var(--black);
+    letter-spacing: -0.2px;
+  }
+  .identity-cred {
+    font-size: 10px; color: var(--secondary); letter-spacing: 0.5px;
+  }
+
+  /* ── Footer ──────────────────────────────── */
+  .footer {
+    margin-top: 48px; padding-top: 16px;
+    border-top: 1px solid var(--border-light);
+    font-size: 9px; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--faint); line-height: 2;
+  }
+
+  /* ── Divider ─────────────────────────────── */
+  .hr { border: none; border-top: 1px solid var(--border-light); margin: 36px 0; }
+
+  /* ── Closing quote ───────────────────────── */
+  .closing-quote {
+    margin: 0 0 48px;
+    padding: 28px 32px 24px;
+    border: 1px solid var(--border-light);
+    border-top: 4px solid var(--accent);
+    background: var(--white);
+  }
+  .cq-text {
+    font-family: var(--sans);
+    font-size: 14.5px; color: var(--black);
+    line-height: 1.8; font-style: italic;
+  }
+  .cq-attr {
+    margin-top: 16px;
+    font-size: 9px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+</style>
+</head>
+<body>
+
+<!-- IDENTITY -->
+<div class="identity-bar">
+  <img class="identity-photo" src="https://github.com/manitjain87.png" alt="Manit Jain" width="44" height="44">
+  <div class="identity-text">
+    <div class="identity-name">Manit Jain</div>
+    <div class="identity-cred">VP Finance &mdash; Strategic Analysis &nbsp;&middot;&nbsp; June 2026</div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="doc-label">Fleek &nbsp;&middot;&nbsp; VP Finance &nbsp;&middot;&nbsp; Strategic Analysis</div>
+<div class="doc-title">Fleek &mdash; From Series B to $1B+ GMV</div>
+<div class="doc-meta">Manit Jain &nbsp;&middot;&nbsp; June 2026</div>
+
+<!-- BUSINESS METRICS -->
+<div class="signal-strip">
+  <div class="signal-item">
+    <div class="signal-value">~$80M</div>
+    <div class="signal-label">GMV</div>
+  </div>
+  <div class="signal-item">
+    <div class="signal-value">70–80%</div>
+    <div class="signal-label">YoY Growth</div>
+  </div>
+  <div class="signal-item">
+    <div class="signal-value">~15%</div>
+    <div class="signal-label">Blended Take Rate</div>
+  </div>
+  <div class="signal-item">
+    <div class="signal-value">$50M</div>
+    <div class="signal-label">Series B</div>
+  </div>
+  <div class="signal-item">
+    <div class="signal-value">~175</div>
+    <div class="signal-label">Headcount</div>
+  </div>
+</div>
+
+<!-- SECTION 01 — RESEARCH FINDINGS -->
+<div class="section-num">Section 01</div>
+<div class="section-title">Business Model &amp; Investment Signals</div>
+
+<div class="findings-grid">
+
+  <!-- Block 1: Business Model -->
+  <div class="finding-card">
+    <div class="finding-label">Business Model &amp; Transaction Flow</div>
+    <div class="finding-body">
+      <strong>B2B wholesale marketplace</strong> connecting secondhand clothing wholesalers with vintage stores, resellers, and individual buyers. All transactions are platform-intermediated.<br><br>
+      <strong>Two product formats:</strong> Bundles (pre-curated boxes, 10–1,000+ pieces; container shipping at 7,000–8,000+ units) and Pieces (individually photographed, 10-piece minimum).<br><br>
+      <strong>Critical distinction:</strong> Exact bundles guarantee specific items shown — premium prices. Representative bundles deliver similar items with quality variance — discounted. The Exact/Representative ratio directly determines revenue per item and buyer trust.<br><br>
+      <strong>Transaction flow:</strong> Buyer orders &rarr; Fleek receives stock &rarr; QC at fulfillment center (days 5–8) &rarr; ships to buyer (21–28 days door-to-door). Shipping, duties, and fees included in listing price. Fleek physically handles items — not a pure marketplace pass-through.<br><br>
+      <strong>Settlement:</strong> Standard = pay on order. Large buyers (£2,000+/month) = 45-day payment terms via credit partner. Working capital cycle: ~65–73 days from stock handling to cash receipt.
+    </div>
+    <div class="finding-stat"><span>Scale:</span> 500,000+ items/month &nbsp;&middot;&nbsp; 10,000+ active buyers &nbsp;&middot;&nbsp; 70 countries</div>
+  </div>
+
+  <!-- Block 2: Revenue Architecture -->
+  <div class="finding-card">
+    <div class="finding-label">Revenue Architecture</div>
+    <div class="finding-body">
+      <strong>Blended take rate ~15%</strong> across buyer fees, seller-side commission, and AI tooling revenue. Intentionally below Faire (25–30%) and Depop (10% B2C) for market capture at growth stage — take rate expansion is a deliberate future lever.<br><br>
+      <strong>FleekSort pricing lever:</strong> Computer vision grading at source (Grade A/B/C) directly determines item pricing. Grade B = 20–30% discount from Grade A. Grade C = upcycling market only. More AI-graded items &rarr; more Exact bundle listings &rarr; <strong>higher average selling price per item.</strong><br><br>
+      <strong>AI auto-bundling:</strong> Sellers photograph items; AI auto-creates graded, priced bundle listings ready to go live. Dramatically lowers the barrier for individual sellers — no technical listing expertise required.<br><br>
+      <strong>Embedded fintech:</strong> 45-day credit terms via third-party credit partner for £2k+/month buyers. Buyer acquisition tool and potential revenue line if Fleek earns origination or referral fees. At scale, proprietary credit scoring dataset creates a path to internalised lending.
+    </div>
+    <div class="finding-stat"><span>Benchmark:</span> Faire take rate 25–30% &nbsp;&middot;&nbsp; Etsy 6.5% &nbsp;&middot;&nbsp; Depop 10% &nbsp;&middot;&nbsp; Shopify B2B GMV +80% Q1 2026</div>
+  </div>
+
+  <!-- Block 3: Supply Architecture (Two-Tier) -->
+  <div class="finding-card">
+    <div class="finding-label">Supply Architecture &mdash; Two-Tier Flywheel</div>
+    <div class="finding-body">
+      <strong>Individual seller tier (emerging compound engine):</strong> Young professionals, parents, and hobbyists in Pakistan who have turned sourcing, grading, and listing secondhand fashion into a meaningful livelihood. "Fleek seller" is becoming a recognisable economic identity. Sellers photograph items; AI auto-creates bundle listings; FleekSort grades and prices. Sell-through analytics flow back as sourcing signals for the next run. Pakistan is the proof-of-concept; India runs the same cultural and economic conditions at larger scale.<br><br>
+      <strong>Institutional supplier tier (deepening unlock):</strong> Large rag houses currently using Fleek for a fraction of their volume. Already on the platform — the lever is making Fleek the preferred channel: fast settlement, demand signal feedback on which categories to source more of, grading support at their facility, and operational tooling that reduces their cost to supply Fleek vs. alternatives.<br><br>
+      <strong>EU deadstock regulation:</strong> Retailers cannot destroy unsold inventory &rarr; a third supplier segment emerges: brands needing a B2B wholesale channel with documented provenance and buyer reach at scale.
+    </div>
+    <div class="finding-stat"><span>Supply:</span> 500–600 verified wholesale suppliers &nbsp;&middot;&nbsp; Pakistan live &nbsp;&middot;&nbsp; India, Thailand in pipeline &nbsp;&middot;&nbsp; EU deadstock law tailwind</div>
+  </div>
+
+  <!-- Block 4: Competitive Position & Moat -->
+  <div class="finding-card">
+    <div class="finding-label">Competitive Position &amp; Moat</div>
+    <div class="finding-body">
+      <strong>No direct B2B secondhand wholesale marketplace competitor identified.</strong> The real incumbents being displaced are offline rag houses — large operators aggregating donated and post-consumer clothing through relationship-based trade.<br><br>
+      <strong>Moat 1 — FleekSort data flywheel:</strong> 2.5M+ items graded. Grading accuracy improves &rarr; more Exact bundle listings &rarr; higher buyer trust &rarr; higher prices &rarr; more buyers &rarr; more transactions &rarr; more grading data &rarr; better model. Genuine compounding moat — not a feature claim.<br><br>
+      <strong>Moat 2 — Supplier performance intelligence:</strong> Sell-through velocity by grade, category, and market; quality consistency across shipments; margin profile by tier. No competitor holds this data. Foundation for both a buyer trust signal and supplier working capital products.<br><br>
+      <strong>Moat 3 — Network density + switching costs:</strong> Suppliers who train staff on Fleek's grading system and individual sellers who build expertise on the platform have structural cost to switch. Buyers with established supplier relationships and embedded credit terms have switching friction.
+    </div>
+    <div class="finding-stat"><span>Moat:</span> 2.5M+ items graded &nbsp;&middot;&nbsp; 500–600 suppliers &nbsp;&middot;&nbsp; 10,000+ buyers &nbsp;&middot;&nbsp; 70 countries</div>
+  </div>
+
+  <!-- Block 5: Investment Signals -->
+  <div class="finding-card">
+    <div class="finding-label">Investment Signals</div>
+    <div class="finding-body">
+      <strong>Tier-1 operator founders:</strong><br>
+      &bull; <strong>CEO Abhi Arora:</strong> Berkeley BS, Cambridge MBA. Ex-Dubsmash (led growth to 300M users, acquired by Reddit). Operator background, not finance.<br>
+      &bull; <strong>CTO Sanket Agarwal:</strong> IIT Kharagpur CS &rarr; Google Search Indexing &rarr; Suki founding engineer &rarr; Postmates Senior Engineering Manager. Built FleekSort and Fleek OS.<br>
+      &bull; <strong>Angels:</strong> Harley Finkelstein (Shopify President), Maria Raga (ex-Depop CEO), Sean Plaice (Postmates CTO) — operators with direct relevance, not passive capital.<br><br>
+      <strong>Funding health:</strong> a16z (seed) &rarr; HV Capital (Series A) &rarr; Pioneer Fund (Series B, Dec 2025). ~$70M total raised. No down-round signals. Series B closed at fresh price post-2024 market.<br><br>
+      <strong>Post-Series B institutionalisation push:</strong> VP Engineering, VP Product (ex-Bumble CPO, joined May 2026), and VP Finance being recruited simultaneously — deliberate cohort hire of functional leaders.
+    </div>
+    <div class="finding-stat"><span>Signal:</span> $70M raised &nbsp;&middot;&nbsp; a16z / HV / Pioneer &nbsp;&middot;&nbsp; 175 people &nbsp;&middot;&nbsp; Tier-1 operators at both founder seats</div>
+  </div>
+
+  <!-- Block 6: Partner Financing & Embedded Finance -->
+  <div class="finding-card">
+    <div class="finding-label">Partner Financing &amp; Embedded Finance Opportunity</div>
+    <div class="finding-body">
+      <strong>Fleek is already a fintech player.</strong> 45-day payment terms for £2k+/month buyers via a third-party credit partner — buyer acquisition tool with embedded finance optionality.<br><br>
+      <strong>Supplier-side financing is the priority.</strong> Fleek is supply-constrained. Working capital for individual sellers (20–30 day cash cycles) and institutional suppliers directly converts to GMV. Fleek holds data no external lender has: item-level sales, margin by grade, FleekSort sell-through velocity by supplier and category. This enables an <strong>item-level sale predictor</strong> — lending against inventory with a probability model no bank can replicate.<br><br>
+      <strong>The principle:</strong> "You cede the right to innovate if you don't build the thing." The data advantage exists today. If Fleek doesn't build the financial product on top of it, the margin and the relationship eventually go to an external lender who will operate without Fleek's data edge.<br><br>
+      <strong>Buyer-side BNPL remains hard.</strong> Resellers ($300–400 AOV) need financing but are structurally difficult to underwrite at the B2B level — the focus is supplier-side first.
+    </div>
+    <div class="finding-stat"><span>Opportunity:</span> Supply-side financing &nbsp;&middot;&nbsp; Item-level predictor &nbsp;&middot;&nbsp; Credit internalization path &nbsp;&middot;&nbsp; VP Finance mandate</div>
+  </div>
+
+</div>
+
+<!-- SECTION 02 — ORG DESIGN -->
+<div class="section-num">Section 02</div>
+<div class="section-title">Finance Org Design &amp; Operating Model</div>
+
+<div class="org-flow">
+
+  <div class="org-top">
+    <div class="org-top-label">Future State &mdash; AI-Native Finance Organisation</div>
+    <div class="org-top-title">VP Finance</div>
+    <div class="org-top-desc">Group consolidation &middot; Investor relations &middot; Series C readiness &middot; Credit partner relationship &middot; Capital allocation &middot; Board reporting</div>
+  </div>
+
+  <div class="org-connector">│<br>│<br>│</div>
+
+  <div class="org-row">
+    <div class="org-fn">
+      <div class="org-fn-name">FP&amp;A</div>
+      <div class="org-fn-loc">US &middot; HQ</div>
+      <div class="org-fn-items">
+        13-week rolling cash<br>
+        Scenario modelling<br>
+        Driver-based planning<br>
+        Burn rate &amp; runway<br>
+        Series C data room
+      </div>
+    </div>
+    <div class="org-fn">
+      <div class="org-fn-name">Commercial Finance</div>
+      <div class="org-fn-loc">UK</div>
+      <div class="org-fn-items">
+        Revenue analytics<br>
+        Unit economics<br>
+        Exact vs Rep bundle mix<br>
+        Pricing governance<br>
+        Transfer pricing framework
+      </div>
+    </div>
+    <div class="org-fn">
+      <div class="org-fn-name">Accounting</div>
+      <div class="org-fn-loc">India</div>
+      <div class="org-fn-items">
+        Xero group-wide close<br>
+        Month-end &lt;48 hours<br>
+        Inter-company eliminations<br>
+        FleekSort API &rarr; GL<br>
+        Item-level COGS
+      </div>
+    </div>
+    <div class="org-fn">
+      <div class="org-fn-name">Fin-Ops</div>
+      <div class="org-fn-loc">Pakistan</div>
+      <div class="org-fn-items">
+        AR automated collections<br>
+        Multi-currency payments<br>
+        (Wise for Business)<br>
+        FX exposure management<br>
+        Supplier payment cycles
+      </div>
+    </div>
+    <div class="org-fn">
+      <div class="org-fn-name">Controllership</div>
+      <div class="org-fn-loc">US / UK</div>
+      <div class="org-fn-items">
+        Corporate cards (Brex)<br>
+        Spend policy enforcement<br>
+        Vendor bill pay + AP<br>
+        Real-time GL &rarr; Xero<br>
+        Budget control at source
+      </div>
+    </div>
+  </div>
+
+  <div class="org-connector">│<br>│<br>│</div>
+
+  <div class="org-ai">
+    <div class="org-ai-label">AI Orchestration Layer</div>
+    <div class="org-ai-items">
+      Board reports &rarr; first draft &lt;2 hours from live data &nbsp;│&nbsp; Cash forecast &rarr; anomaly detection &amp; auto-escalation<br>
+      FX exposure &rarr; timing recommendations &nbsp;│&nbsp; Series C data room &rarr; auto-populated monthly
+    </div>
+    <div class="org-ai-note">◈ All financial decisions remain human-gated. AI handles routine output; humans own exceptions, judgment, and strategy.</div>
+  </div>
+
+  <!-- Fleek OS Foundation vs. Gaps -->
+  <div class="os-compare">
+    <div class="os-col">
+      <div class="os-col-label">Fleek OS &mdash; Current Foundation</div>
+      <div class="os-col-item">
+        <strong>BigQuery</strong> operational database<br>
+        <strong>Brex + HRIS</strong> APIs connected<br>
+        <strong>Financial statements</strong> + management reporting generated<br>
+        <strong>Permission-controlled</strong> build layer<br>
+        <strong>Any team member</strong> can build on top with AI<br>
+        <strong>AI-native</strong> &mdash; not spreadsheet-driven
+      </div>
+    </div>
+    <div class="os-col">
+      <div class="os-col-label">Strategic Gaps &mdash; To Build</div>
+      <div class="os-col-item">
+        <strong>External audit trail:</strong> BigQuery &rarr; GAAP mapping<br>
+        <strong>Group consolidation:</strong> 4-entity inter-company eliminations<br>
+        <strong>FleekSort &rarr; item-level COGS</strong> pipeline<br>
+        <strong>Buyer credit portfolio</strong> framework<br>
+        <strong>13-week rolling cash</strong> model<br>
+        <strong>Transfer pricing</strong> documentation
+      </div>
+    </div>
+  </div>
+
+  <!-- Operating Model Comparison -->
+  <div class="model-compare">
+    <div class="model-col">
+      <div class="model-col-label">Current State</div>
+      <div class="model-col-item">
+        <strong>Close cycle:</strong> 5–10 days<br>
+        <strong>COGS:</strong> category-level estimates<br>
+        <strong>Forecast:</strong> monthly, retrospective<br>
+        <strong>Board reports:</strong> 3–5 days manual<br>
+        <strong>Credit scoring:</strong> blunt £2k/month threshold<br>
+        <strong>FX:</strong> bank rate 2–4% across 4 entities<br>
+        <strong>Audit prep:</strong> 3–6 months<br>
+        <strong>Cost:</strong> ~£400–600K/year (4–6 FTE)
+      </div>
+    </div>
+    <div class="model-col">
+      <div class="model-col-label">AI-Augmented (12 Months)</div>
+      <div class="model-col-item">
+        <strong>Close cycle:</strong> &lt;48 hours<br>
+        <strong>COGS:</strong> item-level, calculated<br>
+        <strong>Forecast:</strong> 13-week rolling, driver-based<br>
+        <strong>Board reports:</strong> &lt;2 hours, AI first draft<br>
+        <strong>Credit scoring:</strong> multi-factor model<br>
+        <strong>FX:</strong> ~0.5% via Wise, AI timing recs<br>
+        <strong>Audit prep:</strong> &lt;4 weeks<br>
+        <strong>Cost:</strong> ~£400–500K/year (2–3 FTE + tools)
+      </div>
+    </div>
+  </div>
+
+  <div class="model-principle">
+    <strong>Control principle:</strong> AI generates the first draft of everything — reports, forecasts, variance explanations, FX timing recommendations. Humans review, override, and own every financial decision. The AI layer gives the team <strong>3–4&times; leverage</strong> — each person owns a domain; AI handles routine production. The goal is not headcount reduction — it is ensuring the finance function scales at a fundamentally different cost curve than the business it supports.
+  </div>
+
+</div>
+
+<!-- SECTION 03 — BEFORE / AFTER -->
+<div class="section-num">Section 03</div>
+<div class="section-title">Before / After &mdash; Finance Function Transformation</div>
+
+<table class="jony-table">
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Current State</th>
+      <th>AI-Augmented (12 Months)</th>
+      <th>Impact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FP&amp;A</td>
+      <td>Fleek OS generates real-time reporting; full scenario modelling and driver-based planning not yet structured</td>
+      <td>Real-time driver-based planning + AI narrative generation + scenario modelling</td>
+      <td>Close: 10d &rarr; &lt;2d<br>Forecast accuracy: &plusmn;20% &rarr; &plusmn;5%</td>
+    </tr>
+    <tr>
+      <td>AR / Fin-Ops</td>
+      <td>45-day credit facility active via credit partner; buyer credit portfolio not formally scored or monitored</td>
+      <td>Credit portfolio framework (scoring, limits, monitoring) + automated settlement + predictive 13-week cash</td>
+      <td>Credit losses visible and managed; facility headroom planned ahead of GMV milestones</td>
+    </tr>
+    <tr>
+      <td>Accounting</td>
+      <td>Fleek OS generates management accounts; group consolidation + item-level COGS not yet wired in</td>
+      <td>Group accounts + auto-match bank feeds + FleekSort API &rarr; item-level COGS</td>
+      <td>Reconciliation: 5d &rarr; &lt;24h<br>COGS: estimated &rarr; item-level</td>
+    </tr>
+    <tr>
+      <td>Payments</td>
+      <td>Multi-currency flows across 4 entities; Brex in use for corporate spend</td>
+      <td>Multi-currency platform (~0.5% all-in) + automated inter-company + FX exposure dashboard</td>
+      <td>£75–175K/year FX saving; inter-company documented</td>
+    </tr>
+    <tr>
+      <td>Controllership</td>
+      <td>Brex corporate cards; spend policy enforcement framework not yet built; opex overruns visible 30+ days after</td>
+      <td>Brex cards + expense management + bill pay + real-time Xero GL sync at point of spend</td>
+      <td>Opex overruns caught pre-event; close loses 2–3d of manual recoding</td>
+    </tr>
+    <tr>
+      <td>Controls</td>
+      <td>Management accounts produced; no group audit package; transfer pricing undocumented</td>
+      <td>Transfer pricing framework + consolidated accounts + compliance automation</td>
+      <td>Group audit: 3–6mo prep &rarr; &lt;4wk; Series C-ready</td>
+    </tr>
+    <tr>
+      <td>Series C Readiness</td>
+      <td>Data available in Fleek OS; Series C-ready investor KPI package not yet assembled</td>
+      <td>Automated KPI package, always current, single source of truth</td>
+      <td>Finance leadership time on strategy, not spreadsheet assembly</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- SECTION 04 — QUESTIONS -->
+<div class="section-num">Section 04</div>
+<div class="section-title-appendix">Series C Readiness &amp; The $10B Questions</div>
+
+<div class="questions-list">
+
+  <div class="open-q">
+    <div class="open-q-num">01 &nbsp;/&nbsp; The Supply Flywheel &mdash; Both Tiers</div>
+    <div class="open-q-text">
+      Fleek is supply-constrained, and supply unlocks at two different scales simultaneously.<br><br>
+      The <strong>individual seller tier</strong> &mdash; young professionals, parents, hobbyists in Pakistan who have turned sourcing, grading, and listing secondhand fashion into a meaningful livelihood &mdash; is the emerging compound engine. Sellers photograph items and the AI auto-creates graded, priced bundle listings ready to go live; FleekSort grading guidance and sell-through analytics then flow back as demand signals for their next sourcing run. Better tools &rarr; better item selection and economics for sellers &rarr; more sellers join &rarr; more supply diversity &rarr; better buyer experience &rarr; reinvest in the platform &rarr; loop tightens. Pakistan is the proof-of-concept; India runs the same economics at larger scale. Category expansion into women's, men's, and kidswear creates new arbitrage surfaces for this tier &mdash; each category is a new domain for individual sellers to develop sourcing expertise in.<br><br>
+      The <strong>institutional supplier tier</strong> &mdash; large rag houses for whom Fleek currently represents a small fraction of their volume &mdash; is the deeper, higher-volume unlock. They're already on the platform; the lever is making Fleek the preferred channel: fast settlement cycles, demand signal feedback on which categories and grades to source more of, grading support, and operational tooling that reduces their cost to supply Fleek relative to every alternative. The EU deadstock regulation creates a third segment alongside both &mdash; brands that cannot destroy unsold inventory and need a B2B wholesale channel with documented provenance and buyer reach.<br><br>
+      The compound question across all three: the tools, AI bundling, and data feedback loops are the product layer. But scaling supply also requires the operational layer &mdash; on-the-ground team composition and org structure to recruit, onboard, and develop sellers in Pakistan and India; compliance infrastructure for cross-border payments, customs, and local regulatory requirements; and incentive design that earns genuine loyalty at both tiers without eroding unit economics. What is the plan across both layers, and how does it hold as supply volume scales toward the Series C GMV target?
+    </div>
+  </div>
+
+  <div class="open-q">
+    <div class="open-q-num">02 &nbsp;/&nbsp; Data Flywheel: FleekSort &rarr; Supplier Intelligence &rarr; Financing</div>
+    <div class="open-q-text">
+      2.5M+ items graded is the headline. The compound value is three products built sequentially on that foundation: a <strong>supplier performance scorecard</strong> (sell-through velocity by grade, category, and market; quality consistency across shipments; margin profile by seller tier); a <strong>buyer trust signal</strong> (Exact vs. Representative bundle ratio as a supplier reliability indicator); and <strong>supplier working capital</strong> &mdash; lending against incoming inventory using item-level sale probability that no bank or BNPL provider can model, because they don't have FleekSort's sell-through data.<br><br>
+      These are sequential, not parallel. The item-level data pipeline from FleekSort into Fleek OS is the infrastructure; the scorecard is the first product built on it; financing is the output that removes the cash cycle constraint for individual sellers and institutional suppliers alike. The scorecard also powers the individual seller flywheel in Q1 &mdash; it is the feedback mechanism that tells sellers what to source next and makes better performance legible and rewardable.<br><br>
+      Has the supplier scorecard been built, or is it a roadmap item? And does the item-level data pipeline exist in Fleek OS today in a form that supports all three products?
+    </div>
+  </div>
+
+  <div class="open-q">
+    <div class="open-q-num">03 &nbsp;/&nbsp; The P&amp;L and Series C Readiness</div>
+    <div class="open-q-text">
+      The operating picture: ~$80M GMV, 70&ndash;80% YoY growth, ~15% blended take rate, monthly burn ~$600&ndash;700K rising with team, AI token costs, and potential hardware capex for FleekSort expansion. Series C trigger: ~18 months runway at ~$225M GMV &mdash; roughly 24&ndash;30 months at current growth.<br><br>
+      The pre-conditions that determine whether Series C is a clean raise or a distracted one: <strong>group entity structure</strong> with inter-company flows documented and transfer-priced across the US C-corp, UK sub, Pakistan, and India entities; <strong>Fleek OS outputs mapped to GAAP line items</strong> with a verifiable external audit trail; and a <strong>consolidated investor KPI package</strong> auto-updated from existing pipelines &mdash; GMV, take rate, gross margin by cohort, burn rate, and AR days always current, never assembled manually for a board meeting.<br><br>
+      What is the current state of each, and what is the build sequence between now and the raise?
+    </div>
+  </div>
+
+  <div class="open-q">
+    <div class="open-q-num">04 &nbsp;/&nbsp; Path to $1B GMV &mdash; The Building Blocks</div>
+    <div class="open-q-text">
+      $80M to $1B is 12.5&times; on the current model, or a smaller multiple on an expanded one. The building blocks: the <strong>individual seller flywheel replicated</strong> across new markets (India, Thailand); <strong>category expansion</strong> (apparel verticals, accessories, kidswear); <strong>take rate expansion</strong> (currently ~15%; Faire operates at 25&ndash;30% &mdash; the delta at $1B GMV is $100&ndash;150M in annual revenue); <strong>FleekSort-as-SaaS</strong> licensing to offline rag houses (near-100% gross margin, zero incremental marketplace cost); <strong>embedded financial services</strong> (supplier working capital, expanded buyer credit facility, eventual credit internalisation).<br><br>
+      Which of these sit on the Series B&rarr;C roadmap, and which are Series C&rarr;D? What does the board define as the primary GMV lever to the next raise?
+    </div>
+  </div>
+
+  <div class="open-q">
+    <div class="open-q-num">05 &nbsp;/&nbsp; Fleek&rsquo;s Product Principles &mdash; What Is the Green Path?</div>
+    <div class="open-q-text">
+      Great product companies at the Series B inflection codify how they decide what to build and in what order. Three questions that matter most right now.<br><br>
+      First: what is Fleek's <strong>Green Path</strong> &mdash; the sequenced steps toward $1B GMV where each decision is evaluated against whether it moves the platform closer, even without knowing the full route?<br><br>
+      Second: how does Fleek classify what it builds &mdash; <strong>infrastructure</strong> that provides long-term leverage (FleekSort, Fleek OS), <strong>features</strong> that solve specific buyer and seller problems, and <strong>experiments</strong> that test hypotheses quickly before being rebuilt properly at scale?<br><br>
+      Third: what is the <strong>global maxima</strong> &mdash; the largest mountain visible from $80M GMV, whether that is the marketplace itself, an embedded financial services platform, a supply-side intelligence layer, or something that only becomes visible as the current summit gets closer?<br><br>
+      The VP Finance function needs these answers not just to understand the business &mdash; capital allocation, burn sequencing, and Series C narrative all follow directly from the product doctrine. Has Fleek codified this, and what does it look like?
+    </div>
+  </div>
+
+</div>
+
+<!-- CLOSING PERSPECTIVE -->
+<div class="closing-quote">
+  <div class="cq-text">Fleek will not fail for lack of opportunity. There are two supplier tiers to deepen, five categories to enter, new geographies to open, an embedded financial services stack to build, and an AI grading product that could be licensed standalone. Every conversation surfaces another mountain to climb. The companies that struggle at this stage are not the ones that ran out of ideas &mdash; they are the ones that tried to climb all the mountains simultaneously. The sequencing decision &mdash; which mountain first, in what order, with what capital, and what to say no to &mdash; is where finance becomes the growth lever.</div>
+  <div class="cq-attr">Manit Jain &nbsp;&middot;&nbsp; June 2026</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Manit Jain &nbsp;&middot;&nbsp; VP Finance Analysis &nbsp;&middot;&nbsp; June 2026 &nbsp;&middot;&nbsp; Fleek (joinfleek.com)
+</div>
+
+</body>
+</html>
