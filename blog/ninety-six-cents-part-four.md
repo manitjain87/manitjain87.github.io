@@ -1,0 +1,196 @@
+---
+title: "The Credit Layer"
+subtitle: "The risk in the AI buildout has moved from the equity layer to the credit layer, and the credit layer is the least disclosed part of the chain. Three of the four largest buyers became net raisers of capital in the first half of 2026."
+date: 2026-10-13
+tags: ["#capital-allocation", "#vendor-financing", "#consumption-economics"]
+series: "Ninety-Six Cents"
+part: Four of four — The credit layer
+---
+
+# The Credit Layer
+
+Search EDGAR for Anthropic and you get 35 filers. Search it for OpenAI and you get 24.
+
+Every one of them is a fund or a feeder vehicle. "ANTHROPIC - A SERIES OF AURUM VP FUND LLC." "OpenAI Apr 2024 a Series of CGF2021 LLC." Special-purpose vehicles, filing Form D to raise money from investors to buy shares in companies that do not file anything themselves. I checked on 13 October: neither company appears in EDGAR's registered-filer list, and "OpenAI Group PBC" — the entity NVIDIA's own 10-Q names as its guarantee counterparty — returns no match at all.
+
+So the vehicles selling exposure to these two disclose on a schedule. The two themselves do not.
+
+That is the subject of this part. [Part One](ninety-six-cents.html) asked who in the chain has the cash flow, and found that capital expenditure absorbed 96 cents of every operating dollar at the four largest buyers. [Part Two](ninety-six-cents-part-two.html) asked whether the revenue on the other side of those commitments is collectible. [Part Three](ninety-six-cents-part-three.html) asked what survives if it is not, and found the answer sitting with whoever wrote the guarantee.
+
+Between them these two companies sit behind the largest commitments in the chain — at least $518 billion over a decade in Anthropic's case, per Reuters' account of a confidential draft prospectus, and in OpenAI's a $105 billion guarantee written behind its leases by NVIDIA.
+
+This part asks a narrower question with a worse answer. **Who holds the credit risk, and can you see it?**
+
+*Last of four. **[Part One](ninety-six-cents.html)** · **[Part Two](ninety-six-cents-part-two.html)** · **[Part Three](ninety-six-cents-part-three.html)**. Each part stands on its own.*
+
+*A note on sourcing, because this part leans harder on absence than the others. Where I say a document is filed I name the accession number, and where I say nothing was filed I say when I looked, because an absence is only as good as its date. The registration counts are mine, computed from EDGAR's own quarterly form indexes, and I give the method so they can be reproduced or refuted. The Firmus deal is a single Reuters report. The Nebius material is my own underwriting, which is not a filing and is marked as judgement throughout.*
+
+## A filed document is not the same as a disclosed one
+
+NVIDIA's quarter to 26 July 2026 is the clearest case in the chain, because it discloses a great deal and still leaves the number everyone quotes undefined.
+
+The 10-Q sets out commitments across **three separate tables** and states no combined total:
+
+| Disclosed table | Total | What it is |
+|---|---|---|
+| Future commitments | **$366bn** | Supply 279, cloud services 29, leases 25, equity 25, capex 8 |
+| Additional commitments | **$56bn** | AI cloud agreements 36, third-party leases to reassign 20 |
+| Guarantees, maximum gross | **$108.5bn** | AI-cloud land/power/shell 3.5, SB Energy 105.0 |
+
+Add them and you get **$530.5 billion**, which is the figure now circulating as NVIDIA's off-balance-sheet exposure. NVIDIA reports no such total, and the phrase "off-balance sheet" appears nowhere in the filing. The sum is also doing more work than it can carry: $279 billion of it is supply commitments, mostly memory, some cancelable before firm orders are placed; $33 billion is NVIDIA's own spending plans rather than anyone else's obligations. The genuinely contingent part is the $108.5 billion of guarantees.
+
+**Now read the guarantee itself**, because NVIDIA filed the form of it as Exhibit 10.1 to that same 10-Q — which is more than most vendors in this cycle have done, and which is why it is worth being precise about what it shows.
+
+What is legible: NVIDIA guarantees a **"Guaranteed Minimum Value"** that is *"comprised of data center, power, and transmission related costs."* Construction cost, not market value. The contract carries the **$105,000,000,000** cap in its own text. It terminates when the tenant or its parent achieves a credit rating, or posts a bank guaranty, letter of credit or surety bond from a rated issuer, or is replaced by a tenant that achieves a rating. It terminates in any event on the twentieth anniversary. It is governed by New York law.
+
+What is not legible: the formula for the Covered Loss Amount, the discount rate, the transaction-cost cap, the Pre-RFS Termination Payment, every credit-rating threshold, and the operative substance of all **five** remedies the exhibit names — Assumption, Relet, Sale, Rejection and Deferral. Each appears as `[***]`.
+
+So the exhibit tells you the guarantee is a rating bridge and does not tell you what rating ends it. It tells you NVIDIA may elect to assume the lease and does not tell you on what terms — only, in a definition, that electing assumption or deferral means *"no Covered Loss Amount shall be payable, but Guarantor shall be required to pay the applicable amounts set forth"* elsewhere in the agreement. The obligation is substituted, not discharged.
+
+None of that is improper, and confidential treatment of commercial terms is ordinary. But read the legend NVIDIA put at the top of the exhibit, because it is the sharpest sentence in the document: the redacted items are excluded *"BECAUSE IT IS BOTH NOT MATERIAL AND IS THE TYPE OF INFORMATION THAT THE REGISTRANT TREATS AS PRIVATE OR CONFIDENTIAL."* The loss formula and the rating thresholds on a $105 billion guarantee are, in the registrant's own representation, not material. The point is about what the reader can actually do: **you can read this contract end to end and still not be able to size the exposure.** A filing can be complete as a legal matter and uninformative as an analytical one.
+
+## The counterparties have no registration statement
+
+That is NVIDIA, which is listed, audited and generous by the standards of this cycle. Now consider who is on the other side.
+
+**Anthropic.** The $518 billion, the roughly 80% that is non-cancelable, the $111.1 billion with Google, $110 billion with Amazon and $31.4 billion with Microsoft — all of it is known because Reuters reported on 28 and 29 September 2026 that it had seen a confidential draft prospectus. That draft is not publicly filed, and Anthropic itself is not an EDGAR filer — only the vehicles buying its shares are. So the commitment figures at the centre of [Part Two](ninety-six-cents-part-two.html) reach the reader through one news organisation's account of a document nobody outside it has read.
+
+And on **14 October** it did disclose — Q3 revenue of $16.8 billion and a first adjusted-profitable quarter — at a closed-door pre-IPO investor day, to prospective buyers, reported out by one anonymous source to the *Financial Times*. The registration record still contains none of it, and nobody outside that room has been told whether the figure is gross or net. That is the shape of this whole problem in a single afternoon.
+
+The exception is instructive. The one Anthropic arrangement backed by a filed document is in somebody else's filing: **SpaceX's S-1/A of 1 June 2026**, which discloses the Anthropic compute agreement, 325,000 GPUs and $1.25 billion a month to May 2029. Anthropic did not disclose that. Its supplier did, because its supplier was selling shares.
+
+**OpenAI.** A confidential S-1 went in on 8 June 2026. Confidential submission is a legitimate and common route, and it means exactly what it says: there is no public registration statement to read. The revenue figures, the loss, the valuation — reported, not disclosed.
+
+That pattern is the one reliable way to see into this layer. **The filed facts about these companies sit in other companies' filings.** AMD's 10-Q is where you learn that no OpenAI warrant shares had vested. Cerebras's 10-Q is where the master agreement and the roughly $1 billion promissory note appear. NVIDIA's 8-K is where the guarantee's insolvency trigger and OpenAI's indemnity appear. The subject of the sentence never files; the counterparty does.
+
+So two of the largest buyers of frontier compute sit behind some of the largest commitments in the chain, and neither has a public registration statement. Whether their revenue is collectible cannot be settled from their own primary documents, because there are none. It can only be triangulated from the filings of the people they owe.
+
+## Where the capital went instead
+
+[Part Two](ninety-six-cents-part-two.html) carried a counter-case: that the IPO window shuts before Anthropic can test it, citing a compilation of seven sizable US IPOs pulled or postponed in Q3 2026 against four in Q2 and three in Q1. I could not reproduce that count from primary data, and I should not have leaned on it. So I went to the registration record itself.
+
+EDGAR publishes every registration withdrawal as a **Form RW**, and its quarterly form indexes list every filing by type. Counting them directly:
+
+A raw RW count is the wrong instrument, because most withdrawals come from shells, blank-cheque vehicles and fund trusts rather than operating companies. So I matched each withdrawing filer's CIK against the companies that actually filed an S-1 or F-1 anywhere in the same seven-quarter window. That puts both columns in one universe:
+
+| Quarter | Withdrawals by registrants | New S-1/F-1 | Per 100 |
+|---|---|---|---|
+| 2025 Q1 | 24 | 323 | 7.4 |
+| 2025 Q2 | 42 | 349 | 12.0 |
+| 2025 Q3 | 24 | 445 | 5.4 |
+| 2025 Q4 | 27 | 398 | 6.8 |
+| 2026 Q1 | 43 | 331 | 13.0 |
+| 2026 Q2 | 57 | 356 | 16.0 |
+| 2026 Q3 | 44 | 344 | 12.8 |
+
+Two things fall out, and they are not the thing I expected.
+
+**2026 is materially worse than 2025.** Withdrawals by actual registrants ran 43, 57 and 44 against a 2025 range of 24 to 42, and the rate per 100 new registrations sits at 12.8 to 16.0 against 5.4 to 12.0. Something did tighten.
+
+**But it tightened in Q2, not Q3.** Q3 2026 fell from 57 to 44, and its rate fell from 16.0 to 12.8. New registrations across 2026 are flat at 331, 356 and 344. So the specific claim — that Q3 was the quarter the window started shutting — is not what the registration record shows, even though the year as a whole is clearly harder than the one before it.
+
+The limits matter here. An RW can withdraw a registration first filed before this window, so matching inside seven quarters undercounts; S-1 filers include funds and shelf registrants alongside operating companies; and a postponement that never becomes a withdrawal generates no filing at all. This measures the registration record, not the IPO market. On the narrow question of whether Q3 2026 saw a withdrawal spike, it says no. On the broader question of whether sizable AI deals specifically got harder to price, it cannot adjudicate, and neither can I.
+
+**What the one big AI deal that failed actually did is more suggestive than any count.** On 9 October, Sydney time, NVIDIA-backed Firmus shelved a $5 billion listing. Reuters reported the anatomy, and every part of it matters more than the withdrawal count:
+
+- Shares were to be sold at A$11, an equity valuation of about **$30.6 billion** — *"nearly triple the $10.5 billion it achieved following a fundraising round at the start of August."* A roughly 3× mark in about two months.
+- Debt of **about $30 billion**, per analysts working for the joint lead managers, for an implied enterprise value near **$60 billion**, at a company founded in 2019 with what Reuters describes as a lack of track record in building AI data centres.
+- The escrow terms would have allowed **more than half the stock** to be sold by existing holders from day one.
+- The term sheet, days before launch, said indicative offers already covered the transaction. Coverage was not the binding constraint. Price and structure were.
+- And then: Firmus **went to a private round instead**, exploring up to $3 billion from existing investors per Bloomberg, with a person involved telling Reuters a Nasdaq listing would follow.
+
+Read that last line again. The public market declined the price; the capital did not stop, it rerouted to the venue with the lightest disclosure, with a public listing deferred to a better moment. Note also that this was an **Australian** listing. It would never have appeared in an EDGAR count at all.
+
+One deal is not a trend, and I am offering this as a reading rather than a finding. But it is at least a coherent explanation for why the registration record looks calmer than the mood does: a growing share of this capital structure — private credit, vendor guarantees, customer prepayments, structured leases — is formed in instruments that never generate an S-1. If that is right, withdrawal counts were always going to be the wrong place to look.
+
+## The buyers went to the market too
+
+[Part One](ninety-six-cents.html) measured what the four largest buyers spent: capital expenditure absorbed 96 cents of every dollar they generated from operations, with Alphabet at 115% of its operating cash flow and Amazon at 117%. Spending more than you generate is an arithmetic statement about funding. It never said where the funding came from, and that turns out to be the more interesting half.
+
+Three of the four are now net raisers of capital. Microsoft is not.
+
+| | Net financing, H1 2026 | Long-term debt | |
+|---|---|---|---|
+| Alphabet | **+$86.3bn** (vs −$26.0bn H1 2025) | $10.9bn Mar-25 → **$98.2bn** Jun-26 | noncurrent |
+| Amazon | **+$62.9bn** | $58.0bn FY24 → **$133.0bn** Jun-26 | |
+| Meta | **+$9.4bn** (Q1 was −$6.6bn) | $28.8bn FY24 → **$83.7bn** Jun-26 | |
+| Microsoft | −$52.5bn, FY to June 2026 | $44.9bn FY24 → **$40.3bn** FY26 | falling |
+
+Read the Microsoft row twice. It is still returning tens of billions a year to shareholders and its debt is going **down**. On the ordinary measure of leverage it is deleveraging into the largest construction programme in its history.
+
+**It is funding that programme through leases.** Its finance lease liability went from $27.1 billion in fiscal 2024 to $46.2 billion to **$66.6 billion** at June 2026, against $46.1 billion of long-term debt principal. And then the figure that dwarfs everything else in this series: *"As of June 30, 2026, we had additional leases, primarily for datacenters, that had not yet commenced of **$329.1 billion**."* They commence between fiscal 2027 and fiscal 2033, with terms of one to twenty years.
+
+An uncommenced lease is recognised nowhere. It is not debt, it is not a lease liability, it is not in capital expenditure. Part One was careful that Microsoft's capex figures sit on several different bases — operating leases outside, finance leases inside — and the four-company table uses cash purchases of property and equipment. On that basis the entire lease channel is **outside** the 96%. The cash-conversion number understates Microsoft's build rather than overstating it.
+
+**Alphabet did the opposite, and did it in public.** During 2026 it issued $20.0 billion of dollar notes and $31.8 billion of foreign-currency notes — six currencies in two quarters, at weighted-average coupons from 1.06% on ten-year Swiss Franc paper to 5.31% on thirty-one-year Sterling. It also issued **$30.5 billion of common stock** and **$19.1 billion of mandatory convertible preferred**, and took buybacks from $28.3 billion in the first half of 2025 to **zero**.
+
+Two series of that preferred are listed on Nasdaq under their own tickers, both at **6.25%**. A company that spent the last decade returning sixty billion dollars a year to shareholders stopped, and sold them equity instead.
+
+**Meta kept $46 billion of it off the balance sheet entirely.** In October 2025 it entered an arrangement to co-develop a data centre campus in Louisiana — "the Venture" — in which it holds a **20% membership interest**. The parties committed to fund their pro rata share of roughly **$27 billion** of development costs. Meta's leases with the Venture commence in **2029**, carry an aggregate initial commitment of about **$12.31 billion**, and run four-year initial terms renewable to twenty years.
+
+And it has provided **residual value guarantees with an aggregate threshold of approximately $28 billion.** Because Meta does not direct the activities that most significantly affect the Venture's economics, it is *"not the primary beneficiary and, therefore, do[es] not consolidate the variable interest entity."* Its equity investment carries at **$2.92 billion**. Its stated **maximum exposure to loss is $46.03 billion**. On the guarantees: *"RVG payments are not probable, and therefore no liability has been recorded to date."*
+
+That is a residual value guarantee, like NVIDIA's — but pointed the other way. NVIDIA's guarantees a third party's default. Meta's guarantees the residual value of its own leases, which is what buys a four-year initial term on a twenty-year asset. It is optionality, purchased with a guarantee, and it is the same optionality [Part Three](ninety-six-cents-part-three.html) credits Meta with on 2028.
+
+**Then there is the one that should end the argument about whether this is an NVIDIA peculiarity.** Alphabet, in the same 10-Q:
+
+*"We have entered into agreements with certain third parties to backstop certain payment obligations relating to data centers, which we account for as credit derivatives... These agreements carry remaining terms of up to 15 years... Upon a default under these backstops, we retain the right to assume the underlying leases for internal use or to sublease to third parties. Under specific conditions or following a predetermined period, we may elect to extinguish the backstop obligation by making a termination payment."*
+
+Backstop a third party's data centre payments. On default, assume the lease or sublease it. Or pay to walk away. Those are NVIDIA's Assumption, Relet and Sale options from Exhibit 10.1, written by a hyperscaler and booked as a derivative. Alphabet's future funding commitments to unconsolidated VIEs also went from **$1.1 billion** at December 2025 to **$21.9 billion** at June 2026 — of which $20.0 billion is a capital funding commitment to an unnamed private company, contingent on milestones through 2030 and accounted for as an equity derivative.
+
+So the instrument this series has been tracking through the vendor runs through the buyers as well. The difference is not that the hyperscalers avoid credit structures. It is that they can afford them.
+
+## What it looks like where you can actually see it
+
+So take a company inside the disclosure regime, with audited statements and a live quote, and ask how hard its credit layer is to read. Working through Nebius's on 13 October, the answer was: harder than it should be.
+
+Three things had to be reconstructed rather than read.
+
+**The share count.** Fully diluted shares come to **311.5 million**, and getting there means adding Class B shares and NVIDIA's prefunded warrant to the ordinary count — neither of which falls out of a quote screen. Note what the second one means in passing: the vendor is in the customer's capital structure, which is the relationship [Part Three](ninety-six-cents-part-three.html) describes in contractual form, here expressed as equity.
+
+**Deferred revenue is debt-like.** Nebius carries roughly **$6.0 billion** of deferred revenue, and [Part One](ninety-six-cents.html) explains where it comes from: around 70% of its Q2 deals carried customer prepayments covering 50–60% of the associated capex, and it expects over $9 billion of prepayments in 2026. Those prepayments compress the reported payback period, because the customer funds half the asset before it is built. They are also an obligation to deliver compute at a fixed price for years, funded today. I model them as debt-like. They are not labelled as debt anywhere.
+
+**There is no cohort.** Screened against 48 comparable names, Nebius sits at the **99th percentile on EV/sales** and the 88.5th on EV/EBITDA. But the cohort contains no other neocloud, has no forward EBITDA distribution to speak of, and the screen's own reliability flag reads low. The honest conclusion is not "expensive versus peers." It is that **the peer set does not exist**, so the most common way investors sanity-check a price is unavailable for the entire asset class.
+
+None of that is a view on the share price, and I am not publishing one. It is three observations about a company that files properly: the share count needs assembling, the largest debt-like obligation is not called debt, and there is nothing to compare it to. If that is the state of disclosure inside the regime, the parts of this buildout outside it are not going to be clearer.
+
+CoreWeave shows the same disclosure problem from a different angle. Its "$9.4 billion of capex" for the quarter is management-defined and was never reconciled on the call to cash purchases of property and equipment; the cash flow statement says **$6,422 million**, a gap of roughly $3 billion. And its **active** power was about 1.5GW against 3.7GW contracted — roughly 41%. Contracted power is a claim on the future. Active power is what can be billed this quarter. Both numbers get quoted as though they were the same kind of fact.
+
+## The Honest Take
+
+[Part One](ninety-six-cents.html) ended on the claim that operating quality and balance-sheet quality are different variables and that this cycle prices them as one. Four parts in, there is a second axis underneath that one. Position in the value chain decides who captures the margin. **Position in the capital structure decides who absorbs the loss** — and it is the half of the picture this cycle discloses least.
+
+The sector's risk has migrated from places that file to places that do not. Equity raises become private rounds. Purchase obligations become vendor guarantees whose triggers are redacted. Customer prepayments do the work of debt without the label. A $30 billion debt pile reaches investors through analysts employed by the banks selling the deal. Two of the most important counterparties in the chain have no registration statement between them, and what is known about them comes from one news organisation reading a confidential draft and from the filings of the companies they owe.
+
+That does not make the buildout a fraud and it does not make demand fake. [Part Three](ninety-six-cents-part-three.html)'s conclusion stands: if a frontier lab misses its commitments the workloads move down the cost curve onto the capacity anyway. The compute gets used. What it means is narrower and more useful. **If you cannot see the credit, you cannot size the drawdown** — and the companies whose operating quality is highest in this chain are, as [Part One](ninety-six-cents.html) showed, among the most financially exposed in it. Those are different variables, and a dislocation prices them separately.
+
+Four things I would watch, each dated and falsifiable:
+
+- **Whether NVIDIA's AI cloud agreements line grows past $36 billion.** It was first disclosed this quarter; the Q1 FY2027 10-Q has no such line. If it widens, the vendor is being asked to carry more of the sector's credit, not less.
+- **Nebius's revenue per gigawatt**, which is the closest thing to a same-store-sales number for an AI cloud, and separates pricing power from simply plugging in more hardware.
+- **CoreWeave's active power as a share of contracted**, which converts a claim into billable revenue.
+- **Anthropic's monthly run-rate growth.** It halved once already, from 36–58% through the spring to 17–24% since May. The $518 billion averages roughly $52 billion a year and does not decelerate. The growth rate already has.
+
+And one event that may simply not happen. The clarifying moment most people are waiting for is an Anthropic listing that prices the model layer in public. Firmus is the reminder that a company facing a price it does not like has somewhere else to go — and that the somewhere else files a Form D, not a prospectus.
+
+## Sources
+
+NVIDIA's commitment and guarantee figures — the three tables, the $366 billion, $56 billion and $108.5 billion of maximum gross exposure, the $105 billion cap, the nine construction phases, the fiscal 2029 first phase, the quoted AI cloud agreement terms and the "approximately 4.25 gigawatts of IT load" at Pike County, Ohio — are from NVIDIA's 10-Q for the quarter ended 26 July 2026, accession 0001045810-26-000075, filed 26 August. The three tables are disclosed separately and NVIDIA states no combined total: $530.5 billion is their sum, computed here, not a figure NVIDIA reports, and the filing never uses the phrase "off-balance sheet." The guaranty terms, the Guaranteed Minimum Value, the five remedies, the termination triggers, the New York governing law and the substituted-payment language are Exhibit 10.1 to that 10-Q. It is a form, and the tenant's name, the loss formula, the discount rate and every rating threshold are redacted as `[***]`; I identify it as the SB Energy guaranty because its $105,000,000,000 cap, its "four and one quarter (4.25) GW" and its Piketon, Ohio premises match the arrangement described in the body of the filing. The absence of an AI cloud agreements line in the prior quarter is from NVIDIA's 10-Q for the quarter ended 26 April 2026, accession 0001045810-26-000052. The insolvency trigger and OpenAI's indemnity are from NVIDIA's 8-K of 17 August 2026.
+
+Anthropic's $518 billion and its components come from Reuters, 28–29 September 2026, reporting a confidential draft prospectus it states it has seen. That draft is not publicly filed. On the EDGAR filer counts: searching the company database on 13 October 2026 returns 35 distinct filers whose names contain "Anthropic" and 25 containing "OpenAI"; I read every name, and all 35 of the first and 24 of the second are funds, series vehicles or co-investment partnerships rather than the operating companies (the twenty-fifth is an unrelated business whose name merely contains the string). Neither company appears in EDGAR's registered-ticker file, and a search for "OpenAI Group PBC" returns no match. The narrow, checkable claim is that neither has a public registration statement and neither files as an operating company; the vehicles raising money to buy their shares file Form D routinely. Its quarterly revenue is via Bloomberg and CNBC, 15 August, with Q2 stated as a floor, so the half-year figure and the growth rates derived from it are my arithmetic on a floor rather than reported results. OpenAI's confidential S-1 submission of 8 June 2026 is reported; I searched EDGAR for an OpenAI filer on 13 October 2026 and found none. The SpaceX compute agreement, 325,000 GPUs and $1.25 billion a month to May 2029 are from SpaceX's S-1/A of 1 June 2026 — a filed document, and a counterparty's. The AMD warrant language is AMD's 10-Q for the quarter ended 27 June 2026; the Cerebras master agreement and promissory note are Cerebras's 10-Q for the quarter ended 30 June 2026.
+
+The registration counts are my own, computed from EDGAR's quarterly form indexes at `sec.gov/Archives/edgar/full-index/{year}/{QTR}/form.idx`. I counted filings of type RW, S-1 and F-1 by quarter, then — because a raw RW count is dominated by shells, blank-cheque vehicles and fund trusts — matched each withdrawing filer's CIK against the set of CIKs that filed an S-1 or F-1 anywhere in the seven-quarter window, so that the numerator and denominator describe the same universe. The matched column is what the table reports. Limits, all of which cut against the method: an RW may withdraw a registration first filed before the window, so a seven-quarter match undercounts; S-1 filers include funds and shelf registrants as well as operating companies; and a postponement that never becomes a withdrawal produces no filing. This measures the registration record, not the IPO market. The seven-four-three compilation quoted in Part Two is Vested via Benzinga, which I could not reproduce from this or any other primary source.
+
+Firmus: the shelved $5 billion listing, the A$11 indicative price, the $30.6 billion implied equity valuation against $10.5 billion at the start of August, the approximately $30 billion of debt attributed to analysts working for the joint lead managers, the roughly $60 billion implied enterprise value, the escrow terms, the term-sheet coverage and the pivot to a private round are all from Reuters, dateline Sydney 9 October 2026. The prospective Nasdaq listing is a person involved in the transaction speaking to Reuters and was not confirmed by the company, which declined to comment; the up-to-$3 billion private round is Bloomberg. The Reuters account does not quote a reason from the company beyond the move to a private round; a *Wall Street Journal* headline the same day has Firmus citing market conditions, which I have not seen in the body of a report. Reading the deal as a signal about AI valuations is Reuters' framing and mine, not the company's. This was an Australian listing and would not appear in any EDGAR count.
+
+Hyperscaler funding figures are from the companies' own filings for the periods stated, and the periods differ: Microsoft's fiscal year ends in June, so its FY2026 is the twelve months to 30 June 2026, while Alphabet, Amazon and Meta are on calendar quarters and their H1 2026 is the six months to 30 June. Net financing is "net cash provided by (used in) financing activities" as each company reports it. Alphabet's H1 2026 figures — $56.2 billion of debt issued net of costs, $30.5 billion of common stock, $19.1 billion of mandatory convertible preferred, zero buybacks against $28.3 billion a year earlier, and +$86.3 billion of net financing against —$26.0 billion — are from its 10-Q for the quarter ended 30 June 2026. I checked the column order against the balance sheet before quoting it: $56.2 billion issued less $5.3 billion repaid is +$51.0 billion, against a noncurrent long-term debt move from $46.5 billion to $98.2 billion, or +$51.7 billion. The issuance detail, the six currencies and the weighted-average coupons (4.80% on fifteen-year dollar notes, 5.31% on thirty-one-year Sterling, 1.06% on ten-year Swiss Franc, 3.90% Euro, 4.35% Canadian dollar, 2.65% yen) are from the debt note in that filing; the two 6.25% mandatory convertible preferred series are listed on Nasdaq and appear on the cover page of the same 10-Q. I have deliberately not computed spreads to government curves, because I did not pull matching maturity-matched benchmarks and a coupon alone is not a spread.
+
+Amazon's $67.0 billion of H1 2026 long-term debt issuance, $62.9 billion of net financing and $133.0 billion of long-term debt at 30 June 2026 are from its 10-Q for that quarter. Its $96.3 billion operating lease liability is in the same filing and covers its whole estate including logistics, so I have not characterised it as AI financing. Meta's $24.9 billion of H1 2026 issuance, +$9.4 billion of net financing (against —$6.6 billion in Q1 alone) and $83.7 billion of long-term debt are from its 10-Q for the quarter ended 30 June 2026.
+
+Microsoft's long-term debt, finance and operating lease liabilities, the $329.1 billion of leases not yet commenced and the contractual-obligations table are all from its 10-K for the fiscal year ended 30 June 2026. Two cautions I want to be explicit about. The $443.5 billion lease line in that table **already includes** the $329.1 billion of uncommenced leases: commenced payments are $24.7 billion of operating plus $89.7 billion of finance, and $114.4 billion plus $329.1 billion is the $443.5 billion. Never add the two. And the table's $743.8 billion total is Microsoft's own sum of all contractual obligations including $194.1 billion of purchase commitments; it is not a financing figure and I have not used it as one. Finance leases are on the balance sheet — only the uncommenced leases are recognised nowhere. Long-term debt appears as $40.3 billion on the balance sheet and $46.1 billion of principal in the obligations table; I use the principal figure where I compare it to leases, and say so.
+
+Meta's Venture: the 20% membership interest, the October 2025 inception, the ~$27 billion of total estimated development costs, the ~$12.31 billion aggregate initial lease commitment commencing 2029, the four-year initial terms renewable to twenty years, the ~$28 billion aggregate residual value guarantee threshold, the non-consolidation conclusion, the $2.92 billion equity carrying value and the $46.03 billion maximum exposure to loss are all from the variable-interest-entity disclosure in its 10-Q for the quarter ended 30 June 2026, as is the quoted statement that RVG payments are not probable and no liability has been recorded. The $46.03 billion is a stated maximum exposure, not an expected loss, and Meta's figure already comprises the equity carrying value, the lease commitments, estimated future funding commitments and the maximum RVG threshold. Meta discloses a further $6.41 billion of maximum exposure across other unconsolidated VIEs; those are other equity-method investments rather than data centres and I have not added them to the $46.03 billion. The press has attached names to this venture and its counterparty; neither appears anywhere in the filing, so neither appears here.
+
+Alphabet's data-centre credit backstops, the credit-derivative accounting, the fifteen-year maximum terms, the assume-or-sublease right and the termination-payment election are quoted from the derivatives note of its 10-Q for the quarter ended 30 June 2026. Alphabet does not disclose a single notional figure for those backstops in that note, so I have quoted the mechanism and not implied a size. The unconsolidated-VIE future funding commitments of $1.1 billion at 31 December 2025 and $21.9 billion at 30 June 2026, and the $20.0 billion milestone-contingent commitment to a private company through 2030 accounted for as an equity derivative, are from the same filing. The filing does not name that company and I have not guessed; it is a separate instrument from the data-centre backstops and should not be conflated with any commitment described in [Part Two](ninety-six-cents-part-two.html).
+
+Nebius and CoreWeave figures carried over from [Part One](ninety-six-cents.html) — the $775 million secured facility at SOFR + 2.50%, the $5.75 billion of convertible notes, depreciation at 45% of revenue, the prepayment percentages, the over $9 billion of expected 2026 prepayments, CoreWeave's $9.4 billion management-defined capex against $6,422 million of cash purchases, and the 1.5GW active against 3.7GW contracted — are from those companies' own Q2 2026 reporting as cited there. The 311.5 million fully diluted share count, the treatment of roughly $6.0 billion of deferred revenue as debt-like and the 48-name cohort percentiles are from my own work of 13 October 2026. That is not a filing and it is not audited: the share count is a reconstruction, the debt-like treatment is an analytical choice I am stating rather than a disclosure, and the percentiles come from a screen whose own reliability flag reads low — which is why I quote the flag alongside the number. I have deliberately left out any valuation conclusion, because this part is about what can and cannot be seen, not about what anything is worth.
